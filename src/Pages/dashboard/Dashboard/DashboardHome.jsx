@@ -4,6 +4,7 @@ import Gatting from "../../../components/DashboardHome/Gatting";
 import BtebIframe from "../../../components/DashboardHome/BtebIfrem";
 import Typingtest from "../../../components/DashboardHome/Typingtest";
 import { Link } from "react-router-dom";
+import Analisys from "../../../components/DashboardHome/Analisys";
 
 const DashboardHome = () => {
   const [status, setStatus] = useState([]);
@@ -21,20 +22,20 @@ const DashboardHome = () => {
   }, []);
   return (
     <div>
-      {" "}
       <Gatting />
       <Time />
       <div className=" ">
         <p className="p-4">{status}</p>
       </div>
-      <div className="h-80">
+      <div className=" ">
         <Link to="/">
           <button className="btn btn-1">Home</button>
         </Link>{" "}
         <Link to="https://bteb.gov.bd/">
           <button className="btn btn-1">BTEB</button>
         </Link>
-      </div>{" "}
+      </div>
+      <Analisys />
     </div>
   );
 };
