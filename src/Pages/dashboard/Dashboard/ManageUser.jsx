@@ -90,7 +90,7 @@ const ManageUser = () => {
             <th>Name</th>
             <th>Email</th>
 
-            <th>Role change </th>
+            <th>Role </th>
             <th>Remove user </th>
           </thead>
           <tbody className="text-center">
