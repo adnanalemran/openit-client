@@ -30,23 +30,11 @@ const DashboardHome = () => {
       <div className="h-80">
         <Link to="/">
           <button className="btn btn-1">Home</button>
+        </Link>{" "}
+        <Link to="https://bteb.gov.bd/">
+          <button className="btn btn-1">BTEB</button>
         </Link>
       </div>{" "}
-      <div className="h-80">
-        <Link to="/">
-          <button className="btn btn-1">Home</button>
-        </Link>
-      </div>{" "}
-      <div className="h-80">
-        <Link to="/">
-          <button className="btn btn-1">Home</button>
-        </Link>
-      </div>{" "}
-      <div className="h-80">
-        <Link to="/">
-          <button className="btn btn-1">Home</button>
-        </Link>
-      </div>
     </div>
   );
 };

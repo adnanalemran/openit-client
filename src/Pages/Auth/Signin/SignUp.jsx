@@ -80,6 +80,7 @@ const SignUp = () => {
 
         userData: Object.fromEntries(formData.entries()),
         displayName: displayName,
+        email: email,
         photoURL: res.data?.data?.display_url,
         phoneNo: `+880${phoneNo}`,
         userType: "user",
