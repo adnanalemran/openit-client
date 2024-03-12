@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { FaTrash, FaUser } from "react-icons/fa";
 
 const ManageUser = () => {
   const axiosSecure = useAxiosSecure();
@@ -12,11 +13,10 @@ const ManageUser = () => {
     queryKey: ["user"],
     queryFn: async () => {
       const res = await axiosSecure.get("/user", {});
-      if(res.data){
+      if (res.data) {
         setLoading(false);
       }
       return res.data;
-
     },
   });
 
@@ -70,9 +70,9 @@ const ManageUser = () => {
   };
 
   if (loading === true) {
-    return (<div className="  bg-base-200 p-16 w-full h-full">Loading...</div>);
+    return <div className="  bg-base-200 p-16 w-full h-full">Loading...</div>;
   }
-  
+
   //this a comment
   return (
     <div className="bg-base-200 p-0 m-0 lg:p-4 lg:m-4 rounded-xl">
@@ -84,14 +84,16 @@ const ManageUser = () => {
 
       <div className="overflow-x-auto">
         <table className="table">
-          <thead className="text-sm">
+          <thead className="text-sm text-center">
             <th>No</th>
             <th>image</th>
             <th>Name</th>
+            <th>Email</th>
 
-            <th>Role</th>
+            <th>Role change </th>
+            <th>Remove user </th>
           </thead>
-          <tbody>
+          <tbody className="text-center">
             {user?.map((user, index) => (
               <tr key={user?._id}>
                 <td>{index + 1}</td>
@@ -107,6 +109,7 @@ const ManageUser = () => {
                     </div>
                   </div>
                 </td>
+
                 <td>
                   <div>
                     <Link
@@ -114,10 +117,20 @@ const ManageUser = () => {
                       to={`/singleUserInfo/${user?._id}`}
                     >
                       <div className="font-bold">{user?.displayName}</div>
-                      {!user?.displayName && <span> {user?.email}</span>}
                     </Link>
                   </div>
-                </td> 
+                </td>
+                <td>
+                  <div>
+                    <Link
+                      className="text-blue-800 font-bold"
+                      to={`/singleUserInfo/${user?._id}`}
+                    >
+                      <div className="font-bold">{user?.email} </div>
+                    </Link>
+                  </div>
+                </td>
+
                 <td>
                   <form onSubmit={(e) => handleRoleChange(e, user)}>
                     <div className=" text-sm flex gap-2">
@@ -130,8 +143,8 @@ const ManageUser = () => {
                         <option value="isStudent">Student</option>
                         <option value="user">out service</option>
                       </select>
-                      <button type="submit" className="btn btn-sm btn-primary ">
-                        Action
+                      <button type="submit" className="btn btn-sm btn-1 ">
+                        <FaUser /> Action
                       </button>
                     </div>
                   </form>
@@ -141,7 +154,7 @@ const ManageUser = () => {
                     onClick={() => handleDeleteUser(user)}
                     className="btn btn-sm btn-error"
                   >
-                    delete
+                    <FaTrash />
                   </button>
                 </td>
               </tr>
