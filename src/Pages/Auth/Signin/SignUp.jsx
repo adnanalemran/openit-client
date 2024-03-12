@@ -21,7 +21,6 @@ const SignUp = () => {
 
   const [loading, setLoading] = useState(false);
 
-
   const showSuccessAlert = () => {
     Swal.fire({
       icon: "success",
@@ -52,8 +51,6 @@ const SignUp = () => {
       const form = e.target;
       const formData = new FormData(form);
 
-
-
       const displayName = form.displayName.value;
       const photoURL = form.photoURL.files[0];
 
@@ -77,7 +74,6 @@ const SignUp = () => {
       });
 
       const data = {
-
         userData: Object.fromEntries(formData.entries()),
         displayName: displayName,
         email: email,
@@ -94,7 +90,7 @@ const SignUp = () => {
       axiosPublic.post("/user", data).then(() => {
         setLoading(false);
         showSuccessAlert();
-        setPassword("")
+        setPassword("");
         navigate("/");
       });
     } catch (error) {
@@ -121,8 +117,8 @@ const SignUp = () => {
         <section className="p-6  dark:bg-gray-800 dark:text-gray-50">
           <Info />
           <p className="font-serif text-sm dark:text-gray-400 text-center py-2">
-        Student Application Form
-      </p>
+            Student Application Form
+          </p>
           <form
             onSubmit={handleSignUp}
             className="container bg-base-300 shadow-sm  flex flex-col mx-auto space-y-12"
@@ -327,6 +323,70 @@ const SignUp = () => {
             </fieldset>
             <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
               <div className="space-y-2 col-span-full lg:col-span-1">
+                <p className="font-medium">SSC education information </p>
+                <p className="text-xs r">
+                  For your convenience, Please provide your details for a smooth
+                  registration process.
+                </p>
+              </div>
+              <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">SSC Roll No :</div>
+                    <input
+                      type="number"
+                      name="sscRollNo"
+                      id="sscRollno"
+                      className="grow"
+                      required
+                      placeholder="E.g.654321"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">SSC REG no:</div>
+                    <input
+                      type="number"
+                      name="sscRegNo"
+                      id="sscRegNo"
+                      className="grow"
+                      required
+                      placeholder="000000000000000"
+                    />
+                  </label>
+                </div>{" "}
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">SSC board name</div>
+                    <input
+                      type="text"
+                      name="SSCBoardName"
+                      id="SSCBoardName"
+                      className="grow"
+                      required
+                      placeholder="E.g. Dhaka"
+                    />
+                  </label>
+                </div>{" "}
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">Passing Year:</div>
+                    <input
+                      type="number"
+                      name="passingYear"
+                      id="passingYear"
+                      className="grow"
+                      required
+                      placeholder="E.g. 2015"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3"></div>
+              </div>
+            </fieldset>
+            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
+              <div className="space-y-2 col-span-full lg:col-span-1">
                 <p className="font-medium">Account Information</p>
                 <p className="text-xs r">
                   For your convenience, save my email and password for future
@@ -371,7 +431,6 @@ const SignUp = () => {
                       type="password"
                       onChange={handlePasswordChange}
                       className="grow"
-                      
                     />
                   </label>
                 </div>
@@ -383,8 +442,8 @@ const SignUp = () => {
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-full group-hover:h-64"></span>
                 <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
                 <span className="relative">
-
-                {loading ? "processing..." : "Apply"}</span>
+                  {loading ? "processing..." : "Apply"}
+                </span>
               </button>
             </div>
           </form>
