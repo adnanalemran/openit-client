@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "photoUrl": "https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg",
+    "designation": "Professor",
+    "mobileNo": "+1234567890",
+    "email": "john.doe@example.com"
+  },
+  {
+    "id": 2,
+    "name": "লিপু রঞ্জন পণ্ডিত",
+    "photoUrl": "https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_640.jpg",
+    "designation": "Associate Professor",
+    "mobileNo": "+9876543210",
+    "email": "jane.smith@example.com"
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "photoUrl": "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg",
+    "designation": "Assistant Professor",
+    "mobileNo": "+1122334455",
+    "email": "bob.johnson@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Alice Williams",
+    "photoUrl": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg",
+    "designation": "Lecturer",
+    "mobileNo": "+5544332211",
+    "email": "alice.williams@example.com"
+  },
+  {
+    "id": 5,
+    "name": "Ethan Davis",
+    "photoUrl": "https://www.shutterstock.com/shutterstock/videos/1061923675/thumb/1.jpg?ip=x480",
+    "designation": "Instructor",
+    "mobileNo": "+9988776655",
+    "email": "ethan.davis@example.com"
+  },
+  {
+    "id": 6,
+    "name": "Ethan Davis",
+    "photoUrl": "https://www.shutterstock.com/shutterstock/videos/1061923675/thumb/1.jpg?ip=x480",
+    "designation": "Instructor",
+    "mobileNo": "+9988776655",
+    "email": "ethan.davis@example.com"
+  }
+]

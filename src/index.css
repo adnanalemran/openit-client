@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500;1,700;1,900&family=Tiro+Bangla&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Roboto", sans-serif;
+}
+.text-bangla {
+  font-family: "Tiro Bangla", serif;
+}
+
+.btn-1 {
+  background-color: #8d53e4;
+  color: white;
+}
+.btn-1:hover {
+  background-color: #854cd8;
+}
