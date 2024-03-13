@@ -82,7 +82,7 @@ const SignUp = () => {
         userType: "user",
         beach: "no select",
         totalDueAmmout: 0,
-        lastSmsSendingDate: "",
+
         totalPurchesAmmount: 0,
         purchesProductCollection: [],
       };

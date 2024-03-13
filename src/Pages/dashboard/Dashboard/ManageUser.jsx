@@ -114,7 +114,7 @@ const ManageUser = () => {
                   <div>
                     <Link
                       className="text-blue-800 font-bold"
-                      to={`/singleUserInfo/${user?._id}`}
+                      to={`/dashboard/singleUserInfo/${user?._id}`}
                     >
                       <div className="font-bold">{user?.displayName}</div>
                     </Link>
@@ -124,7 +124,7 @@ const ManageUser = () => {
                   <div>
                     <Link
                       className="text-blue-800 font-bold"
-                      to={`/singleUserInfo/${user?._id}`}
+                      to={`/dashboard/singleUserInfo/${user?._id}`}
                     >
                       <div className="font-bold">{user?.email} </div>
                     </Link>

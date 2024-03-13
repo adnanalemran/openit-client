@@ -10,6 +10,7 @@ import DashboardHome from "../Pages/dashboard/Dashboard/DashboardHome";
 
 import ManageUser from "../Pages/dashboard/Dashboard/ManageUser";
 import StudentList from "../Pages/dashboard/Dashboard/StudentList";
+import SingleProfile from "../Pages/Profile/SingleProfile";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/student-list",
         element: <StudentList />,
+      },
+      {
+        path: "/dashboard/singleUserInfo/:id",
+        element: <SingleProfile />,
       },
     ],
   },
