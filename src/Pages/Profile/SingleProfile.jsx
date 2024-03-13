@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import Skeleton from 'react-loading-skeleton';
+import { useState } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
@@ -10,7 +10,6 @@ import {
   FaPhone,
   FaUser,
 } from "react-icons/fa";
-
 
 import { FiDollarSign, FiMail, FiFacebook } from "react-icons/fi";
 
@@ -29,23 +28,15 @@ const SingleProfile = () => {
 
   if (loading) {
     return (
-      <div className="bg-base-300 p-8 rounded-lg shadow-md">
-        {/* Render Skeleton loader while data is being fetched */}
-        <div className="flex flex-col gap-4 text-gray-500">
-          <Skeleton height={20} width={300} />
-          <Skeleton height={20} width={200} />
-          <Skeleton height={20} width={400} />
-          <Skeleton height={20} width={350} />
-          {/* Add more Skeleton elements as needed */}
-        </div>
+      <div className="h-[100vh] flex flex-col gap-4 justify-center items-center">
+        <p className="text-4xl">Loading....</p>
+        <progress className="progress w-full"></progress>
       </div>
     );
   }
 
-
   return (
     <div className="bg-base-300 p-8 rounded-lg shadow-md">
-      
       {user ? (
         <>
           {user?.userType === "user" && (
@@ -63,7 +54,10 @@ const SingleProfile = () => {
                 <p className="mt-4 text-center text-gray-500">
                   BTEB Id :
                   {!user?.btebId && (
-                    <span className="text-red-600"> Student not registered </span>
+                    <span className="text-red-600">
+                      {" "}
+                      Student not registered{" "}
+                    </span>
                   )}
                   {user?.btebId}
                 </p>
@@ -79,9 +73,7 @@ const SingleProfile = () => {
                   </button>
                 </Link>
 
-                <Link
-                  className="text-blue-800 font-bold"
-                >
+                <Link className="text-blue-800 font-bold">
                   <button className="btn btn-info">
                     <FaEdit /> Edit User info
                   </button>
@@ -101,7 +93,8 @@ const SingleProfile = () => {
                 </p>
 
                 <p className="flex gap-2">
-                  <FaPhone /> <a href={`tel:${user?.phoneNo}`}>{user?.phoneNo}</a>
+                  <FaPhone />{" "}
+                  <a href={`tel:${user?.phoneNo}`}>{user?.phoneNo}</a>
                 </p>
 
                 <p className="flex gap-2">
@@ -120,7 +113,7 @@ const SingleProfile = () => {
 
                 <p>
                   <span className="font-bold flex  gap-2 items-center ">
-                    <FaMoneyBill />  
+                    <FaMoneyBill />
                     <p>Total Buy Amount: {user?.totalPurchesAmmount}</p>
                   </span>
                 </p>
@@ -161,36 +154,31 @@ const SingleProfile = () => {
             </p>
             <p>
               <span className="font-bold text-blue-500">
-                Education Qualification :  
+                Education Qualification :
               </span>
               {user?.userData.educationQualification}
             </p>
             <p>
               <span className="font-bold text-blue-500">
-                School/University name :  
+                School/University name :
               </span>
               {user?.userData.schoolUniversity}
             </p>
             <p>
-              <span className="font-bold text-blue-500">
-              SSC Roll No :  
-              </span>
+              <span className="font-bold text-blue-500">SSC Roll No :</span>
               {user?.userData.sscRollNo}
-            </p>  
+            </p>
             <p>
-              <span className="font-bold text-blue-500">
-              SSC Reg No :  
-              </span>
+              <span className="font-bold text-blue-500">SSC Reg No :</span>
               {user?.userData.sscRegNo}
-            </p>  
+            </p>
+            <p>
+              <span className="font-bold text-blue-500">SSC Board Name :</span>
+              {user?.userData.SSCBoardName}
+            </p>{" "}
             <p>
               <span className="font-bold text-blue-500">
-              SSC Board Name :  
-              </span>
-              {user?.userData.SSCBoardName}
-            </p>  <p>
-              <span className="font-bold text-blue-500">
-              SSC Passing Year :  
+                SSC Passing Year :
               </span>
               {user?.userData.passingYear}
             </p>

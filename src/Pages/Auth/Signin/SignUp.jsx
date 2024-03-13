@@ -302,7 +302,7 @@ const SignUp = () => {
                       id="presentAddress"
                       className="grow"
                       required
-                      placeholder="E.g. Agargaon(1207), Dhaka"
+                      placeholder="E.g.Vill.- Mohuriya,P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
                     />
                   </label>
                 </div>
@@ -315,7 +315,7 @@ const SignUp = () => {
                       id="permanentAddress"
                       className="grow"
                       required
-                      placeholder="E.g. Durgapur, Netrokona"
+                      placeholder="E.g.Vill.- Mohuriya, P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
                     />
                   </label>
                 </div>
