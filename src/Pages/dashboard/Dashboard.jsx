@@ -66,7 +66,7 @@ const Dashboard = () => {
                     type="button"
                     className="py-3 font-semibold rounded-full btn bg-slate-300 flex items-center  "
                   >
-                   <FaUser className="mr-0" />  Profile
+                    <FaUser className="mr-0" /> Profile
                   </button>
                 </Link>
 

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "MD.Nuruzzaman",
-    "photoUrl": "https://scontent.fdac24-1.fna.fbcdn.net/v/t39.30808-6/345904271_256032193497981_113965725188123182_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=EwQJApBNKLgAX8Q7pY8&_nc_ht=scontent.fdac24-1.fna&oh=00_AfBfl6vKIWleBvKzOrCX4Jzb-mPdTKGSrYnROiN7QUZEdw&oe=65FB36B3",
+    "photoUrl": "https://i.ibb.co/93hxcgf/nur.jpg",
     "designation": "Director",
     "mobileNo": "01707530810",
     "email": "nuruzzaman.engbd@gmail.com"
@@ -10,24 +10,31 @@
   {
     "id": 2,
     "name": "কামাল হোসেন",
-    "photoUrl": "https://scontent.fdac24-1.fna.fbcdn.net/v/t1.6435-9/87387346_906744999745354_4842446695616741376_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jTDngJncdHAAX8ne_k2&_nc_ht=scontent.fdac24-1.fna&oh=00_AfARJPjN8IoGwXAyNSfNAr9jR06aYvtXovkhlBBDXhTmnA&oe=661CE76F",
+    "photoUrl": "https://i.ibb.co/mHGJz7y/kamal.jpg",
     "designation": "Educator Computer Office application",
     "mobileNo": "01737127375",
     "email": "kamalnetrokona24@gmail.com"
   },
-
+  {
+    "id": 3,
+    "name": "Md.Moniruzzaman",
+    "photoUrl": "https://i.ibb.co/M67QxSF/o.jpg",
+    "designation": "Instructor",
+    "mobileNo": "01919-989010",
+    "email": "**@example.com"
+  },
   {
     "id": 4,
     "name": "Adnan Al-Emran",
-    "photoUrl": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/350003486_770462721415686_1670057892383528903_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Wcm3_WrqmJ4AX_-c5o-&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAibKqg3Z_OX4UC5HLkaPWNtbeIpWE3MTTY2fryiUH8zA&oe=65FAB061",
-    "designation": "adviser",
+    "photoUrl": "https://i.ibb.co/2vJL0mv/1685169155998.jpg",
+    "designation": "counselor",
     "mobileNo": "+880 1917-019619",
     "email": "alice.williams@example.com"
   },
   {
     "id": 5,
     "name": "Md. Joynal Abedin",
-    "photoUrl": "https://scontent.fdac24-4.fna.fbcdn.net/v/t39.30808-6/394417811_1434890434035736_4077660962849583693_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=WjjOFaxb04kAX9Efz3R&_nc_ht=scontent.fdac24-4.fna&oh=00_AfBQpOETllTiaczzvktshfKM0YPxGNZ4EQU7cI9vXv-OaQ&oe=65FAFCC0",
+    "photoUrl": "https://i.ibb.co/VCx0fXN/joynal.jpg",
     "designation": "counselor",
     "mobileNo": "01601-677145",
     "email": "**@example.com"
@@ -35,7 +42,7 @@
   {
     "id": 6,
     "name": "Mst ***",
-    "photoUrl": "https://www.shutterstock.com/shutterstock/videos/1061923675/thumb/1.jpg?ip=x480",
+    "photoUrl": "https://i.ibb.co/bJN0JWb/mina-raju-cartoon-protect-logo-3-A00-C140-F1-seeklogo-com.png",
     "designation": "Instructor",
     "mobileNo": "+880 1815-150963",
     "email": "ethan.davis@example.com"

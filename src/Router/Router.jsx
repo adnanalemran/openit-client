@@ -15,6 +15,9 @@ import PrivateRoute from "./PrivateRoute";
 import InvalidAccess from "../Layout/Shared/404/InvalidAccess";
 import AdminRouter from "./AdminRouter";
 import Profile from "../Pages/Profile/Profile";
+import ResultForHome from "../Pages/result/resultForHome";
+import ComeInSoon from "../Pages/ComeInSoon/ComeInSoon";
+import CumpusLife from "../Pages/HomePage/CumpusLife/CumpusLife";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +32,14 @@ export const router = createBrowserRouter([
       {
         path: "/Faculty",
         element: <Faculty />,
+      },
+      {
+        path: "/result",
+        element: <ResultForHome />,
+      },
+      {
+        path: "gallery",
+        element: <CumpusLife />,
       },
     ],
   },
@@ -56,7 +67,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/profile",
-        element:<Profile/>,
+        element: <Profile />,
       },
 
       {

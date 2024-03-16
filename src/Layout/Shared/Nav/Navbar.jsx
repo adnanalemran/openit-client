@@ -3,7 +3,14 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import logo from "../../../assets/logo.png";
 import "./nav.css";
-
+import {
+  FaEdit,
+  FaUser,
+  FaSignOutAlt,
+  FaDeskpro,
+  FaHome,
+  FaSignInAlt,
+} from "react-icons/fa";
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
   const displayName = user?.displayName;
@@ -23,13 +30,17 @@ const Nav = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/faculty">Faculty Members</NavLink>
-      </li>
-      <li>
         <NavLink to="/result">Results</NavLink>
       </li>
       <li>
-        <NavLink to="https://elibrary.worldbank.org/">e-Library</NavLink>
+        <NavLink to="/e-Library">Student Info</NavLink>
+      </li> 
+     
+      <li>
+        <NavLink to="/gallery">Gallery</NavLink>
+      </li>
+      <li>
+        <NavLink to="/faculty">About</NavLink>
       </li>
     </>
   );
@@ -98,26 +109,46 @@ const Nav = () => {
                   </label>
                   <ul className="menu shadow menu-sm dropdown-content right-1 mt-3 z-[5] p-3 gap-2 rounded-box w-52 bg-base-100    ">
                     <p className="font-bold">{displayName}</p>
-                    <li>
-                      <Link className="btn btn-1   " to="/Dashboard">
-                        Dashboard
-                      </Link>
-                    </li>
+
                     <li>
                       <Link
-                        className="btn btn-error text-white"
-                        onClick={handleSignOut}
+                        className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center  "
+                        to="dashboard/profile"
                       >
-                        Log Out
+                        <FaUser /> My Profile
                       </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center  "
+                        to="/Dashboard"
+                      >
+                        <FaHome /> Dashboard
+                      </Link>
+                    </li>
+
+                    <li>
+                      <button
+                        onClick={handleSignOut}
+                        className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center"
+                      >
+                        <FaSignOutAlt className="mr-2" /> Log-out
+                      </button>
                     </li>
                   </ul>
                 </div>
               </div>
             ) : (
               <Link to="/signIn">
-                <button type="button" className="btn btn-1">
-                  Login
+                <button
+                  type="button"
+                  className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center   "
+                >
+                  <div className="flex">
+                
+                    <FaSignInAlt className="mr-2" /> <p>Login </p>
+                  </div>
                 </button>
               </Link>
             )}

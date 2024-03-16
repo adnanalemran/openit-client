@@ -4,12 +4,11 @@ import { Link, Navigate } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosPublic";
 import Swal from "sweetalert2";
 import {
- 
   FaEdit,
   FaMoneyBill,
   FaPhone,
   FaUser,
-  FaSignOutAlt
+  FaSignOutAlt,
 } from "react-icons/fa";
 
 import { FiDollarSign, FiMail, FiFacebook } from "react-icons/fi";
@@ -41,7 +40,6 @@ const Profile = () => {
     }
   }, [axiosSecure, user?.email]);
 
- 
   const handleSignOut = async () => {
     try {
       await logOut();
@@ -65,7 +63,7 @@ const Profile = () => {
         <div className="w-full lg:w-1/2">
           <div className="avatar">
             <div className="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-              <img src={dbuser?.photoURL} alt={user?.displayName} />
+              <img src={dbuser?.photoURL} alt={dbuser?.displayName} />
             </div>
           </div>
 
@@ -75,7 +73,7 @@ const Profile = () => {
               {!user?.btebId && (
                 <span className="text-red-600"> Student not registered </span>
               )}
-              {user?.btebId}
+              {dbuser?.btebId}
             </p>
             <p className="mt-4 text-center text-gray-500">
               Profile Id: {dbuser?._id}
@@ -83,25 +81,26 @@ const Profile = () => {
           </div>
 
           <div className="w-full flex gap-4 mx-auto items-center justify-center">
-  <button
-    onClick={handleSignOut}
-    className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center"
-  >
-    <FaSignOutAlt className="mr-2" /> Log-out
-  </button>
+            <button
+              onClick={handleSignOut}
+              className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center"
+            >
+              <FaSignOutAlt className="mr-2" /> Log-out
+            </button>
 
-  <Link className="text-blue-800 font-bold">
-    <button className="px-8 py-3 font-semibold rounded-full btn bg-purple-500 text-white">
-      <FaEdit /> Edit User info
-    </button>
-  </Link>
-</div>
+            <Link className="text-blue-800 font-bold">
+              <button className="px-8 py-3 font-semibold rounded-full btn bg-purple-500 text-white">
+                <FaEdit /> Edit Profile
+              </button>
+            </Link>
+          </div>
         </div>
         <div className="w-full lg:w-1/2 text-left mt-4 lg:ml-8 text-gray-800">
-          <p className="text-xl font-bold mb-4 text-gray-900">
-            {dbuser?.displayName}`s profile information
+          <p className="text-2xl font-bold mb-4 text-gray-900">
+            Your profile information
           </p>
           <hr className=" border-dashed border-1 border-indigo-400 p-4 my-4" />
+
           <div className="flex flex-col gap-2">
             <p>
               <span className="font-bold flex gap-2">
@@ -146,7 +145,66 @@ const Profile = () => {
             </p>
           </div>
 
-          <div className="flex gap-4 mt-4 justify-end"></div>
+          <hr className=" border-dashed border-1 border-indigo-400 p-4 my-4" />
+        </div>
+      </div>
+      <div className="flex w-full   text-left text-lg p-4">
+        <div className=" lg:w-1/2 w-full   ">
+          <p>
+            <span className="font-bold text-blue-500">Name: </span>
+            {dbuser?.userData.displayName}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">Father Name: </span>
+            {dbuser?.userData.fatherName}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">Mother Name: </span>
+            {dbuser?.userData.motherName}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">Date Of Birth : </span>
+            {dbuser?.userData.dateOfBirth}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">
+              Education Qualification :
+            </span>
+            {dbuser?.userData.educationQualification}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">
+              School/University name :
+            </span>
+            {dbuser?.userData.schoolUniversity}
+          </p>
+        </div>
+        <div className=" lg:w-1/2 w-full">
+          <p>
+            <span className="font-bold text-blue-500">SSC Roll No :</span>
+            {dbuser?.userData.sscRollNo}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">SSC Reg No :</span>
+            {dbuser?.userData.sscRegNo}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">SSC Board Name :</span>
+            {dbuser?.userData.SSCBoardName}
+          </p>{" "}
+          <p>
+            <span className="font-bold text-blue-500">SSC Passing Year :</span>
+            {dbuser?.userData.passingYear}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">Role No:</span>
+            {dbuser?.userType}
+          </p>
+          <p>
+            <span className="font-bold text-blue-500">Beach No: </span>
+            {!user?.beach && <span>Beach No select</span>}
+            {dbuser?.beach}
+          </p>
         </div>
       </div>
     </div>
