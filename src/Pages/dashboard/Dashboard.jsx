@@ -27,6 +27,7 @@ const Dashboard = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
+  
   const handleSignOut = async () => {
     try {
       await logOut();

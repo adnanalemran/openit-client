@@ -19,6 +19,7 @@ const Slider = () => {
 
   return (
     <Swiper
+    className=" z-[4]"
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
