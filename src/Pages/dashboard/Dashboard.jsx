@@ -4,10 +4,11 @@ import Swal from "sweetalert2";
 import Header from "../../components/Shared/Header/Header";
 import { AuthContext } from "../../providers/AuthProvider";
 import AdminMenu from "./Admin/AdminMenu";
-import StudentMenu from "./Student/StudentMenu.jsx";
-import UserMenu from "./User/UserMenu.jsx";
+import StudentMenu from "./Student/StudentMenu";
+import UserMenu from "./User/UserMenu";
 import "./dashboard.css";
 import useAdmin from "../../Hook/useAdmin";
+import useStudent from "../../Hook/useStudent";
 
 // import useStudent from "../../Hook/useStudent.jsx";
 
@@ -20,14 +21,14 @@ const showSuccessAlert = () => {
 };
 
 const Dashboard = () => {
-  // const [isAdmin] = useAdmin();
-  const isAdmin = true;
-  // const [isStudent] = useStudent();
+  const [isAdmin] = useAdmin();
+  // const isAdmin = true;
+  const [isStudent] = useStudent();
 
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
-  
+
   const handleSignOut = async () => {
     try {
       await logOut();
@@ -63,11 +64,12 @@ const Dashboard = () => {
                   >
                     Profile
                   </button>
-
-                 
                 </Link>
 
-                <button onClick={handleSignOut} className="px-8 py-3 font-semibold rounded-full  btn bg-slate-300  ">
+                <button
+                  onClick={handleSignOut}
+                  className="px-8 py-3 font-semibold rounded-full  btn bg-slate-300  "
+                >
                   Log-out
                 </button>
               </div>
@@ -85,7 +87,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="w-full lg:w-4/5  sticky">
           <div className="w-full justify-around lg:p-8  border-2 border-[#9756f5]  text-center rounded-lg lg:-mt-32 bg-base-300">
             <Outlet></Outlet>

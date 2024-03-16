@@ -26,10 +26,10 @@ const Nav = () => {
         <NavLink to="/faculty">Faculty Members</NavLink>
       </li>
       <li>
-        <NavLink to="/result">View Results</NavLink>
+        <NavLink to="/result">Results</NavLink>
       </li>
       <li>
-        <NavLink to="/e-library">e-Library</NavLink>
+        <NavLink to="https://elibrary.worldbank.org/">e-Library</NavLink>
       </li>
     </>
   );
@@ -40,8 +40,7 @@ const Nav = () => {
         {`
           .active {
             background-color: #2C3E4F !important;
-
-
+            color:white;
 
           }
 

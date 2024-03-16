@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext, useState } from "react";
- 
+
 import Info from "./Info";
 
 const Signin = () => {
@@ -11,7 +11,7 @@ const Signin = () => {
   const [password, setPassword] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
- 
+
   const showSuccessAlert = () => {
     Swal.fire({
       icon: "success",
@@ -32,30 +32,28 @@ const Signin = () => {
     e.preventDefault();
 
     signIn(email, password)
-    .then(() => {
-      showSuccessAlert();
-      navigate(location?.state ? location.state : "/");
-    })
+      .then(() => {
+        showSuccessAlert();
+        navigate(location?.state ? location.state : "/");
+      })
 
-    .catch((error) => {
-       
-      if (error.code === "auth/invalid-login-credentials") {
-        showErrorAlert("Email or password is incorrect.");
-      } else {
-        showErrorAlert(error.message);
-      }
-    });
+      .catch((error) => {
+        if (error.code === "auth/invalid-login-credentials") {
+          showErrorAlert("Email or password is incorrect.");
+        } else {
+          showErrorAlert(error.message);
+        }
+      });
   };
 
   return (
     <div className="py-8 px-4 min-h-screen   ">
       <div className="bg-base-300 w-full shadow-xl mx-auto max-w-md p-8 pb-16 space-y-3 rounded-xl border my-5  ">
-     
         <Link to="/">
-             <Info/>
-             <p className="font-serif text-sm dark:text-gray-400 text-center py-2">
-      Log in 
-      </p>
+          <Info />
+          <p className="font-serif text-sm dark:text-gray-400 text-center py-2">
+            Log in
+          </p>
         </Link>
 
         <form className="space-y-6" onSubmit={handleLogin}>
@@ -97,7 +95,7 @@ const Signin = () => {
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 className="grow"
-              placeholder="123456"
+                placeholder="123456"
               />
             </label>
           </div>

@@ -6,16 +6,16 @@ import useAxiosPublic from "./useAxiosPublic";
 const useAdmin = () => {
   const { user, loading } = useAuth();
   const axiosSecure = useAxiosPublic();
-  const { data: isAdmin, isPending: isAdminLoading } = useQuery({
-    queryKey: [user?.email, "isAdmin"],
+  const { data: isStudent, isPending: isStudentLoading } = useQuery({
+    queryKey: [user?.email, "isStudent"],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axiosSecure.get(`/user/admin/${user.email}`);
+      const res = await axiosSecure.get(`/user/Student/${user.email}`);
 
-      return res.data?.admin;
+      return res.data?.student;
     },
   });
-  return [isAdmin, isAdminLoading];
+  return [isStudent, isStudentLoading];
 };
 
 export default useAdmin;

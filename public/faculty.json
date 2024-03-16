@@ -1,50 +1,43 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
-    "photoUrl": "https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg",
-    "designation": "Professor",
-    "mobileNo": "+1234567890",
-    "email": "john.doe@example.com"
+    "name": "MD.Nuruzzaman",
+    "photoUrl": "https://scontent.fdac24-1.fna.fbcdn.net/v/t39.30808-6/345904271_256032193497981_113965725188123182_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=EwQJApBNKLgAX8Q7pY8&_nc_ht=scontent.fdac24-1.fna&oh=00_AfBfl6vKIWleBvKzOrCX4Jzb-mPdTKGSrYnROiN7QUZEdw&oe=65FB36B3",
+    "designation": "Director",
+    "mobileNo": "01707530810",
+    "email": "nuruzzaman.engbd@gmail.com"
   },
   {
     "id": 2,
-    "name": "লিপু রঞ্জন পণ্ডিত",
-    "photoUrl": "https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_640.jpg",
-    "designation": "Associate Professor",
-    "mobileNo": "+9876543210",
-    "email": "jane.smith@example.com"
+    "name": "কামাল হোসেন",
+    "photoUrl": "https://scontent.fdac24-1.fna.fbcdn.net/v/t1.6435-9/87387346_906744999745354_4842446695616741376_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jTDngJncdHAAX8ne_k2&_nc_ht=scontent.fdac24-1.fna&oh=00_AfARJPjN8IoGwXAyNSfNAr9jR06aYvtXovkhlBBDXhTmnA&oe=661CE76F",
+    "designation": "Educator Computer Office application",
+    "mobileNo": "01737127375",
+    "email": "kamalnetrokona24@gmail.com"
   },
-  {
-    "id": 3,
-    "name": "Bob Johnson",
-    "photoUrl": "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg",
-    "designation": "Assistant Professor",
-    "mobileNo": "+1122334455",
-    "email": "bob.johnson@example.com"
-  },
+
   {
     "id": 4,
-    "name": "Alice Williams",
-    "photoUrl": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg",
-    "designation": "Lecturer",
-    "mobileNo": "+5544332211",
+    "name": "Adnan Al-Emran",
+    "photoUrl": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/350003486_770462721415686_1670057892383528903_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Wcm3_WrqmJ4AX_-c5o-&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAibKqg3Z_OX4UC5HLkaPWNtbeIpWE3MTTY2fryiUH8zA&oe=65FAB061",
+    "designation": "adviser",
+    "mobileNo": "+880 1917-019619",
     "email": "alice.williams@example.com"
   },
   {
     "id": 5,
-    "name": "Ethan Davis",
-    "photoUrl": "https://www.shutterstock.com/shutterstock/videos/1061923675/thumb/1.jpg?ip=x480",
-    "designation": "Instructor",
-    "mobileNo": "+9988776655",
-    "email": "ethan.davis@example.com"
+    "name": "Md. Joynal Abedin",
+    "photoUrl": "https://scontent.fdac24-4.fna.fbcdn.net/v/t39.30808-6/394417811_1434890434035736_4077660962849583693_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=WjjOFaxb04kAX9Efz3R&_nc_ht=scontent.fdac24-4.fna&oh=00_AfBQpOETllTiaczzvktshfKM0YPxGNZ4EQU7cI9vXv-OaQ&oe=65FAFCC0",
+    "designation": "counselor",
+    "mobileNo": "01601-677145",
+    "email": "**@example.com"
   },
   {
     "id": 6,
-    "name": "Ethan Davis",
+    "name": "Mst ***",
     "photoUrl": "https://www.shutterstock.com/shutterstock/videos/1061923675/thumb/1.jpg?ip=x480",
     "designation": "Instructor",
-    "mobileNo": "+9988776655",
+    "mobileNo": "+880 1815-150963",
     "email": "ethan.davis@example.com"
   }
 ]

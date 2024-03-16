@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaUser, FaPhone } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 const Faculty = () => {
@@ -33,8 +33,7 @@ const Faculty = () => {
               <h2 className="card-title">
                 <FaUser size={15} /> {singlefaculty?.name}
               </h2>
-              <p>পদবী: {singlefaculty.designation} </p>{" "}
-              
+              <p>Designation: {singlefaculty.designation} </p>{" "}
               <div className="card-actions justify-end">
                 <p className="flex gap-2">
                   <FaPhone size={16} />{" "}
@@ -43,11 +42,11 @@ const Faculty = () => {
                   </a>
                 </p>
                 <p className="flex gap-2">
-                <FiMail size={20} />
-                <a href={`mailto:${singlefaculty?.email}`}>
-                  {singlefaculty?.email}
-                </a>
-              </p>
+                  <FiMail size={20} />
+                  <a href={`mailto:${singlefaculty?.email}`}>
+                    {singlefaculty?.email}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
