@@ -10,7 +10,7 @@ import "./dashboard.css";
 import useAdmin from "../../Hook/useAdmin";
 import useStudent from "../../Hook/useStudent";
 
-// import useStudent from "../../Hook/useStudent.jsx";
+ 
 
 const showSuccessAlert = () => {
   Swal.fire({
@@ -22,7 +22,6 @@ const showSuccessAlert = () => {
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
- 
   const [isStudent] = useStudent();
 
   const location = useLocation();
@@ -57,7 +56,7 @@ const Dashboard = () => {
               <h4 className="text-lg font-bold">Name: {user?.displayName}</h4>
 
               <div className="flex gap-2 justify-center pt-3">
-                <Link to="/profile">
+                <Link to="/dashboard/profile">
                   <button
                     type="button"
                     className="px-8 py-3 font-semibold rounded-full btn-1  "

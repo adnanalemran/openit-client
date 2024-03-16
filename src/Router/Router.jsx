@@ -14,6 +14,7 @@ import SingleProfile from "../Pages/Profile/SingleProfile";
 import PrivateRoute from "./PrivateRoute";
 import InvalidAccess from "../Layout/Shared/404/InvalidAccess";
 import AdminRouter from "./AdminRouter";
+import Profile from "../Pages/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRoute>
-        <Dashboard />{" "}
+        <Dashboard />
       </PrivateRoute>
     ),
 
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/",
         element: <DashboardHome />,
+      },
+      {
+        path: "/dashboard/profile",
+        element:<Profile/>,
       },
 
       {

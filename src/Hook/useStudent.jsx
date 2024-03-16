@@ -10,7 +10,7 @@ const useAdmin = () => {
     queryKey: [user?.email, "isStudent"],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axiosSecure.get(`/user/Student/${user.email}`);
+      const res = await axiosSecure.get(`/user/student/${user.email}`);
 
       return res.data?.student;
     },

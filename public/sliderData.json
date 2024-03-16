@@ -3,18 +3,31 @@
     "id": 1,
     "text": " শিক্ষা সুযোগ নয়, অধিকার, শিক্ষার আলো ঘরে ঘরে জালো",
     "subText": "-সংগৃহীত",
-    "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fcomputer-training&psig=AOvVaw3xxvoIg5FMR22TkCslkF7L&ust=1710671275574000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKi7rJ_J-IQDFQAAAAAdAAAAABAD"
+    "imageUrl": "https://i.ibb.co/tC1Xv6L/s1.jpg"
   },
   {
     "id": 2,
     "text": "মনুষ্যত্বের শিক্ষাটাই চরম শিক্ষা আর সমস্তই তার অধীন",
     "subText": "-রবীন্দ্রনাথ ঠাকুর",
-    "imageUrl": "https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/421691377_713807580943824_8368517652701725929_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeFcYjwKIiOKEhnp_NSknGx0LgrHVQmxhn4uCsdVCbGGfurH2pKf2nDCH3Jc0goCl2MlJuiloG6Q3uzWaDVlKCVj&_nc_ohc=yCi7VDcI47UAX8sAYLE&_nc_ht=scontent.fdac27-1.fna&oh=00_AfCOrh4DvJau1BofxXuXHPjfYxIxo7zsRDsIkub1NCTrTw&oe=65E98D7E"
+    "imageUrl": "https://i.ibb.co/FzYV3Lb/s2.jpg"
   },
   {
     "id": 3,
     "text": "একজন শিক্ষক সামগ্রিকভাবে প্রভাব ফেলে, কেউ বলতে পারে না তার প্রভাব কোথায় গিয়ে শেষ হয়।",
     "subText": "-হেনরি এডামস",
-    "imageUrl": "https://scontent.fdac27-2.fna.fbcdn.net/v/t39.30808-6/365286638_615401270784456_7513919081035016253_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeHy-jcgiOvxbW7hmATi6t6krCQWpwQCE1asJBanBAITVt_699SUptTQCdzCXR8LeCG91pExqsrtaqXSw0D5Nm5Y&_nc_ohc=v0kKq-4ix4QAX8O78oh&_nc_ht=scontent.fdac27-2.fna&oh=00_AfDPlHvqjQ8MmVjj_i0pYBEa0tluw6lv9IeyOWkMImk1Rw&oe=65E949E4"
+    "imageUrl": "https://i.ibb.co/1m38Jsr/s5.jpg"
+  },
+  {
+    "id": 4,
+    "text": "বাড়ছে সুযোগ বাড়ছে কাজ, কারিগরি শিক্ষা নেব আজ ",
+    "subText": "-কারিগরি শিক্ষায়",
+    "imageUrl": "https://i.ibb.co/Hn29Zzh/363896143-315718820822419-4977700565723139717-n.jpg"
+  },
+
+  {
+    "id": 5,
+    "text": "যায় বছর যায় দিন,কারিগরি শিক্ষায় মনোযোগ দিন।",
+    "subText": "-BTEB",
+    "imageUrl": "https://i.ibb.co/x3kpVZS/s3.jpg"
   }
 ]
