@@ -9,8 +9,13 @@ import UserMenu from "./User/UserMenu";
 import "./dashboard.css";
 import useAdmin from "../../Hook/useAdmin";
 import useStudent from "../../Hook/useStudent";
-
- 
+import {
+  FaEdit,
+  FaMoneyBill,
+  FaPhone,
+  FaUser,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 const showSuccessAlert = () => {
   Swal.fire({
@@ -59,17 +64,17 @@ const Dashboard = () => {
                 <Link to="/dashboard/profile">
                   <button
                     type="button"
-                    className="px-8 py-3 font-semibold rounded-full btn-1  "
+                    className="py-3 font-semibold rounded-full btn bg-slate-300 flex items-center  "
                   >
-                    Profile
+                   <FaUser className="mr-0" />  Profile
                   </button>
                 </Link>
 
                 <button
                   onClick={handleSignOut}
-                  className="px-8 py-3 font-semibold rounded-full  btn bg-slate-300  "
+                  className=" py-3 font-semibold rounded-full btn bg-slate-300 flex items-center"
                 >
-                  Log-out
+                  <FaSignOutAlt className="mr-0" /> Log-out
                 </button>
               </div>
             </div>
@@ -89,11 +94,7 @@ const Dashboard = () => {
 
         <div className="w-full lg:w-4/5  sticky">
           <div className="w-full justify-around lg:p-8  border-2 border-[#9756f5]  text-center rounded-lg lg:-mt-32 bg-base-300">
-
-
             <Outlet></Outlet>
-
-
           </div>
         </div>
       </div>

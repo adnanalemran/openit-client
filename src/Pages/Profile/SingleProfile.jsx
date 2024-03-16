@@ -35,6 +35,9 @@ const SingleProfile = () => {
     );
   }
 
+
+  
+
   return (
     <div className="bg-base-300 p-8 rounded-lg shadow-md">
       {user ? (

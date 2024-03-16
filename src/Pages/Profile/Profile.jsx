@@ -3,7 +3,16 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link, Navigate } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosPublic";
 import Swal from "sweetalert2";
+import {
+ 
+  FaEdit,
+  FaMoneyBill,
+  FaPhone,
+  FaUser,
+  FaSignOutAlt
+} from "react-icons/fa";
 
+import { FiDollarSign, FiMail, FiFacebook } from "react-icons/fi";
 const Profile = () => {
   const showSuccessAlert = () => {
     Swal.fire({
@@ -32,12 +41,7 @@ const Profile = () => {
     }
   }, [axiosSecure, user?.email]);
 
-  const convertToBdTime = (timestamp) => {
-    const gmt6Time = new Date(timestamp);
-    const options = { timeZone: "Asia/Dhaka" };
-    return gmt6Time.toLocaleString("en-US", options);
-  };
-
+ 
   const handleSignOut = async () => {
     try {
       await logOut();
@@ -56,62 +60,93 @@ const Profile = () => {
           করুন
         </h2>
       )}
-      <div className="flex flex-col lg:flex-row w-full">
+
+      <div className="flex flex-col lg:flex-row-reverse w-full">
         <div className="w-full lg:w-1/2">
-          <img
-            src={user?.photoURL}
-            alt={user?.displayName}
-            className="w-32 h-32 mx-auto rounded-full  aspect-square"
-          />
-
-          <p className="mt-4 text-center text-gray-500">Id: {user?.uid}</p>
-        </div>
-        <div className="w-full lg:w-1/2 text-left mt-4 lg:ml-8">
-          <p className="text-xl font-bold mb-4">Your Profile</p>
-          <p>
-            <span className="font-bold text-blue-500">Beach No: </span>
-            {dbuser?.beach}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">Name:</span>{" "}
-            {user?.displayName}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">Registration Date:</span>{" "}
-            {user?.metadata.creationTime &&
-              convertToBdTime(user.metadata.creationTime)}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">Last Sign In Time:</span>{" "}
-            {user?.metadata.lastSignInTime &&
-              convertToBdTime(user.metadata.lastSignInTime)}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">Email:</span>{" "}
-            {dbuser?.email}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">Address:</span>{" "}
-            {dbuser?.address}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">Phone No:</span>{" "}
-            {dbuser?.phoneNo}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">NID No:</span>{" "}
-            {dbuser?.nid}
-          </p>
-          <p>
-            <span className="font-bold text-blue-500">Role No:</span>{" "}
-            {dbuser?.userType}
-          </p>
-
-          <div className="flex gap-4 mt-4 justify-end">
-            <button onClick={handleSignOut} className="btn btn-error px-8">
-              Log-out
-            </button>
+          <div className="avatar">
+            <div className="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src={dbuser?.photoURL} alt={user?.displayName} />
+            </div>
           </div>
+
+          <div className="p-4 text-sm">
+            <p className="mt-4 text-center text-gray-500">
+              BTEB Id :
+              {!user?.btebId && (
+                <span className="text-red-600"> Student not registered </span>
+              )}
+              {user?.btebId}
+            </p>
+            <p className="mt-4 text-center text-gray-500">
+              Profile Id: {dbuser?._id}
+            </p>
+          </div>
+
+          <div className="w-full flex gap-4 mx-auto items-center justify-center">
+  <button
+    onClick={handleSignOut}
+    className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center"
+  >
+    <FaSignOutAlt className="mr-2" /> Log-out
+  </button>
+
+  <Link className="text-blue-800 font-bold">
+    <button className="px-8 py-3 font-semibold rounded-full btn bg-purple-500 text-white">
+      <FaEdit /> Edit User info
+    </button>
+  </Link>
+</div>
+        </div>
+        <div className="w-full lg:w-1/2 text-left mt-4 lg:ml-8 text-gray-800">
+          <p className="text-xl font-bold mb-4 text-gray-900">
+            {dbuser?.displayName}`s profile information
+          </p>
+          <hr className=" border-dashed border-1 border-indigo-400 p-4 my-4" />
+          <div className="flex flex-col gap-2">
+            <p>
+              <span className="font-bold flex gap-2">
+                <FaUser /> <p>Name:{dbuser?.displayName}</p>
+              </span>
+            </p>
+
+            <p className="flex gap-2">
+              <FaPhone />{" "}
+              <a href={`tel:${dbuser?.phoneNo}`}>{dbuser?.phoneNo}</a>
+            </p>
+
+            <p className="flex gap-2">
+              <FiMail /> <a href={`mailto:${dbuser?.email}`}>{dbuser?.email}</a>
+            </p>
+            <p className="flex gap-2">
+              <FiFacebook /> Facebook:
+              <a
+                href={dbuser?.userData?.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {dbuser?.userData?.facebookUrl}
+              </a>
+            </p>
+
+            <p>
+              <span className="font-bold flex  gap-2 items-center ">
+                <FaMoneyBill />
+                <p>Total Buy Amount: {dbuser?.totalPurchesAmmount}</p>
+              </span>
+            </p>
+            <p>
+              <span className="font-bold flex  gap-2 items-center  ">
+                <FiDollarSign /> <p>Total given: {dbuser?.totalSellPrice}</p>
+              </span>
+            </p>
+            <p>
+              <span className="font-bold flex  gap-2 items-center">
+                <FiDollarSign /> <p>Total Due: {dbuser?.totalDueAmmout}</p>
+              </span>
+            </p>
+          </div>
+
+          <div className="flex gap-4 mt-4 justify-end"></div>
         </div>
       </div>
     </div>
@@ -119,4 +154,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
