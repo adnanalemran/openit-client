@@ -11,6 +11,9 @@ import DashboardHome from "../Pages/dashboard/Dashboard/DashboardHome";
 import ManageUser from "../Pages/dashboard/Dashboard/ManageUser";
 import StudentList from "../Pages/dashboard/Dashboard/StudentList";
 import SingleProfile from "../Pages/Profile/SingleProfile";
+import PrivateRoute from "./PrivateRoute";
+import InvalidAccess from "../Layout/Shared/404/InvalidAccess";
+import AdminRouter from "./AdminRouter";
 
 export const router = createBrowserRouter([
   {
@@ -39,25 +42,42 @@ export const router = createBrowserRouter([
 
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />{" "}
+      </PrivateRoute>
+    ),
 
     children: [
       {
         path: "/dashboard/",
         element: <DashboardHome />,
       },
+
       {
         path: "/dashboard/user-management",
-        element: <ManageUser />,
+        element: (
+          <AdminRouter>
+            <ManageUser />
+          </AdminRouter>
+        ),
       },
       {
         path: "/dashboard/student-list",
-        element: <StudentList />,
+        element: (
+          <AdminRouter>
+            <StudentList />
+          </AdminRouter>
+        ),
       },
       {
         path: "/dashboard/singleUserInfo/:id",
         element: <SingleProfile />,
       },
     ],
+  },
+  {
+    path: "invalidAccess",
+    element: <InvalidAccess />,
   },
 ]);

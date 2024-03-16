@@ -1,70 +1,53 @@
 import { NavLink } from "react-router-dom";
-import { FaChartBar, FaBeer, FaMoneyBill, FaUser, FaShoppingCart, FaListUl, FaUsers } from "react-icons/fa";
-
+import {
+  FaChartBar,
+  FaBeer,
+  FaMoneyBill,
+  FaUser,
+  FaShoppingCart,
+  FaListUl,
+  FaUsers,
+} from "react-icons/fa";
+import { FaHome, FaNewspaper, FaChartLine, FaList } from "react-icons/fa";
 const StudentMenu = () => {
   return (
-    <div>
-      <div className="flex flex-col gap-4">
-        <NavLink to="/analysis">
-          <li className="btn btn-primary text-white w-full">
-            <FaChartBar className="mr-2" />
-            Analytics
-          </li>
-        </NavLink>
-        <NavLink to="/addToCard">
-          <li className="btn btn-primary text-white w-full">
-            <FaShoppingCart className="mr-2" />
-            Shopping Cart
-          </li>
-        </NavLink>
+    <div className="flex flex-col gap-4">
+      <NavLink to="/dashboard">
+        <li className="flex p-2 gap-1 bg-gradient-to-r from-[#ba97e9] to-[#9756F5] text-white w-full items-center rounded-r-3xl hover:from-[#ac8cd6] hover:to-[#9756F5] transition-all duration-500">
+          <FaHome className="mx-4" />
+          <p className="font-medium text-lg">My Dashboard</p>
+        </li>
+      </NavLink>
 
-        <NavLink to="/sellView">
-          <li className="btn btn-primary text-white w-full">
-            <FaListUl className="mr-2" />
-            Sell List
-          </li>
-        </NavLink>
+      <NavLink to="/dashboard/news">
+        <li className="flex p-2 gap-1 bg-gradient-to-r from-[#ba97e9] to-[#9756F5] text-white w-full items-center rounded-r-3xl hover:from-[#ac8cd6] hover:to-[#9756F5] transition-all duration-500">
+          <FaNewspaper className="mx-4" />
+          <p className="font-medium text-lg">Notice</p>
+        </li>
+      </NavLink>
 
-        <NavLink to="/memberlist ">
-          <li className="btn btn-primary text-white w-full">
-            <FaUsers className="mr-2" />
-            List of Due
-          </li>
-        </NavLink>
-        <NavLink to="/manageProduct">
-          <li className="btn btn-primary text-white w-full">
-            <FaBeer className="mr-2" />
-            Product Management
-          </li>
-        </NavLink>
+      <NavLink to="/dashboard/analytics">
+        <li className="flex p-2 gap-1 bg-gradient-to-r from-[#ba97e9] to-[#9756F5] text-white w-full items-center rounded-r-3xl hover:from-[#ac8cd6] hover:to-[#9756F5] transition-all duration-500">
+          <FaChartLine className="mx-4" />
+          <p className="font-medium text-lg">Status Analytics</p>
+        </li>
+      </NavLink>
 
-        <NavLink to="/money">
-          <li className="btn btn-primary text-white w-full">
-            <FaMoneyBill className="mr-2" />
-             Money Management
-          </li>
-        </NavLink>
-        <NavLink to="/cost">
-          <li className="btn btn-primary text-white w-full">
-            <FaMoneyBill className="mr-2" />
-            Cost Management
-          </li>
-        </NavLink>
+      <NavLink to="/dashboard/student-list">
+        <li className="flex p-2 gap-1 bg-gradient-to-r from-[#ba97e9] to-[#9756F5] text-white w-full items-center rounded-r-3xl hover:from-[#ac8cd6] hover:to-[#9756F5] transition-all duration-500">
+          <FaList className="mx-4" />
+          <p className="font-medium text-lg">Corse List </p>
+        </li>
+      </NavLink>
 
-        <NavLink to="/user">
-          <li className="btn btn-primary text-white w-full">
-            <FaUser className="mr-2" />
-            User Management
-          </li>
-        </NavLink>
-
-        
-      </div>
+      <NavLink to="/dashboard/cost-management">
+        <li className="flex p-2 gap-1 bg-gradient-to-r from-[#ba97e9] to-[#9756F5] text-white w-full items-center rounded-r-3xl hover:from-[#ac8cd6] hover:to-[#9756F5] transition-all duration-500">
+          <FaMoneyBill className="mx-4" />
+          <p className="font-medium text-lg">Cost Management</p>
+        </li>
+      </NavLink>
     </div>
   );
 };
 
 export default StudentMenu;
-
-
- 

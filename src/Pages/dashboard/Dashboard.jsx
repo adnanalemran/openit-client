@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import Header from "../../components/Shared/Header/Header";
+
 import { AuthContext } from "../../providers/AuthProvider";
 import AdminMenu from "./Admin/AdminMenu";
 import StudentMenu from "./Student/StudentMenu";
@@ -22,7 +22,7 @@ const showSuccessAlert = () => {
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
-  // const isAdmin = true;
+ 
   const [isStudent] = useStudent();
 
   const location = useLocation();
@@ -90,7 +90,11 @@ const Dashboard = () => {
 
         <div className="w-full lg:w-4/5  sticky">
           <div className="w-full justify-around lg:p-8  border-2 border-[#9756f5]  text-center rounded-lg lg:-mt-32 bg-base-300">
+
+
             <Outlet></Outlet>
+
+
           </div>
         </div>
       </div>
