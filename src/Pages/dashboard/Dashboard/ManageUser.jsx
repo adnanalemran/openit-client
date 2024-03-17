@@ -5,6 +5,7 @@ import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaTrash, FaUser } from "react-icons/fa";
+import Loading from "../../Loading/Loading";
 
 const ManageUser = () => {
   const axiosSecure = useAxiosSecure();
@@ -70,7 +71,7 @@ const ManageUser = () => {
   };
 
   if (loading === true) {
-    return <div className="  bg-base-200 p-16 w-full h-full">Loading...</div>;
+    return<Loading/>;
   }
 
   //this a comment
