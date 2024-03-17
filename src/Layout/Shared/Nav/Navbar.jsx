@@ -3,14 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import logo from "../../../assets/logo.png";
 import "./nav.css";
-import {
-  FaEdit,
-  FaUser,
-  FaSignOutAlt,
-  FaDeskpro,
-  FaHome,
-  FaSignInAlt,
-} from "react-icons/fa";
+import { FaUser, FaSignOutAlt, FaHome, FaSignInAlt } from "react-icons/fa";
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
   const displayName = user?.displayName;
@@ -34,8 +27,8 @@ const Nav = () => {
       </li>
       <li>
         <NavLink to="/e-Library">Student Info</NavLink>
-      </li> 
-     
+      </li>
+
       <li>
         <NavLink to="/gallery">Gallery</NavLink>
       </li>
@@ -146,7 +139,6 @@ const Nav = () => {
                   className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center   "
                 >
                   <div className="flex">
-                
                     <FaSignInAlt className="mr-2" /> <p>Login </p>
                   </div>
                 </button>
