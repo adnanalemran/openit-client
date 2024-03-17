@@ -1,20 +1,16 @@
 import useAxiosSecure from "../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 const Analisys = () => {
-
-
-
   const axiosSecure = useAxiosSecure();
 
-  const { data: user = [],   } = useQuery({
+  const { data: user = [] } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
       const res = await axiosSecure.get("/userv2/userNumber", {});
       return res.data;
     },
   });
-console.log(user)
-
+  console.log(user);
 
   return (
     <div className="flex  gap-4 p-4">
@@ -29,7 +25,6 @@ console.log(user)
                 alt="Trophy"
               />
               <div className="text-4xl font-bold">{user?.totalAdmins}</div>
-              
             </div>
           </div>
         </div>
@@ -45,11 +40,11 @@ console.log(user)
                 alt="Trophy"
               />
               <div className="text-4xl font-bold">{user?.totalStudents}</div>
-          
             </div>
           </div>
         </div>
-      </div>      <div className="card  w-1/3  bg-primary text-primary-content">
+      </div>{" "}
+      <div className="card  w-1/3  bg-primary text-primary-content">
         <div className="card  bg-primary text-primary-content">
           <div className="card-body">
             <h2 className="card-title">Total User</h2>
@@ -59,7 +54,7 @@ console.log(user)
                 src="https://i.ibb.co/1vmrrMR/students.png"
                 alt="Trophy"
               />
-          
+
               <div className="text-4xl font-bold">{user?.totalUser}</div>
             </div>
           </div>
