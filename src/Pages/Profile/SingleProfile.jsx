@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 
 import { FiDollarSign, FiMail, FiFacebook } from "react-icons/fi";
+import Loading from "../Loading/Loading";
 
 const SingleProfile = () => {
   const { id } = useParams();
@@ -27,16 +28,8 @@ const SingleProfile = () => {
   });
 
   if (loading) {
-    return (
-      <div className="h-[100vh] flex flex-col gap-4 justify-center items-center">
-        <p className="text-4xl">Loading....</p>
-        <progress className="progress w-full"></progress>
-      </div>
-    );
+    return <Loading />;
   }
-
-
-  
 
   return (
     <div className="bg-base-300 p-8 rounded-lg shadow-md">

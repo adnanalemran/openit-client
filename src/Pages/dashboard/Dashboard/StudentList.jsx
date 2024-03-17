@@ -1,100 +1,85 @@
 import { useQuery } from "@tanstack/react-query";
-
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaTrash, FaUser } from "react-icons/fa";
+import Loading from "../../Loading/Loading";
 
 const StudentList = () => {
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
   const { data: user = [], refetch } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/user/students", {});
+      const res = await axiosSecure.get("userv2/studentAllData", {});
       if (res.data) {
         setLoading(false);
       }
-      return res.data;
+      return res?.data;
     },
   });
 
-  const handleDeleteUser = (user) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axiosSecure.delete(`/user/${user?._id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            refetch();
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
-              icon: "success",
-            });
-          }
-        });
-      }
-    });
-  };
 
-  const handleRoleChange = (e, user) => {
-    e.preventDefault();
+  const filteredUsers = Array.isArray(user) ? user.filter((user) =>
+  user.displayName.toLowerCase().includes(searchQuery.toLowerCase())
+) : [];
 
-    const newRole = e.target.role.value;
 
-    axiosSecure
-      .patch(`/user/${user?._id}`, { role: newRole })
-      .then((res) => {
-        if (res.data.modifiedCount > 0) {
-          refetch();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `success  Change role!`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+
 
   if (loading === true) {
-    return <div className="  bg-base-200 p-16 w-full h-full">Loading...</div>;
+    return (
+      <div className="  ">
+        <Loading />
+      </div>
+    );
   }
 
   //this a comment
   return (
     <div className="bg-base-200 p-0 m-0 lg:p-4 lg:m-4 rounded-xl">
       <div className="text-3xl py-2">
-        <h2>Manage user</h2>
+        <h2>Student list</h2>
       </div>
-      <div className="flex w-full  "></div>
-      <h4>Total user : {user?.length}</h4>
+      <h4>Total student : {user?.length}</h4>
 
-      <div className="overflow-x-auto">
+      <label className="input input-bordered flex items-center gap-2 w-1/2 mx-auto my-8 ">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target?.value)}
+          className="grow "
+          placeholder="Search Student by name "
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          className="w-4 h-4 opacity-70"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </label>
+
+    
+      <div className="overflow-x-auto ">
         <table className="table">
-          <thead className="text-sm text-center">
+          <thead className="text-sm   text-left">
             <th>No</th>
             <th>image</th>
             <th>Name</th>
+            <th>beach no</th>
             <th>Email</th>
-
-            <th>Role </th>
-            <th>Remove user </th>
+            <th>Mobile no</th>
           </thead>
-          <tbody className="text-center">
-            {user?.map((user, index) => (
+          <tbody className=" text-left">
+            {filteredUsers.map((user, index) => (
               <tr key={user?._id}>
                 <td>{index + 1}</td>
                 <td>
@@ -112,50 +97,29 @@ const StudentList = () => {
 
                 <td>
                   <div>
-                    <Link
+                  <Link
                       className="text-blue-800 font-bold"
-                      to={`/singleUserInfo/${user?._id}`}
+                      to={`/dashboard/singleUserInfo/${user?._id}`}
                     >
                       <div className="font-bold">{user?.displayName}</div>
                     </Link>
                   </div>
                 </td>
-                <td>
-                  <div>
-                    <Link
-                      className="text-blue-800 font-bold"
-                      to={`/singleUserInfo/${user?._id}`}
-                    >
-                      <div className="font-bold">{user?.email} </div>
-                    </Link>
-                  </div>
-                </td>
 
                 <td>
-                  <form onSubmit={(e) => handleRoleChange(e, user)}>
-                    <div className=" text-sm flex gap-2">
-                      <select
-                        name="role"
-                        defaultValue={user?.userType}
-                        className="px-4 py-0  rounded-md text-black"
-                      >
-                        <option value="isAdmin">Admin</option>
-                        <option value="isStudent">Student</option>
-                        <option value="user">out service</option>
-                      </select>
-                      <button type="submit" className="btn btn-sm btn-1 ">
-                        <FaUser /> Action
-                      </button>
-                    </div>
-                  </form>
+                  <div>
+                    <div className="font-bold">{user?.beach} </div>
+                  </div>
                 </td>
                 <td>
-                  <button
-                    onClick={() => handleDeleteUser(user)}
-                    className="btn btn-sm btn-error"
-                  >
-                    <FaTrash />
-                  </button>
+                  <div>
+                    <div className="font-bold">{user?.email} </div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <div className="font-bold">{user?.phoneNo} </div>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -165,7 +129,5 @@ const StudentList = () => {
     </div>
   );
 };
-
- 
 
 export default StudentList;

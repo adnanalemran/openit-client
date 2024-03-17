@@ -16,8 +16,9 @@ import InvalidAccess from "../Layout/Shared/404/InvalidAccess";
 import AdminRouter from "./AdminRouter";
 import Profile from "../Pages/Profile/Profile";
 import ResultForHome from "../Pages/result/resultForHome";
-import ComeInSoon from "../Pages/ComeInSoon/ComeInSoon";
+ 
 import CumpusLife from "../Pages/HomePage/CumpusLife/CumpusLife";
+ 
 
 export const router = createBrowserRouter([
   {
