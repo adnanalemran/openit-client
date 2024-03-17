@@ -69,58 +69,31 @@ const StudentList = () => {
 
     
       <div className="overflow-x-auto ">
-        <table className="table">
-          <thead className="text-sm   text-left">
-            <th>No</th>
-            <th>image</th>
-            <th>Name</th>
-            <th>beach no</th>
-            <th>Email</th>
-            <th>Mobile no</th>
+      <table className="table w-full">
+          <thead>
+            <tr>
+              <th className="text-left">No</th>
+              <th className="text-left">Name</th>
+              <th className="text-left">Beach No</th>
+              <th className="text-left">Email</th>
+              <th className="text-left">Mobile No</th>
+            </tr>
           </thead>
-          <tbody className=" text-left">
+          <tbody>
             {filteredUsers.map((user, index) => (
-              <tr key={user?._id}>
+              <tr key={user._id}>
                 <td>{index + 1}</td>
                 <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={user?.photoURL}
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-
-                <td>
-                  <div>
                   <Link
-                      className="text-blue-800 font-bold"
-                      to={`/dashboard/singleUserInfo/${user?._id}`}
-                    >
-                      <div className="font-bold">{user?.displayName}</div>
-                    </Link>
-                  </div>
+                    to={`/dashboard/singleUserInfo/${user._id}`}
+                    className="text-blue-800 font-bold"
+                  >
+                    {user.displayName}
+                  </Link>
                 </td>
-
-                <td>
-                  <div>
-                    <div className="font-bold">{user?.beach} </div>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <div className="font-bold">{user?.email} </div>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <div className="font-bold">{user?.phoneNo} </div>
-                  </div>
-                </td>
+                <td>{user.beach}</td>
+                <td>{user.email}</td>
+                <td>{user.phoneNo}</td>
               </tr>
             ))}
           </tbody>

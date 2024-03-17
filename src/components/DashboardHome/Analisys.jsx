@@ -1,5 +1,7 @@
-import useAxiosSecure from "../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { FaUsers, FaUserGraduate, FaUserAltSlash, FaUser } from 'react-icons/fa';
+import useAxiosSecure from "../../Hook/useAxiosPublic";
+
 const Analisys = () => {
   const axiosSecure = useAxiosSecure();
 
@@ -10,59 +12,40 @@ const Analisys = () => {
       return res.data;
     },
   });
- 
 
   return (
-    <div className="">
-      <div className="flex  gap-4 p-4">
-        <div className="card  w-1/3  bg-primary text-primary-content">
-          <div className="card  bg-primary text-primary-content">
-            <div className="card-body">
-              <h2 className="card-title">Total Admin</h2>
-              <div className="flex items-center justify-between">
-                <img
-                  className="w-16"
-                  src="https://i.ibb.co/rmkcddQ/teamwork.png"
-                  alt="Trophy"
-                />
-                <div className="text-4xl font-bold">{user?.totalAdmins}</div>
-              </div>
-            </div>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold text-center my-8">User Analysis</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="card bg-gradient-to-b from-purple-400 to-purple-600 text-white shadow-lg p-6 rounded-lg">
+          <div className="flex items-center justify-center mb-4">
+            <FaUser className="w-12 h-12 mr-2" />
+            <h2 className="text-xl font-bold">Total Admin</h2>
           </div>
-        </div>{" "}
-        <div className="card  w-1/3  bg-primary text-primary-content">
-          <div className="card  bg-primary text-primary-content">
-            <div className="card-body">
-              <h2 className="card-title">Total Student</h2>
-              <div className="flex items-center justify-between">
-                <img
-                  className="w-16"
-                  src="https://i.ibb.co/1vmrrMR/students.png"
-                  alt="Trophy"
-                />
-                <div className="text-4xl font-bold">{user?.totalStudents}</div>
-              </div>
-            </div>
+          <div className="text-2xl font-bold text-center">{user?.totalAdmins}</div>
+        </div>
+        <div className="card bg-gradient-to-b from-blue-400 to-blue-600 text-white shadow-lg p-6 rounded-lg">
+          <div className="flex items-center justify-center mb-4">
+            <FaUserGraduate className="w-12 h-12 mr-2" />
+            <h2 className="text-xl font-bold">Total Student</h2>
           </div>
-        </div>{" "}
-        <div className="card  w-1/3  bg-primary text-primary-content">
-          <div className="card  bg-primary text-primary-content">
-            <div className="card-body">
-              <h2 className="card-title">Total User</h2>
-              <div className="flex items-center justify-between">
-                <img
-                  className="w-16"
-                  src="https://i.ibb.co/1vmrrMR/students.png"
-                  alt="Trophy"
-                />
-
-                <div className="text-4xl font-bold">{user?.totalUser}</div>
-              </div>
-            </div>
+          <div className="text-2xl font-bold text-center">{user?.totalStudents}</div>
+        </div>
+        <div className="card bg-gradient-to-b from-green-400 to-green-600 text-white shadow-lg p-6 rounded-lg">
+          <div className="flex items-center justify-center mb-4">
+            <FaUsers className="w-12 h-12 mr-2" />
+            <h2 className="text-xl font-bold">Total User</h2>
           </div>
+          <div className="text-2xl font-bold text-center">{user?.totalUser}</div>
+        </div>
+        <div className="card bg-gradient-to-b from-yellow-400 to-yellow-600 text-white shadow-lg p-6 rounded-lg">
+          <div className="flex items-center justify-center mb-4">
+            <FaUserAltSlash className="w-12 h-12 mr-2" />
+            <h2 className="text-xl font-bold">Out of Service</h2>
+          </div>
+          <div className="text-2xl font-bold text-center">{user?.outService}</div>
         </div>
       </div>
-       
     </div>
   );
 };

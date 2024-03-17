@@ -84,16 +84,16 @@ const ManageUser = () => {
 
       <div className="overflow-x-auto">
         <table className="table">
-          <thead className="text-sm text-center">
-            <th>No</th>
-            <th>image</th>
-            <th>Name</th>
-            <th>Email</th>
-
-            <th>Role </th>
-            <th>Remove user </th>
+        <thead>
+            <tr>
+              <th className="text-left">No</th>
+              <th className="text-left">Name</th>
+              <th className="text-left">Email</th>
+              <th className="text-left">Role</th>
+              <th className="text-left">Actions</th>
+            </tr>
           </thead>
-          <tbody className="text-center">
+          <tbody className=" ">
             {user?.map((user, index) => (
               <tr key={user?._id}>
                 <td>{index + 1}</td>
@@ -113,20 +113,20 @@ const ManageUser = () => {
                 <td>
                   <div>
                     <Link
-                      className="text-blue-800 font-bold"
+                      className="text-blue-800 "
                       to={`/dashboard/singleUserInfo/${user?._id}`}
                     >
-                      <div className="font-bold">{user?.displayName}</div>
+                      <div className="">{user?.displayName}</div>
                     </Link>
                   </div>
                 </td>
                 <td>
                   <div>
                     <Link
-                      className="text-blue-800 font-bold"
+                      className="  "
                       to={`/dashboard/singleUserInfo/${user?._id}`}
                     >
-                      <div className="font-bold">{user?.email} </div>
+                      <div className="">{user?.email} </div>
                     </Link>
                   </div>
                 </td>
