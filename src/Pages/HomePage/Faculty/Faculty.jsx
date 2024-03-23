@@ -14,10 +14,14 @@ const Faculty = () => {
     <div className="py-8 text-bangla   ">
       <h2
         data-aos="fade-down"
-        className="text-center text-5xl font-bold py-4 border-b-2 "
+        className=" text-center text-3xl font-semibold text-gray-950 py-4 border-b-2 "
       >
         শিক্ষক-শিক্ষিকা বৃন্দ
       </h2>
+
+     
+
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 shadow  mt-4 p-4 ">
         {faculty.map((singlefaculty) => (
           <div
