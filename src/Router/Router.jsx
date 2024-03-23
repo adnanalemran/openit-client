@@ -20,6 +20,8 @@ import ResultForHome from "../Pages/result/resultForHome";
 import CumpusLife from "../Pages/HomePage/CumpusLife/CumpusLife";
 import Student_public_view from "../Pages/Student_public_view/Student_public_view";
 import ManageNotice from "../Pages/dashboard/ManageNotice/ManageNotice";
+import AllNotice from "../Pages/dashboard/ManageNotice/AllNotice";
+import SingleNotice from "../Pages/dashboard/ManageNotice/SingleNotice";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +49,10 @@ export const router = createBrowserRouter([
         path: "gallery",
         element: <CumpusLife />,
       },
+      {
+        path: "/notice/:id",
+        element: <SingleNotice />,
+      },
     ],
   },
   {
@@ -58,6 +64,7 @@ export const router = createBrowserRouter([
     path: "/signUp",
     element: <SignUp />,
   },
+
 
   {
     path: "/dashboard",
@@ -92,6 +99,13 @@ export const router = createBrowserRouter([
             <ManageNotice />
           </AdminRouter>
         ),
+      },  {
+        path: "/dashboard/allNotice",
+        element: (
+          <AdminRouter>
+            <AllNotice/>
+          </AdminRouter>
+        ),
       },
       {
         path: "/dashboard/student-list",
@@ -104,7 +118,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/singleUserInfo/:id",
         element: <SingleProfile />,
-      },
+      },  
     ],
   },
   {

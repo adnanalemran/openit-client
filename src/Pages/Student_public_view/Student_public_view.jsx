@@ -35,12 +35,9 @@ const Student_public_view = () => {
 
   //this a comment
   return (
-    <div className=" pt-16 container mx-auto px-8  " > 
-
-    
-      <h2   
-      
-       className="text-3xl py-12 font-semibold text-center bg-gradient-to-r from-cyan-200 to-purple-200   text-gray-800">
+   <div className="pt-16  ">
+     <div className="  ">
+      <h2 className="text-3xl py-8 font-semibold text-center    text-gray-800">
         Our student List
       </h2>
       <hr />
@@ -70,7 +67,7 @@ const Student_public_view = () => {
         </svg>
       </label>
 
-      <div className="overflow-x-auto ">
+      <div className="overflow-x-auto container mx-auto  ">
         <div className="table w-full">
           <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full py-12 ">
             {filteredUsers.map((user) => (
@@ -79,15 +76,14 @@ const Student_public_view = () => {
                   data-aos="zoom-in-up"
                   className="card w-full max-w-sm  shadow-xl relative hover:shadow-2xl mx-auto "
                 >
-               
-                    <figure   className=" px-2">
-                      <img
-                        src={user?.photoURL}
-                        alt="Image"
-                        className="rounded-xl my-2 w-[390px] h-[370px]  object-cover  "
-                      />
-                    </figure>
-            
+                  <figure className=" px-2">
+                    <img
+                      src={user?.photoURL}
+                      alt="Image"
+                      className="rounded-xl my-2 w-[390px] h-[370px]  object-cover  "
+                    />
+                  </figure>
+
                   <div className=" pb-5">
                     <div className="  ">
                       <h2 className="text-center text-2xl  font-bold py-8 text-gray-900  ">
@@ -96,7 +92,7 @@ const Student_public_view = () => {
 
                       <div className="card-actions items-center justify-center pb-4">
                         <div className=" bg-purple-300    py-4 rounded-lg px-8">
-                        Batch number:  {user.beach}
+                          Batch number: {user.beach}
                         </div>
                       </div>
                     </div>
@@ -108,6 +104,7 @@ const Student_public_view = () => {
         </div>
       </div>
     </div>
+   </div>
   );
 };
 

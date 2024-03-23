@@ -7,11 +7,11 @@ const ManageNotice = () => {
       <marquee className="text-2xl pb-8">
         Welcome to Notice control panel
       </marquee>
-      <div className="flex gap-4  w-full">
-        <div className="  w-1/2  ">
+      <div className="flex flex-col gap-4  w-full">
+        <div className="   ">
           <WebNotice />
         </div>
-        <div className="w-1/2 ">
+        <div className="  ">
           <StudentNotice className=" " />
         </div>
       </div>
