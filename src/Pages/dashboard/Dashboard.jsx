@@ -2,20 +2,14 @@ import { useContext } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
+import { FaArrowLeft, FaSignOutAlt, FaUser } from "react-icons/fa";
+import useAdmin from "../../Hook/useAdmin";
+import useStudent from "../../Hook/useStudent";
 import { AuthContext } from "../../providers/AuthProvider";
 import AdminMenu from "./Admin/AdminMenu";
 import StudentMenu from "./Student/StudentMenu";
 import UserMenu from "./User/UserMenu";
 import "./dashboard.css";
-import useAdmin from "../../Hook/useAdmin";
-import useStudent from "../../Hook/useStudent";
-import {
-  FaEdit,
-  FaMoneyBill,
-  FaPhone,
-  FaUser,
-  FaSignOutAlt,
-} from "react-icons/fa";
 
 const showSuccessAlert = () => {
   Swal.fire({
@@ -45,7 +39,16 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="lg:h-[150px] md:h-[100px] bg-cover bg-center lg:relative"></div>
+      <div className="lg:h-[200px]  h-[100px] bg-cover bg-center lg:relative">
+        <div className=" py-4  bg-base-300 shadow-sm container mx-auto rounded-lg px-6">
+          <div className="flex-1  ">
+            <Link to="/" className=" flex text-lg text-gray-600 items-center   ">
+              <FaArrowLeft className=" mr-3 " />
+                Back to Open-it Homepage
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className="flex flex-col lg:flex-row w-full container mx-auto">
         <div className="w-full lg:w-1/5 sticky top-10">
           <div className="justify-around p-4 text-center rounded-lg lg:-mt-32 bg-base-300 w-full mx-auto flex lg:flex-col  ">

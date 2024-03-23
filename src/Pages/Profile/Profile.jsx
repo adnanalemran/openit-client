@@ -1,17 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
-import { Link, Navigate } from "react-router-dom";
-import useAxiosSecure from "../../Hook/useAxiosPublic";
-import Swal from "sweetalert2";
 import {
   FaEdit,
   FaMoneyBill,
   FaPhone,
-  FaUser,
   FaSignOutAlt,
+  FaUser,
 } from "react-icons/fa";
+import { Link, Navigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hook/useAxiosPublic";
+import { AuthContext } from "../../providers/AuthProvider";
 
-import { FiDollarSign, FiMail, FiFacebook } from "react-icons/fi";
+import { FiDollarSign, FiFacebook, FiMail } from "react-icons/fi";
 const Profile = () => {
   const showSuccessAlert = () => {
     Swal.fire({
@@ -109,7 +109,7 @@ const Profile = () => {
             </p>
 
             <p className="flex gap-2">
-              <FaPhone />{" "}
+              <FaPhone />
               <a href={`tel:${dbuser?.phoneNo}`}>{dbuser?.phoneNo}</a>
             </p>
 
@@ -191,7 +191,7 @@ const Profile = () => {
           <p>
             <span className="font-bold text-blue-500">SSC Board Name :</span>
             {dbuser?.userData.SSCBoardName}
-          </p>{" "}
+          </p>
           <p>
             <span className="font-bold text-blue-500">SSC Passing Year :</span>
             {dbuser?.userData.passingYear}

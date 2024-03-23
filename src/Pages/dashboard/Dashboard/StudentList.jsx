@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import Swal from "sweetalert2";
+ 
 import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FaTrash, FaUser } from "react-icons/fa";
+ 
 import Loading from "../../Loading/Loading";
 
 const StudentList = () => {

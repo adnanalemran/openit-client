@@ -1,14 +1,12 @@
+import { Player } from "@lottiefiles/react-lottie-player";
 import React, { useEffect, useState } from "react";
-import Time from "../../../components/DashboardHome/Time";
-import Gatting from "../../../components/DashboardHome/Gatting";
-import BtebIframe from "../../../components/DashboardHome/BtebIfrem";
-import Typingtest from "../../../components/DashboardHome/Typingtest";
 import { Link } from "react-router-dom";
-import Analisys from "../../../components/DashboardHome/Analisys";
+import animation from "../../../../public/animation/Animation - 1710595501629.json";
 import useAdmin from "../../../Hook/useAdmin";
 import useStudent from "../../../Hook/useStudent";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import animation from "../../../../public/animation/Animation - 1710595501629.json";
+import Analisys from "../../../components/DashboardHome/Analisys";
+import Gatting from "../../../components/DashboardHome/Gatting";
+import Time from "../../../components/DashboardHome/Time";
 
 
 const DashboardHome = () => {
@@ -59,7 +57,7 @@ const DashboardHome = () => {
              
             </p>
             <Link to="/">
-              {" "}
+              
               <button className="btn btn-1">Home</button>
             </Link>
           </div>

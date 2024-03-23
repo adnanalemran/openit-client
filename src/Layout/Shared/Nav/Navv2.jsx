@@ -1,6 +1,6 @@
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import logo from "../../../assets/logo.png";
 import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../providers/AuthProvider";
 const navItem = (
   <>
@@ -111,7 +111,7 @@ const Navv2 = () => {
                     type="button"
                     className="px-8 py-3 font-semibold rounded dark:bg-gray-100 dark:text-gray-800"
                   >
-                    {" "}
+                    
                     Login
                   </button>
                 </Link>

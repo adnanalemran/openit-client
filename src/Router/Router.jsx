@@ -16,9 +16,10 @@ import InvalidAccess from "../Layout/Shared/404/InvalidAccess";
 import AdminRouter from "./AdminRouter";
 import Profile from "../Pages/Profile/Profile";
 import ResultForHome from "../Pages/result/resultForHome";
- 
+
 import CumpusLife from "../Pages/HomePage/CumpusLife/CumpusLife";
- 
+import Student_public_view from "../Pages/Student_public_view/Student_public_view";
+import ManageNotice from "../Pages/dashboard/ManageNotice/ManageNotice";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
         element: <Faculty />,
       },
       {
+        path: "/student-for-public",
+        element: <Student_public_view />,
+      },
+      {
         path: "/result",
         element: <ResultForHome />,
       },
@@ -48,6 +53,7 @@ export const router = createBrowserRouter([
     path: "/signIn",
     element: <Signin />,
   },
+
   {
     path: "/signUp",
     element: <SignUp />,
@@ -76,6 +82,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRouter>
             <ManageUser />
+          </AdminRouter>
+        ),
+      },
+      {
+        path: "/dashboard/notice",
+        element: (
+          <AdminRouter>
+            <ManageNotice />
           </AdminRouter>
         ),
       },

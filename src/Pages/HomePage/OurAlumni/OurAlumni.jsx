@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
 import "swiper/css";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/bundle"; // Import the bundle for Swiper bundle mode
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "swiper/css/bundle"; // Import the bundle for Swiper bundle mode
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
-import { useEffect, useState } from "react";
  
 import 'aos/dist/aos.css';
 const OurAlumni = () => {
@@ -72,7 +72,7 @@ const OurAlumni = () => {
                   <div className="mt-6 mb-2">
                     <h2 className="text-xl font-semibold tracki">
                       {alumni.name}
-                    </h2>{" "}
+                    </h2>
                     <span className="block text-xs font-medium tracki uppercase dark:text-violet-400">
                       {alumni.post}
                     </span>

@@ -26,7 +26,7 @@ const Nav = () => {
         <NavLink to="/result">Results</NavLink>
       </li>
       <li>
-        <NavLink to="/e-Library">Student Info</NavLink>
+        <NavLink to="/student-for-public">Student Info</NavLink>
       </li>
 
       <li>
@@ -39,7 +39,7 @@ const Nav = () => {
   );
 
   return (
-    <div className="navbar lg:px-8">
+    <div className="navbar   fixed   top-0  z-10  mx-auto lg:px-16 mx-w opacity-90 bg-base-100  ">
       <style>
         {`
           .active {

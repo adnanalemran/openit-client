@@ -22,7 +22,7 @@ const Notice = () => {
               <th>1</th>
               <td>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium quibusdam nobis possimus voluptates{" "}
+                Laudantium quibusdam nobis possimus voluptates
               </td>
               <td>01/01/21</td>
             </tr>
@@ -30,7 +30,7 @@ const Notice = () => {
               <th>1</th>
               <td>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium quibusdam nobis possimus voluptates{" "}
+                Laudantium quibusdam nobis possimus voluptates
               </td>
               <td>01/01/21</td>
             </tr>
@@ -38,7 +38,7 @@ const Notice = () => {
               <th>1</th>
               <td>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium quibusdam nobis possimus voluptates{" "}
+                Laudantium quibusdam nobis possimus voluptates
               </td>
               <td>01/01/21</td>
             </tr>

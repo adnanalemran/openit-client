@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaUser, FaPhone } from "react-icons/fa";
+import { FaPhone, FaUser } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 const Faculty = () => {
   const [faculty, setFaculty] = useState([]);
@@ -22,7 +22,7 @@ const Faculty = () => {
         {faculty.map((singlefaculty) => (
           <div
             key={singlefaculty.id}
-            className="card card-compact bg-base-300 p-6 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+            className="card card-compact bg-base-300 p-6 hover:shadow-lg transition duration-300    hover:scale-105 shadow-xl"
           >
             <div className="avatar mt-4">
               <div className="w-44 mx-auto rounded-full">
@@ -33,10 +33,10 @@ const Faculty = () => {
               <h2 className="card-title">
                 <FaUser size={15} /> {singlefaculty?.name}
               </h2>
-              <p>Designation: {singlefaculty.designation} </p>{" "}
+              <p>Designation: {singlefaculty.designation} </p>
               <div className="card-actions justify-end">
                 <p className="flex gap-2">
-                  <FaPhone size={16} />{" "}
+                  <FaPhone size={16} />
                   <a href={`tel:${singlefaculty?.mobileNo}`}>
                     {singlefaculty?.mobileNo}
                   </a>

@@ -1,17 +1,17 @@
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import {
+    FaDownload,
+    FaEdit,
+    FaMoneyBill,
+    FaPhone,
+    FaUser,
+} from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosPublic";
-import { useQuery } from "@tanstack/react-query";
-import {
-  FaDownload,
-  FaEdit,
-  FaMoneyBill,
-  FaPhone,
-  FaUser,
-} from "react-icons/fa";
 
-import { FiDollarSign, FiMail, FiFacebook } from "react-icons/fi";
+import { FiDollarSign, FiFacebook, FiMail } from "react-icons/fi";
 import Loading from "../Loading/Loading";
 
 const SingleProfile = () => {
@@ -51,8 +51,8 @@ const SingleProfile = () => {
                   BTEB Id :
                   {!user?.btebId && (
                     <span className="text-red-600">
-                      {" "}
-                      Student not registered{" "}
+                      
+                      Student not registered
                     </span>
                   )}
                   {user?.btebId}
@@ -89,7 +89,7 @@ const SingleProfile = () => {
                 </p>
 
                 <p className="flex gap-2">
-                  <FaPhone />{" "}
+                  <FaPhone />
                   <a href={`tel:${user?.phoneNo}`}>{user?.phoneNo}</a>
                 </p>
 
@@ -171,7 +171,7 @@ const SingleProfile = () => {
             <p>
               <span className="font-bold text-blue-500">SSC Board Name :</span>
               {user?.userData.SSCBoardName}
-            </p>{" "}
+            </p>
             <p>
               <span className="font-bold text-blue-500">
                 SSC Passing Year :

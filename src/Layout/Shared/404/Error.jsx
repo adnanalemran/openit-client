@@ -9,7 +9,7 @@ const Error = () => {
           <Info />
 
           <Link rel="noopener noreferrer" to="/">
-            {" "}
+            
             <img
               src="https://i.ibb.co/s1KDXcK/1-z-BFBJkt-PD3-z0-S-35k-O5-Hg.gif"
               alt=""
