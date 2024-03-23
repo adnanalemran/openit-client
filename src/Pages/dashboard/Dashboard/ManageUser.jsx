@@ -8,6 +8,7 @@ import { FaTrash, FaUser } from "react-icons/fa";
 import Loading from "../../Loading/Loading";
 
 const ManageUser = () => {
+  
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(true);
   const { data: user = [], refetch } = useQuery({
@@ -19,6 +20,8 @@ const ManageUser = () => {
       }
       return res.data;
     },
+
+
   });
 
   const handleDeleteUser = (user) => {
