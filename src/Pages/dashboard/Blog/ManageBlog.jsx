@@ -56,12 +56,12 @@ const ManageBlog = () => {
   }
   return (
     <div className="">
-      <div className="card bg-gradient-to-b from-blue-400 to-blue-600">
-        <div className="text-2xl pt-3 pb-2 text-white font-bold">
-          Write a Website notice
+      <div className="card bg-gradient-to-b  ">
+        <div className="text-2xl pt-3 pb-2   font-bold">
+          Write a Website Blog
         </div>
-        <div className="text-white">
-          <h4>Total Publish notice : {notices?.length}</h4>
+        <div className=" ">
+          <h4>Total Publish Blog : {notices?.length}</h4>
         </div>
         <hr className="border-b-1 border-purple-400" />
         <form className="p-4" onSubmit={handleSubmit}>
@@ -69,12 +69,14 @@ const ManageBlog = () => {
             <input
               type="text"
               name="title"
+              required
               className="input input-bordered w-1/2 mb-2"
               placeholder="Title"
             />
             <input
               type="text"
               name="image"
+              required
               className="input input-bordered w-1/2 mb-2"
             />
           </div>
@@ -82,6 +84,7 @@ const ManageBlog = () => {
           <textarea
             type="text"
             name="notice"
+            required
             rows="5"
             cols="50"
             className="  w-full   mb-2 textarea textarea-bordered"
@@ -90,14 +93,21 @@ const ManageBlog = () => {
 
           <br />
           <div className="flex justify-end gap-4">
-            <Link to="/dashboard/Allblog">
-              <button className="btn  ">See All notice</button>
-            </Link>
+           
             <button type="submit" className="btn">
-              Publish Notice
+              Publish Blog
             </button>
           </div>
         </form>
+        
+
+
+
+
+
+
+
+        
       </div>
     </div>
   );
