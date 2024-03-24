@@ -12,12 +12,14 @@ const Faculty = () => {
 
   return (
     <div className="py-8 text-bangla   ">
-      <h2
-        data-aos="fade-down"
-        className=" text-center text-3xl font-semibold text-gray-950 py-4 border-b-2 "
-      >
-        শিক্ষক-শিক্ষিকা বৃন্দ
-      </h2>
+       <div className="text-center ">
+        <h2 className="text-3xl font-semibold text-gray-950 pb-3">
+          Our Mentor
+        </h2>
+        <p className="text-gray-700">
+          Discover the ideal course from top skilled Mentor !
+        </p>
+      </div>
 
      
 

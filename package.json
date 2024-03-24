@@ -25,6 +25,7 @@
     "react-icons": "^4.11.0",
     "react-loading-skeleton": "^3.4.0",
     "react-router-dom": "^6.18.0",
+    "react-type-animation": "^3.2.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.10.5",
     "swiper": "^11.0.7"

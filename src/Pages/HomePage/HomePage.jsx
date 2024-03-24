@@ -9,6 +9,7 @@ import Subscribe from "../../components/Homepage/Subscribe";
 import Featured from "../../components/Homepage/Featured";
 import DealsAndOffers from "../../components/Homepage/DealsAndOffers";
 import HeroSection from "../../components/Homepage/HeroSection";
+import Premium from "../../components/Homepage/Premium";
 
 const HomePage = () => {
   return (
@@ -19,7 +20,8 @@ const HomePage = () => {
       <div className=" container mx-auto overflow-hidden ">
         <HomeInfo />
 
-        {/* <Featured/> */}
+        <Featured/>
+        <Premium/>
         <DealsAndOffers />
         <Faculty />
         <CumpusLife />
