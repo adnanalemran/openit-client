@@ -22,6 +22,7 @@ import Student_public_view from "../Pages/Student_public_view/Student_public_vie
 import ManageNotice from "../Pages/dashboard/ManageNotice/ManageNotice";
 import AllNotice from "../Pages/dashboard/ManageNotice/AllNotice";
 import SingleNotice from "../Pages/dashboard/ManageNotice/SingleNotice";
+import ManageBlog from "../Pages/dashboard/Blog/ManageBlog";
 
 export const router = createBrowserRouter([
   {
@@ -97,6 +98,13 @@ export const router = createBrowserRouter([
         element: (
           <AdminRouter>
             <ManageNotice />
+          </AdminRouter>
+        ),
+      },   {
+        path: "/dashboard/blog",
+        element: (
+          <AdminRouter>
+            <ManageBlog />
           </AdminRouter>
         ),
       },  {

@@ -1,49 +1,41 @@
-import React from "react";
-
 const CumpusLife = () => {
   return (
     <div className="py-8 text-bangla lg:pt-16">
-      <h2 data-aos="flip-up" className="text-center text-5xl font-bold py-4 ">
-        ক্যাম্পাস সময়
-      </h2>
-      <h4 className="text-center text-sm font-bold py-4 border-b-2">
-        আমাদের শিক্ষার্থীদের অতিরিক্ত পাঠ্যক্রম
-      </h4>
+      <div className="text-center ">
+        <h2 className="text-3xl font-semibold text-gray-950 pb-3">
+          Camps time..
+        </h2>
+        <p className="text-gray-700">Discover the open-it blog !</p>
+      </div>
+      <div className=" gap-6 w-full py-12 px-4   ">
+        <div className=" my-5 flex  items-center justify-center align-middle  w-full   shadow-xl relative  ">
+          <figure className=" w-1/3  ">
+            <img
+              src="https://t3.ftcdn.net/jpg/02/02/61/30/360_F_202613068_kl4ZJPWGn5nWo2G1qBTv1a5CzgKkHg2r.jpg"
+              alt="Shoes"
+              className="rounded-xl     h-80 object-cover  "
+            />
+          </figure>
 
-      <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
-        <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-          <img
-            data-aos="zoom-out-right"
-            src="https://i.ibb.co/Dg9hhrd/lab3-1.jpg"
-            alt=""
-            className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 "
-          />
-          <img
-            data-aos="zoom-in-right"
-            alt=""
-            className="w-full h-full rounded shadow-sm min-h-48 object-cover dark:bg-gray-500 "
-            src="https://i.ibb.co/fpVVmDp/lab3.jpg"
-          />
-          <img
-            data-aos="zoom-out-left"
-            alt=""
-            className="w-full h-full rounded shadow-sm min-h-48 object-cover dark:bg-gray-500 "
-            src="https://i.ibb.co/PZ05K7Y/image.jpg"
-          />
-          <img
-            data-aos="zoom-in-left"
-            alt=""
-            className="w-full h-full rounded shadow-sm min-h-48 object-cover dark:bg-gray-500 "
-            src="https://i.ibb.co/pPmfpSH/image.jpg"
-          />
-          <img
-            data-aos="zoom-in-down"
-            alt=""
-            className="w-full h-full rounded shadow-sm min-h-48 object-cover dark:bg-gray-500 "
-            src="https://i.ibb.co/nDtLZC6/image.jpg"
-          />
+          <div className="w-2/3 pb-5">
+            <div className=" pl-3  ">
+              <p className="text-sm font-semibold">25-03-2024</p>
+              <h2 className="  font-bold   text-blue-500  ">
+                Mahe Romadan ifter party Mahe Romadan ifter party Mahe Romadan
+                ifter party Mahe Romadan ifter party Mahe Romadan ifter party
+                Mahe Romadan ifter party Mahe Romadan ifter party Mahe Romadan
+                ifter party Mahe Romadan ifter party Mahe Romadan ifter party
+                Mahe Romadan ifter party Mahe Romadan ifter party Mahe Romadan
+                ifter party Mahe Romadan ifter party Mahe Romadan ifter party
+                Mahe Romadan ifter party Mahe Romadan ifter party Mahe Romadan
+                ifter party Mahe Romadan ifter party Mahe Romadan ifter party
+                Mahe Romadan ifter party Mahe Romadan ifter party Mahe Romadan
+                ifter party Mahe Romadan ifter party on open it
+              </h2>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
