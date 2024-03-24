@@ -8,20 +8,24 @@ import Sectian from "./Sectian/Sectian";
 import Subscribe from "../../components/Homepage/Subscribe";
 import Featured from "../../components/Homepage/Featured";
 import DealsAndOffers from "../../components/Homepage/DealsAndOffers";
+import HeroSection from "../../components/Homepage/HeroSection";
 
 const HomePage = () => {
   return (
     <div className="">
-      <Slider />
+      {/* <Slider /> */}
+      <HeroSection />
+
       <div className=" container mx-auto overflow-hidden ">
         <HomeInfo />
+
         {/* <Featured/> */}
-        <DealsAndOffers/>
+        <DealsAndOffers />
         <Faculty />
         <CumpusLife />
         <Sectian />
         <OurAlumni />
-<Subscribe/>
+        <Subscribe />
       </div>
     </div>
   );
