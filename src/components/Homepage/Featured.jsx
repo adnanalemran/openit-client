@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import office from "../../assets/office_application.jpg";
 import gpdesign from "../../assets/1_uw8prVHOb4-8rE5EM_JYjg.jpg";
 import mran from "../../assets/MERN-Stack-Development.png";
+import office from "../../assets/office_application.jpg";
 const Featured = () => {
   return (
     <div className=" py-8 container mx-auto px-8  ">
@@ -93,8 +93,8 @@ const Featured = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  200hr 30min{" "}
-                </div>{" "}
+                  200hr 30min
+                </div>
                 <div className="flex gap-1">
                   <svg
                     width="19"
@@ -108,8 +108,8 @@ const Featured = () => {
                       fill="#212121"
                     />
                   </svg>
-                  50 classes{" "}
-                </div>{" "}
+                  50 classes
+                </div>
                 <div className="flex gap-1">
                   <svg
                     width="18"
@@ -127,12 +127,12 @@ const Featured = () => {
                       fill="black"
                     />
                   </svg>
-                  25 Sales{" "}
+                  25 Sales
                 </div>
               </div>
               <div className="card-actions items-center justify-center  ">
                 <Link to="/signUp">
-                  {" "}
+                  
                   <button className=" px-8 py-3 font-semibold rounded-full btn hover:bg-[#ff6d48] bg-[#FF7426] text-white  flex items-center  ">
                     Join Course
                   </button>
@@ -220,8 +220,8 @@ const Featured = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  200hr 30min{" "}
-                </div>{" "}
+                  200hr 30min
+                </div>
                 <div className="flex gap-1">
                   <svg
                     width="19"
@@ -235,8 +235,8 @@ const Featured = () => {
                       fill="#212121"
                     />
                   </svg>
-                  52 classes{" "}
-                </div>{" "}
+                  52 classes
+                </div>
                 <div className="flex gap-1">
                   <svg
                     width="18"
@@ -254,12 +254,12 @@ const Featured = () => {
                       fill="black"
                     />
                   </svg>
-                  20 Sales{" "}
+                  20 Sales
                 </div>
               </div>
               <div className="card-actions items-center justify-center  ">
                 <Link to="/signUp">
-                  {" "}
+                  
                   <button className=" px-8 py-3 font-semibold rounded-full btn hover:bg-[#ff6d48] bg-[#FF7426] text-white  flex items-center  ">
                     Join Course
                   </button>
@@ -347,8 +347,8 @@ const Featured = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  200hr 30min{" "}
-                </div>{" "}
+                  200hr 30min
+                </div>
                 <div className="flex gap-1">
                   <svg
                     width="19"
@@ -362,8 +362,8 @@ const Featured = () => {
                       fill="#212121"
                     />
                   </svg>
-                  50 classes{" "}
-                </div>{" "}
+                  50 classes
+                </div>
                 <div className="flex gap-1">
                   <svg
                     width="18"
@@ -381,12 +381,12 @@ const Featured = () => {
                       fill="black"
                     />
                   </svg>
-                  25 Sales{" "}
+                  25 Sales
                 </div>
               </div>
               <div className="card-actions items-center justify-center  ">
                 <Link to="/signUp">
-                  {" "}
+                  
                   <button className=" px-8 py-3 font-semibold rounded-full btn hover:bg-[#ff6d48] bg-[#FF7426] text-white  flex items-center  ">
                     Join Course
                   </button>
