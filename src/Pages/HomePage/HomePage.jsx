@@ -4,7 +4,7 @@ import HomeInfo from "./HomeInfo/HomeInfo";
 import Faculty from "./Faculty/Faculty";
 import CumpusLife from "./CumpusLife/CumpusLife";
 import OurAlumni from "./OurAlumni/OurAlumni";
-import Sectian from "./Sectian/Sectian";
+ 
 import Subscribe from "../../components/Homepage/Subscribe";
 import Featured from "../../components/Homepage/Featured";
 import DealsAndOffers from "../../components/Homepage/DealsAndOffers";
@@ -17,15 +17,12 @@ const HomePage = () => {
       {/* <Slider /> */}
       <HeroSection />
 
-      <div className=" container mx-auto overflow-hidden ">
+      <div className="   mx-auto overflow-hidden ">
         <HomeInfo />
-
-        <Featured/>
-        <Premium/>
-        <DealsAndOffers />
+        <Featured />
+        <Premium />
         <Faculty />
-        <CumpusLife />
-        <Sectian />
+        <CumpusLife /> <DealsAndOffers />
         <OurAlumni />
         <Subscribe />
       </div>

@@ -66,7 +66,7 @@ const Featured = () => {
                 </div>
               </div>
               <div className="text-[#FF7426] px-4 text-lg font-bold">
-                3500BDT
+                5000BDT
               </div>
               <div className="p-4 flex gap-2 text-gray-500">
                 <div className="flex gap-1">
@@ -193,7 +193,7 @@ const Featured = () => {
                 </div>
               </div>
               <div className="text-[#FF7426] px-4 text-lg font-bold">
-                5000BDT
+                6000BDT
               </div>
               <div className="p-4 flex gap-2 text-gray-500">
                 <div className="flex gap-1">

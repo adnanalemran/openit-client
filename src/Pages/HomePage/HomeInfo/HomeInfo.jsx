@@ -12,11 +12,11 @@ const HomeInfo = () => {
 
           <div className="lg:w-2/3">
             <div className="">
-              <h1 data-aos="fade-right" className="text-3xl font-bold">
-                প্রতিষ্ঠান প্রধানের বার্তা
+              <h1 data-aos="fade-right" className="text-3xl font-bold ">
+              Message from the head of the institution
               </h1>
               <p data-aos="fade-up-right" className="py-6">
-                পৃথিবীর প্রতি ব্যক্তি নিজেকে মোটামুটি করে, এমনকি আমি ও। কেবল
+                পৃথিবীর প্রতি ব্যক্তি নিজেকে বেঁচে থাকে, আমি ও তাই। কেবল
                 নিজের জন্য জীবন যাপন করতে মানুষত্ব নেই, মানুষ হওয়ার সার্থকতা
                 হলো অন্যদের উদ্ধার করা! আমি তৈরি আছি যাতে আবিষ্কৃত হয় যা মেয়াদ
                 শেষে দু: খ এবং কঠিনাইতে পড়ার অর্থ থাকে। "ওপেন আইটি ইনস্টিটিউট"
