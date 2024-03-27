@@ -16,8 +16,9 @@ const Chart = () => {
   const totalAdmins = user?.totalAdmins || 0;
   const totalStudents = user?.totalStudents || 0;
   const outOfService = user?.outService || 0;
+  const applied_student = user?.applied_student || 0;
 
-  const total = totalAdmins + totalStudents + outOfService;
+  const total = totalAdmins + totalStudents + outOfService + applied_student;
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -26,11 +27,25 @@ const Chart = () => {
         <div className="w-full  p-6  rounded-lg  ">
           <PieChart
             data={[
-              { title: "Admins", value: totalAdmins, color: "#5A67D8" },
-              { title: "Students", value: totalStudents, color: "#FF6B6B" },
-              { title: "Out of Service", value: outOfService, color: "#A3A3A3" },
+              { title: "Admins", value: totalAdmins, color: "#61CDBB" },
+              { title: "Students", value: totalStudents, color: "#F1E15B" },
+              {
+                title: "Out of Service",
+                value: outOfService,
+                color: "#F57560",
+              },
+              {
+                title: "applied student",
+                value: applied_student,
+                color: "#E8C1A0",
+              },
             ]}
-            label={({ dataEntry }) => `${dataEntry.title}: ${dataEntry.value} (${((dataEntry.value / total) * 100).toFixed(2)}%)`}
+            label={({ dataEntry }) =>
+              `${dataEntry.title}: ${dataEntry.value} (${(
+                (dataEntry.value / total) *
+                100
+              ).toFixed(2)}%)`
+            }
             labelStyle={{
               fontSize: "4px",
               fontFamily: "sans-serif",

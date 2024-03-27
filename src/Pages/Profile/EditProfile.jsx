@@ -26,7 +26,7 @@ const EditProfile = () => {
       userType: userData?.userType,
       email: userData?.email,
       btebID: userData?.btebID,
-       
+
       photoURL: userData?.photoURL,
       totalDueAmmout: userData?.totalDueAmmout,
       totalPurchesAmmount: userData?.totalPurchesAmmount,

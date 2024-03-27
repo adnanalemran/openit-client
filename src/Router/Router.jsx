@@ -26,6 +26,7 @@ import ManageBlog from "../Pages/dashboard/Blog/ManageBlog";
 import EditProfile from "../Pages/Profile/EditProfile";
 import AdminMenu from "../Pages/dashboard/Admin/AdminMenu";
 import AdministratorByEditProfile from "../Pages/Profile/AdministratorByEditProfile";
+import Applied_studentList from "../Pages/dashboard/Dashboard/applied_studentList";
 
 export const router = createBrowserRouter([
   {
@@ -92,6 +93,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRouter>
             <ManageUser />
+          </AdminRouter>
+        ),
+      },
+      {
+        path: "/dashboard/applied_student",
+        element: (
+          <AdminRouter>
+            <Applied_studentList />
           </AdminRouter>
         ),
       },
