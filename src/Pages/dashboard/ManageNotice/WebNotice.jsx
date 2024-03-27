@@ -69,7 +69,7 @@ const WebNotice = () => {
       postDate: postDate,
       noticeDetails: noticeDetails,
     };
-console.log(formData)
+ 
     axiosSecure.post("/notice", formData).then(() => {
       refetch();
       showSuccessAlert();

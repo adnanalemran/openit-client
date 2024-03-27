@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import {
-    FaDownload,
-    FaEdit,
-    FaMoneyBill,
-    FaPhone,
-    FaUser,
+  FaDownload,
+  FaEdit,
+  FaMoneyBill,
+  FaPhone,
+  FaUser,
 } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
@@ -17,12 +17,12 @@ import Loading from "../Loading/Loading";
 const SingleProfile = () => {
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
-  const [loading, setLoading] = useState(true); // Initialize loading state
+  const [loading, setLoading] = useState(true);
   const { data: user = [] } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/user/${id}`);
-      setLoading(false); // Set loading to false when data is fetched
+      setLoading(false);
       return res.data;
     },
   });
@@ -40,6 +40,16 @@ const SingleProfile = () => {
           )}
           <div className="flex flex-col lg:flex-row-reverse w-full">
             <div className="w-full lg:w-1/2">
+              <p className="p-4">
+                <span className="font-bold text-blue-500"> </span>
+
+                {!user?.beach && <span>Beach No select</span>}
+                <div className=" ">
+                  <div className="text-2xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text "><span > {user?.beach}</span>  batch student</div>
+                   
+                </div>
+              </p>
+
               <div className="avatar">
                 <div className="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img src={user?.photoURL} alt={user?.displayName} />
@@ -50,10 +60,7 @@ const SingleProfile = () => {
                 <p className="mt-4 text-center text-gray-500">
                   BTEB Id :
                   {!user?.btebId && (
-                    <span className="text-red-600">
-                      
-                      Student not registered
-                    </span>
+                    <span className="text-red-600">Student not registered</span>
                   )}
                   {user?.btebId}
                 </p>
@@ -69,7 +76,10 @@ const SingleProfile = () => {
                   </button>
                 </Link>
 
-                <Link className="text-blue-800 font-bold">
+                <Link
+                  to={`/dashboard/EditProfile/${user?._id}`}
+                  className="text-blue-800 font-bold"
+                >
                   <button className="btn btn-info">
                     <FaEdit /> Edit User info
                   </button>
@@ -181,11 +191,6 @@ const SingleProfile = () => {
             <p>
               <span className="font-bold text-blue-500">Role No:</span>
               {user?.userType}
-            </p>
-            <p>
-              <span className="font-bold text-blue-500">Beach No: </span>
-              {!user?.beach && <span>Beach No select</span>}
-              {user?.beach}
             </p>
           </div>
         </>
