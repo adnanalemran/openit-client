@@ -16,10 +16,10 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [course, setCourse] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
-
   const [loading, setLoading] = useState(false);
+  const [gender, setGender] = useState("");
 
   const showSuccessAlert = () => {
     Swal.fire({
@@ -64,7 +64,6 @@ const SignUp = () => {
       const result = await createUser(email, password);
       const currentUser = result.user;
 
-      // Update user information
       result.user.displayName = displayName;
       result.user.photoURL = res.data?.data?.display_url;
 
@@ -80,7 +79,8 @@ const SignUp = () => {
         photoURL: res.data?.data?.display_url,
         phoneNo: `+880${phoneNo}`,
         userType: "applied_student",
-
+        course: course,
+        gender: gender,
         totalDueAmmout: 0,
         totalPurchesAmmount: 0,
         purchesProductCollection: [],
@@ -108,6 +108,14 @@ const SignUp = () => {
 
   const handlePhoneNoChange = (e) => {
     setPhoneNo(e.target.value);
+  };
+
+  const handleCourseChange = (e) => {
+    setCourse(e.target.value);
+  };
+
+  const handleGenderChange = (e) => {
+    setGender(e.target.value);
   };
 
   return (
@@ -154,7 +162,12 @@ const SignUp = () => {
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="    text-gray-800 "> Course: </div>
-                    <select className="w-full p-2" defaultValue="" required>
+                    <select
+                      className="w-full p-2"
+                      defaultValue=""
+                      required
+                      onChange={handleCourseChange} // Add onChange event handler
+                    >
                       <option
                         value=""
                         disabled
@@ -177,6 +190,7 @@ const SignUp = () => {
                     </select>
                   </label>
                 </div>
+
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="text-gray-800">Father Name:</div>
@@ -203,10 +217,16 @@ const SignUp = () => {
                     />
                   </label>
                 </div>
+
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="    text-gray-800">Gender:</div>
-                    <select className="w-full p-2" defaultValue="" required>
+                    <div className="    text-gray-800 "> Gender: </div>
+                    <select
+                      className="w-full p-2"
+                      defaultValue=""
+                      required
+                      onChange={handleGenderChange}
+                    >
                       <option
                         value=""
                         disabled
@@ -221,103 +241,102 @@ const SignUp = () => {
                     </select>
                   </label>
                 </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Date of Birth:</div>
-                    <input
-                      type="date"
-                      name="dateOfBirth"
-                      id="dateOfBirth"
-                      className="grow"
-                      required
-                      placeholder="Select date"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">
-                      Education Qualification:
-                    </div>
-                    <input
-                      type="text"
-                      name="educationQualification"
-                      id="educationQualification"
-                      className="grow"
-                      required
-                      placeholder="E.g. Bsc in CSE"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">School/University:</div>
-                    <input
-                      type="text"
-                      name="schoolUniversity"
-                      id="schoolUniversity"
-                      className="grow"
-                      required
-                      placeholder="E.g. Green University of Bangladesh"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="PhoneNo" className="block  "></label>
-                  <label className="input input-bordered flex items-center gap-2">
-                    +880
-                    <input
-                      type="text"
-                      name="PhoneNo"
-                      value={phoneNo}
-                      onChange={handlePhoneNoChange}
-                      pattern="[0-9]{10}"
-                      placeholder="1917019619"
-                      required
-                      id="PhoneNo"
-                      className="grow"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2">
-                    <div className="text-gray-800">Facebook Profile URL:</div>
-                    <input
-                      type="url"
-                      name="facebookUrl"
-                      id="facebookUrl"
-                      className="grow"
-                      required
-                      placeholder="https://facebook.com/your_username"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Present Address:</div>
-                    <input
-                      type="text"
-                      name="presentAddress"
-                      id="presentAddress"
-                      className="grow"
-                      required
-                      placeholder="E.g.Vill.- Mohuriya,P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Permanent Address:</div>
-                    <input
-                      type="text"
-                      name="permanentAddress"
-                      id="permanentAddress"
-                      className="grow"
-                      required
-                      placeholder="E.g.Vill.- Mohuriya, P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
-                    />
-                  </label>
-                </div>
+              </div>
+
+              <div className="col-span-full sm:col-span-3">
+                <label className="input input-bordered flex items-center gap-2 ">
+                  <div className="text-gray-800">Date of Birth:</div>
+                  <input
+                    type="date"
+                    name="dateOfBirth"
+                    id="dateOfBirth"
+                    className="grow"
+                    required
+                    placeholder="Select date"
+                  />
+                </label>
+              </div>
+              <div className="col-span-full sm:col-span-3">
+                <label className="input input-bordered flex items-center gap-2 ">
+                  <div className="text-gray-800">Education Qualification:</div>
+                  <input
+                    type="text"
+                    name="educationQualification"
+                    id="educationQualification"
+                    className="grow"
+                    required
+                    placeholder="E.g. Bsc in CSE"
+                  />
+                </label>
+              </div>
+              <div className="col-span-full sm:col-span-3">
+                <label className="input input-bordered flex items-center gap-2 ">
+                  <div className="text-gray-800">School/University:</div>
+                  <input
+                    type="text"
+                    name="schoolUniversity"
+                    id="schoolUniversity"
+                    className="grow"
+                    required
+                    placeholder="E.g. Green University of Bangladesh"
+                  />
+                </label>
+              </div>
+              <div className="col-span-full sm:col-span-3">
+                <label htmlFor="PhoneNo" className="block  "></label>
+                <label className="input input-bordered flex items-center gap-2">
+                  +880
+                  <input
+                    type="text"
+                    name="PhoneNo"
+                    value={phoneNo}
+                    onChange={handlePhoneNoChange}
+                    pattern="[0-9]{10}"
+                    placeholder="1917019619"
+                    required
+                    id="PhoneNo"
+                    className="grow"
+                  />
+                </label>
+              </div>
+              <div className="col-span-full sm:col-span-3">
+                <label className="input input-bordered flex items-center gap-2">
+                  <div className="text-gray-800">Facebook Profile URL:</div>
+                  <input
+                    type="url"
+                    name="facebookUrl"
+                    id="facebookUrl"
+                    className="grow"
+                    required
+                    placeholder="https://facebook.com/your_username"
+                  />
+                </label>
+              </div>
+              <div className="col-span-full sm:col-span-3">
+                <label className="input input-bordered flex items-center gap-2 ">
+                  <div className="text-gray-800">Present Address:</div>
+                  <input
+                    type="text"
+                    name="presentAddress"
+                    id="presentAddress"
+                    className="grow"
+                    required
+                    placeholder="E.g.Vill.- Mohuriya,P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
+                  />
+                </label>
+              </div>
+              <div className="col-span-full sm:col-span-3">
+                <label className="input input-bordered flex items-center gap-2 ">
+                  <div className="text-gray-800">Permanent Address:</div>
+                  <input
+                    type="text"
+                    name="permanentAddress"
+                    id="permanentAddress"
+                    className="grow"
+                    required
+                    placeholder="E.g.Vill.- Mohuriya, P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
+                  />
+                </label>
               </div>
             </fieldset>
             <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
