@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading/Loading";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { FaTrash } from "react-icons/fa";
 
 const ManageBlog = () => {
   const axiosSecure = useAxiosSecure();
@@ -25,6 +26,33 @@ const ManageBlog = () => {
       icon: "success",
       title: "Success...",
       text: "Publish success",
+    });
+  };
+
+
+  
+  const handleDeleteNoticce = (notice) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/blog/${notice?._id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
     });
   };
 
@@ -99,6 +127,41 @@ const ManageBlog = () => {
             </button>
           </div>
         </form>
+
+        <div className="card w-full glass">
+        <div className="overflow-x-auto">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>no</th>
+                <th>title</th>
+                <th>Notice Date </th>
+           
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            {notices?.map((notice, index) => (
+              <tr key={notice?._id}> <td>{index + 1}</td>
+                  <td className="text-blue-500">{notice.noticeTitle}</td>
+                  <td>{notice.postDate}</td>
+        
+                  <td>
+                  <button
+                    onClick={() => handleDeleteNoticce(notice)}
+                    className="btn btn-sm btn-error"
+                  >
+                    <FaTrash />
+                  </button>
+                </td>
+                 
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
         
 
 
@@ -107,7 +170,7 @@ const ManageBlog = () => {
 
 
 
-        
+
       </div>
     </div>
   );

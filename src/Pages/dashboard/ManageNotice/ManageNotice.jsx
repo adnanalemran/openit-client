@@ -12,7 +12,7 @@ const ManageNotice = () => {
           <WebNotice />
         </div>
         <div className="  ">
-          <StudentNotice className=" " />
+          {/* <StudentNotice className=" " /> */}
         </div>
       </div>
     </div>

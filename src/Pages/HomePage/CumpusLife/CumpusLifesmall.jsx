@@ -2,13 +2,13 @@ import { useState } from "react";
 import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading/Loading";
-const CumpusLife = () => {
+const CumpusLifesmall = () => {
   const axiosSecure = useAxiosSecure();
  
   const { data: blogs = [],  } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/blog", {});
+      const res = await axiosSecure.get("/blog/latest", {});
       if (res.data) {
         // setLoading(false);
       }
@@ -29,19 +29,19 @@ const CumpusLife = () => {
         <p className="text-gray-700">Discover the open-it blog !</p>
       </div>
 
-      <div className=" flex flex-col-reverse gap-6 w-full py-12 px-4   ">
+      <div className=" gap-6 w-full py-12 px-4   ">
         {blogs?.map((blog) => (
           <div key={blog?._id}>
-            <div className=" my-5 flex gap-6  items-center justify-center align-middle  w-full   shadow-xl relative  ">
-              <figure className=" w-1/3  ">
+            <div className=" my-5 flex   items-center justify-center align-middle  w-full   shadow-xl relative  ">
+              <figure className=" w-1/4  ">
                 <img
                   src={blog?.imageUrl}
                   alt="Shoes"
-                  className="rounded-xl     h-80 object-cover  "
+                  className="rounded-xl  h-60 object-cover  "
                 />
               </figure>
 
-              <div className="w-2/3 pb-5">
+              <div className="w-3/4 pb-5">
                 <div className=" pl-3  ">
                   <h2 className="  font-bold   text-blue-500  ">
                     {blog?.noticeTitle}
@@ -61,4 +61,4 @@ const CumpusLife = () => {
   );
 };
 
-export default CumpusLife;
+export default CumpusLifesmall;
