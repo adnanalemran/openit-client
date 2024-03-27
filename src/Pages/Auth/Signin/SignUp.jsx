@@ -79,7 +79,7 @@ const SignUp = () => {
         email: email,
         photoURL: res.data?.data?.display_url,
         phoneNo: `+880${phoneNo}`,
-        userType: "new_student",
+        userType: "applied_student",
 
         totalDueAmmout: 0,
         totalPurchesAmmount: 0,

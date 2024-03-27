@@ -57,10 +57,10 @@ const SingleProfile = () => {
               <div className="p-4 text-sm">
                 <p className="mt-4 text-center text-gray-500">
                   BTEB Id :
-                  {!user?.btebId && (
+                  {!user?.btebID && (
                     <span className="text-red-600">Student not registered</span>
                   )}
-                  {user?.btebId}
+                  {user?.btebID}
                 </p>
                 <p className="mt-4 text-center text-gray-500">
                   Profile Id: {user?._id}
@@ -75,7 +75,7 @@ const SingleProfile = () => {
                 </Link>
 
                 <Link
-                  to={`/dashboard/EditProfile/${user?._id}`}
+                  to={`/dashboard/AdminEditProfile/${user?._id}`}
                   className="text-blue-800 font-bold"
                 >
                   <button className="btn btn-info">

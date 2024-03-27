@@ -24,6 +24,8 @@ import AllNotice from "../Pages/dashboard/ManageNotice/AllNotice";
 import SingleNotice from "../Pages/dashboard/ManageNotice/SingleNotice";
 import ManageBlog from "../Pages/dashboard/Blog/ManageBlog";
 import EditProfile from "../Pages/Profile/EditProfile";
+import AdminMenu from "../Pages/dashboard/Admin/AdminMenu";
+import AdministratorByEditProfile from "../Pages/Profile/AdministratorByEditProfile";
 
 export const router = createBrowserRouter([
   {
@@ -129,9 +131,19 @@ export const router = createBrowserRouter([
         path: "/dashboard/singleUserInfo/:id",
         element: <SingleProfile />,
       },
+
       {
         path: "/dashboard/EditProfile/:id",
         element: <EditProfile />,
+      },
+
+      {
+        path: "/dashboard/AdminEditProfile/:id",
+        element: (
+          <AdminRouter>
+            <AdministratorByEditProfile />,
+          </AdminRouter>
+        ),
       },
     ],
   },

@@ -3,7 +3,7 @@ import useAxiosSecure from "../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 
-const EditProfile = () => {
+const AdministratorByEditProfile = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
@@ -22,11 +22,10 @@ const EditProfile = () => {
     const formData = {
       displayName: e.target.displayName.value,
       phoneNo: e.target.phoneNo.value,
+      btebID: e.target.btebID.value,
       beach: parseInt(e.target.beach.value),
       userType: userData?.userType,
       email: userData?.email,
-      btebID: userData?.btebID,
-       
       photoURL: userData?.photoURL,
       totalDueAmmout: userData?.totalDueAmmout,
       totalPurchesAmmount: userData?.totalPurchesAmmount,
@@ -55,7 +54,7 @@ const EditProfile = () => {
           timer: 1000,
         });
 
-        navigate("/dashboard/profile");
+        navigate(`/dashboard/singleUserInfo/${userData._id}`);
       } else {
         Swal.fire({
           icon: "error",
@@ -104,19 +103,30 @@ const EditProfile = () => {
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-          <div className="space-y-1 text-sm hidden">
-            <label className="block">
+          <div className="space-y-1 text-sm text-warning  ">
+            <label className="block bg-slate-900">
               Beach number(Administrator Edit only)
             </label>
             <input
-              disabled
+              
               type="text"
               name="beach"
               defaultValue={userData?.beach}
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
+          </div>    <div className="space-y-1 text-sm text-warning">
+            <label className="block bg-slate-900">
+             BTEB ID 
+            </label>
+            <input
+              
+              type="text"
+              name="btebID"
+              defaultValue={userData?.btebID}
+              className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
+            />
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm ">
             <label className="block">Father Name</label>
             <input
               type="text"
@@ -125,7 +135,7 @@ const EditProfile = () => {
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm ">
             <label className="block">Mother Name</label>
             <input
               type="text"
@@ -134,7 +144,7 @@ const EditProfile = () => {
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm ">
             <label className="block">Date Of Birth</label>
             <input
               type="date"
@@ -143,7 +153,7 @@ const EditProfile = () => {
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm ">
             <label className="block">Education Qualification</label>
             <input
               type="text"
@@ -202,4 +212,7 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+ 
+
+
+export default AdministratorByEditProfile;

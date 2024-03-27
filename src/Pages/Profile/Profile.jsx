@@ -54,7 +54,7 @@ const Profile = () => {
     <div className="bg-base-300   p-8 rounded-lg shadow-md">
       {dbuser?.userType === "user" && (
         <h2 className="text-red-500 text-2xl p-4">
-          আপনি একজন আবেদনকারী ,এজেন্ট হিসেবে যুক্ত হতে কর্তৃপক্ষের সাথে যোগাযোগ
+          আপনি একজন আবেদনকারী ,Student  হিসেবে যুক্ত হতে কর্তৃপক্ষের সাথে যোগাযোগ
           করুন
         </h2>
       )}
@@ -70,10 +70,10 @@ const Profile = () => {
           <div className="p-4 text-sm">
             <p className="mt-4 text-center text-gray-500">
               BTEB Id :
-              {!user?.btebId && (
+              {!user?.btebID && (
                 <span className="text-red-600"> Student not registered </span>
               )}
-              {dbuser?.btebId}
+              {dbuser?.btebID}
             </p>
             <p className="mt-4 text-center text-gray-500">
               Profile Id: {dbuser?._id}
@@ -88,7 +88,10 @@ const Profile = () => {
               <FaSignOutAlt className="mr-2" /> Log-out
             </button>
 
-            <Link className="text-blue-800 font-bold">
+            <Link
+              to={`/dashboard/EditProfile/${dbuser?._id}`}
+              className="text-blue-800 font-bold"
+            >
               <button className="px-8 py-3 font-semibold rounded-full btn bg-purple-500 text-white">
                 <FaEdit /> Edit Profile
               </button>
@@ -197,7 +200,7 @@ const Profile = () => {
             {dbuser?.userData.passingYear}
           </p>
           <p>
-            <span className="font-bold text-blue-500">Role No:</span>
+            <span className="font-bold text-blue-500">User Type :</span>
             {dbuser?.userType}
           </p>
           <p>
