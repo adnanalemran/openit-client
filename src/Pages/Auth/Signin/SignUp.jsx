@@ -79,10 +79,9 @@ const SignUp = () => {
         email: email,
         photoURL: res.data?.data?.display_url,
         phoneNo: `+880${phoneNo}`,
-        userType: "user",
-        beach: "no select",
-        totalDueAmmout: 0,
+        userType: "new_student",
 
+        totalDueAmmout: 0,
         totalPurchesAmmount: 0,
         purchesProductCollection: [],
       };
@@ -234,7 +233,7 @@ const SignUp = () => {
                       placeholder="Select date"
                     />
                   </label>
-                </div>  
+                </div>
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="text-gray-800">
@@ -292,7 +291,7 @@ const SignUp = () => {
                       placeholder="https://facebook.com/your_username"
                     />
                   </label>
-                </div>  
+                </div>
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="text-gray-800">Present Address:</div>
@@ -355,7 +354,7 @@ const SignUp = () => {
                       placeholder="000000000000000"
                     />
                   </label>
-                </div>  
+                </div>
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="text-gray-800">SSC board name</div>
@@ -368,7 +367,7 @@ const SignUp = () => {
                       placeholder="E.g. Dhaka"
                     />
                   </label>
-                </div>  
+                </div>
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="text-gray-800">Passing Year:</div>

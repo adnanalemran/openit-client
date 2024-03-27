@@ -35,15 +35,13 @@ const SingleProfile = () => {
     <div className="bg-base-300 p-8 rounded-lg shadow-md">
       {user ? (
         <>
-          {user?.userType === "user" && (
-            <h2 className="text-gray-500 p-4">সে একজন আবেদনকারী</h2>
-          )}
+         
           <div className="flex flex-col lg:flex-row-reverse w-full">
             <div className="w-full lg:w-1/2">
               <p className="p-4">
                 <span className="font-bold text-blue-500"> </span>
 
-                {!user?.beach && <span>Beach No select</span>}
+                
                 <div className=" ">
                   <div className="text-2xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text "><span > {user?.beach}</span>  batch student</div>
                    
@@ -142,10 +140,7 @@ const SingleProfile = () => {
           <hr className=" border-dashed border-1 border-indigo-400 p-4 my-4" />
 
           <div className=" flex flex-col gap-2 text-left lg:px-8">
-            <p>
-              <span className="font-bold text-blue-500">Name: </span>
-              {user?.userData.displayName}
-            </p>
+            
             <p>
               <span className="font-bold text-blue-500">Father Name: </span>
               {user?.userData.fatherName}

@@ -7,7 +7,8 @@ const EditProfile = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
-  const { data: user = [], isLoading } = useQuery({
+
+  const { data: userData = [], isLoading } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/user/${id}`);
@@ -21,19 +22,32 @@ const EditProfile = () => {
     const formData = {
       displayName: e.target.displayName.value,
       phoneNo: e.target.phoneNo.value,
+      beach: parseInt(e.target.beach.value),
+
+      userType: userData?.userType,
+      email: userData?.email,
+      photoURL: userData?.photoURL,
+      totalDueAmmout: userData?.totalDueAmmout,
+      totalPurchesAmmount: userData?.totalPurchesAmmount,
+      purchesProductCollection: userData?.purchesProductCollection,
       userData: {
+        ...userData.userData,
         fatherName: e.target.fatherName.value,
         motherName: e.target.motherName.value,
-        educationQualification: user.userData.educationQualification,
+        educationQualification: e.target.educationQualification.value,
+        dateOfBirth: e.target.dateOfBirth.value,
+        schoolUniversity: e.target.schoolUniversity.value,
+        facebookUrl: e.target.facebookUrl.value,
+        permanentAddress: e.target.permanentAddress.value,
+        presentAddress: e.target.presentAddress.value,
       },
-      beach: parseInt(e.target.beach.value),
     };
 
     try {
       const updateRes = await axiosSecure.put(`/user/${id}`, formData);
 
       if (updateRes.data) {
-        navigate(`/dashboard/singleUserInfo/${user?._id}`);
+        navigate(`/dashboard/singleUserInfo/${userData._id}`);
         Swal.fire({
           text: updateRes.data.message,
           icon: "success",
@@ -58,23 +72,24 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto max-w-4xl p-8 space-y-3 rounded-xl m-5 ">
-      <h1 className="text-2xl font-bold text-center">Update Profile </h1>
+    <div className="w-11/12 mx-auto max-w-4xl p-8 space-y-3 rounded-xl m-5">
+      <h1 className="text-2xl font-bold text-center">Update Profile</h1>
       <hr className="border-1 border-gray-700" />
 
       {isLoading ? (
         <p>Loading...</p>
       ) : (
         <form
-          className=" grid grid-cols-1 md:grid-cols-2 grid-rows-5 gap-4  "
+          className="grid grid-cols-1 md:grid-cols-2 grid-rows-5 gap-4 text-left"
           onSubmit={handleSubmit}
         >
           <div className="space-y-1 text-sm">
             <label className="block dark-text-gray-400">Name</label>
             <input
+              disabled
               type="text"
               name="displayName"
-              defaultValue={user?.displayName}
+              defaultValue={userData?.displayName}
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
@@ -83,55 +98,91 @@ const EditProfile = () => {
             <input
               type="text"
               name="phoneNo"
-              defaultValue={user?.phoneNo}
+              defaultValue={userData?.phoneNo}
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-
           <div className="space-y-1 text-sm">
-            <label className="block ">Beach number</label>
+            <label className="block">Beach number</label>
             <input
               type="text"
               name="beach"
-              defaultValue={user?.beach}
+              defaultValue={userData?.beach}
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-
           <div className="space-y-1 text-sm">
-            <label className="block   ">Father Name</label>
+            <label className="block">Father Name</label>
             <input
               type="text"
               name="fatherName"
-              defaultValue={user?.userData.fatherName}
+              defaultValue={userData?.userData.fatherName}
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-
-
-
-
-
-          
           <div className="space-y-1 text-sm">
-            <label className="block   ">Mother Name</label>
+            <label className="block">Mother Name</label>
             <input
               type="text"
               name="motherName"
-              defaultValue={user?.userData.motherName}
+              defaultValue={userData?.userData.motherName}
               className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
             />
           </div>
-
-
-
-
-
-
-
-
-
-
+          <div className="space-y-1 text-sm">
+            <label className="block">Date Of Birth</label>
+            <input
+              type="date"
+              name="dateOfBirth"
+              defaultValue={userData?.userData.dateOfBirth}
+              className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
+            />
+          </div>
+          <div className="space-y-1 text-sm">
+            <label className="block">Education Qualification</label>
+            <input
+              type="text"
+              name="educationQualification"
+              defaultValue={userData?.userData.educationQualification}
+              className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
+            />
+          </div>
+          <div className="space-y-1 text-sm">
+            <label className="block">School/University</label>
+            <input
+              type="text"
+              name="schoolUniversity"
+              defaultValue={userData?.userData.schoolUniversity}
+              className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
+            />
+          </div>
+          <div className="space-y-1 text-sm">
+            <label className="block">Facebook URL</label>
+            <input
+              type="text"
+              name="facebookUrl"
+              defaultValue={userData?.userData.facebookUrl}
+              className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
+            />
+          </div>
+          <div className="space-y-1 text-sm">
+            <label className="block">Present Address</label>
+            <input
+              type="text"
+              name="presentAddress"
+              defaultValue={userData?.userData.presentAddress}
+              className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
+            />
+          </div>{" "}
+          <div className="space-y-1 text-sm">
+            <label className="block   ">permanentAddress</label>
+            <input
+              type="text"
+              name="permanentAddress"
+              defaultValue={userData?.userData.permanentAddress}
+              className="text-gray-900 w-full px-4 py-3 rounded-md dark-border-gray-700 dark-bg-gray-900 dark-text-gray-100 focus:dark-border-violet-400"
+            />
+          </div>
           <div className="col-span-2 flex justify-end">
             <button
               type="submit"

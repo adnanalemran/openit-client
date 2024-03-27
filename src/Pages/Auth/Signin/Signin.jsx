@@ -113,9 +113,9 @@ const Signin = () => {
         <div className="flex items-center pt-4 space-x-1"></div>
 
         <p className="text-sm text-center sm:px-6 ">
-          You don't have an account?
+           
           <Link to="/signUp" className="underline px-2 font-semibold">
-            Sign up
+          Apply as a new student
           </Link>
         </p>
       </div>
