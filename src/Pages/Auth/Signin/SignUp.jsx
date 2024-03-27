@@ -83,7 +83,7 @@ const SignUp = () => {
         gender: gender,
         totalDueAmmout: 0,
         totalPurchesAmmount: 0,
-        purchesProductCollection: [],
+        markCollection: [],
       };
 
       axiosPublic.post("/user", data).then(() => {
@@ -218,6 +218,7 @@ const SignUp = () => {
                   </label>
                 </div>
 
+                
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="    text-gray-800 "> Gender: </div>
@@ -241,102 +242,109 @@ const SignUp = () => {
                     </select>
                   </label>
                 </div>
-              </div>
+             
+             
 
-              <div className="col-span-full sm:col-span-3">
-                <label className="input input-bordered flex items-center gap-2 ">
-                  <div className="text-gray-800">Date of Birth:</div>
-                  <input
-                    type="date"
-                    name="dateOfBirth"
-                    id="dateOfBirth"
-                    className="grow"
-                    required
-                    placeholder="Select date"
-                  />
-                </label>
-              </div>
-              <div className="col-span-full sm:col-span-3">
-                <label className="input input-bordered flex items-center gap-2 ">
-                  <div className="text-gray-800">Education Qualification:</div>
-                  <input
-                    type="text"
-                    name="educationQualification"
-                    id="educationQualification"
-                    className="grow"
-                    required
-                    placeholder="E.g. Bsc in CSE"
-                  />
-                </label>
-              </div>
-              <div className="col-span-full sm:col-span-3">
-                <label className="input input-bordered flex items-center gap-2 ">
-                  <div className="text-gray-800">School/University:</div>
-                  <input
-                    type="text"
-                    name="schoolUniversity"
-                    id="schoolUniversity"
-                    className="grow"
-                    required
-                    placeholder="E.g. Green University of Bangladesh"
-                  />
-                </label>
-              </div>
-              <div className="col-span-full sm:col-span-3">
-                <label htmlFor="PhoneNo" className="block  "></label>
-                <label className="input input-bordered flex items-center gap-2">
-                  +880
-                  <input
-                    type="text"
-                    name="PhoneNo"
-                    value={phoneNo}
-                    onChange={handlePhoneNoChange}
-                    pattern="[0-9]{10}"
-                    placeholder="1917019619"
-                    required
-                    id="PhoneNo"
-                    className="grow"
-                  />
-                </label>
-              </div>
-              <div className="col-span-full sm:col-span-3">
-                <label className="input input-bordered flex items-center gap-2">
-                  <div className="text-gray-800">Facebook Profile URL:</div>
-                  <input
-                    type="url"
-                    name="facebookUrl"
-                    id="facebookUrl"
-                    className="grow"
-                    required
-                    placeholder="https://facebook.com/your_username"
-                  />
-                </label>
-              </div>
-              <div className="col-span-full sm:col-span-3">
-                <label className="input input-bordered flex items-center gap-2 ">
-                  <div className="text-gray-800">Present Address:</div>
-                  <input
-                    type="text"
-                    name="presentAddress"
-                    id="presentAddress"
-                    className="grow"
-                    required
-                    placeholder="E.g.Vill.- Mohuriya,P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
-                  />
-                </label>
-              </div>
-              <div className="col-span-full sm:col-span-3">
-                <label className="input input-bordered flex items-center gap-2 ">
-                  <div className="text-gray-800">Permanent Address:</div>
-                  <input
-                    type="text"
-                    name="permanentAddress"
-                    id="permanentAddress"
-                    className="grow"
-                    required
-                    placeholder="E.g.Vill.- Mohuriya, P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
-                  />
-                </label>
+
+
+
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">Date of Birth:</div>
+                    <input
+                      type="date"
+                      name="dateOfBirth"
+                      id="dateOfBirth"
+                      className="grow"
+                      required
+                      placeholder="Select date"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">
+                      Education Qualification:
+                    </div>
+                    <input
+                      type="text"
+                      name="educationQualification"
+                      id="educationQualification"
+                      className="grow"
+                      required
+                      placeholder="E.g. Bsc in CSE"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">School/University:</div>
+                    <input
+                      type="text"
+                      name="schoolUniversity"
+                      id="schoolUniversity"
+                      className="grow"
+                      required
+                      placeholder="E.g. Green University of Bangladesh"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3">
+                  <label htmlFor="PhoneNo" className="block  "></label>
+                  <label className="input input-bordered flex items-center gap-2">
+                    +880
+                    <input
+                      type="text"
+                      name="PhoneNo"
+                      value={phoneNo}
+                      onChange={handlePhoneNoChange}
+                      pattern="[0-9]{10}"
+                      placeholder="1917019619"
+                      required
+                      id="PhoneNo"
+                      className="grow"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2">
+                    <div className="text-gray-800">Facebook Profile URL:</div>
+                    <input
+                      type="url"
+                      name="facebookUrl"
+                      id="facebookUrl"
+                      className="grow"
+                      required
+                      placeholder="https://facebook.com/your_username"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">Present Address:</div>
+                    <input
+                      type="text"
+                      name="presentAddress"
+                      id="presentAddress"
+                      className="grow"
+                      required
+                      placeholder="E.g.Vill.- Mohuriya,P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
+                    />
+                  </label>
+                </div>
+                <div className="col-span-full sm:col-span-3">
+                  <label className="input input-bordered flex items-center gap-2 ">
+                    <div className="text-gray-800">Permanent Address:</div>
+                    <input
+                      type="text"
+                      name="permanentAddress"
+                      id="permanentAddress"
+                      className="grow"
+                      required
+                      placeholder="E.g.Vill.- Mohuriya, P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
+                    />
+                  </label>
+                </div>
               </div>
             </fieldset>
             <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
