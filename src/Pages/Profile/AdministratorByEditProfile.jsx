@@ -30,6 +30,7 @@ const AdministratorByEditProfile = () => {
       totalDueAmmout: userData?.totalDueAmmout,
       totalPurchesAmmount: userData?.totalPurchesAmmount,
       purchesProductCollection: userData?.purchesProductCollection,
+      markCollection:userData?.markCollection,
       userData: {
         ...userData.userData,
         fatherName: e.target.fatherName.value,

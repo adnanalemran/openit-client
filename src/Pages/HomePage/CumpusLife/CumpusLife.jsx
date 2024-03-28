@@ -4,8 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading/Loading";
 const CumpusLife = () => {
   const axiosSecure = useAxiosSecure();
- 
-  const { data: blogs = [],  } = useQuery({
+
+  const { data: blogs = [] } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => {
       const res = await axiosSecure.get("/blog", {});
@@ -47,10 +47,7 @@ const CumpusLife = () => {
                     {blog?.noticeTitle}
                   </h2>{" "}
                   <p className="text-sm  ">{blog?.postDate}</p>
-                  <p>
-                  {blog?.noticeDetails}
-                  
-                  </p>
+                  <p>{blog?.noticeDetails}</p>
                 </div>
               </div>
             </div>

@@ -26,7 +26,7 @@ const EditProfile = () => {
       userType: userData?.userType,
       email: userData?.email,
       btebID: userData?.btebID,
-
+      markCollection:userData?.markCollection,
       photoURL: userData?.photoURL,
       totalDueAmmout: userData?.totalDueAmmout,
       totalPurchesAmmount: userData?.totalPurchesAmmount,
@@ -41,6 +41,7 @@ const EditProfile = () => {
         facebookUrl: e.target.facebookUrl.value,
         permanentAddress: e.target.permanentAddress.value,
         presentAddress: e.target.presentAddress.value,
+
       },
     };
 
