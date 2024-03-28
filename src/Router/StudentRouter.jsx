@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import useAxiosSecure from "../Hook/useAxiosSecure";
+import useAxiosSecure from "../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 
 const StudentRouter = ({ children }) => {

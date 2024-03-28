@@ -27,6 +27,8 @@ import EditProfile from "../Pages/Profile/EditProfile";
 import AdminMenu from "../Pages/dashboard/Admin/AdminMenu";
 import AdministratorByEditProfile from "../Pages/Profile/AdministratorByEditProfile";
 import Applied_studentList from "../Pages/dashboard/Dashboard/applied_studentList";
+import StudentRouter from "./StudentRouter";
+import TypingTest from "../Pages/STUDENT/TypingTest";
 
 export const router = createBrowserRouter([
   {
@@ -152,6 +154,17 @@ export const router = createBrowserRouter([
           <AdminRouter>
             <AdministratorByEditProfile />,
           </AdminRouter>
+        ),
+      }, 
+      
+      // Student router
+      
+      {
+        path: "/dashboard/TypingTest",
+        element: (
+          <StudentRouter>
+            <TypingTest />,
+          </StudentRouter>
         ),
       },
     ],
