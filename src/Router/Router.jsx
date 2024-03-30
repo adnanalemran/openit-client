@@ -29,6 +29,7 @@ import AdministratorByEditProfile from "../Pages/Profile/AdministratorByEditProf
 import Applied_studentList from "../Pages/dashboard/Dashboard/applied_studentList";
 import StudentRouter from "./StudentRouter";
 import TypingTest from "../Pages/STUDENT/TypingTest";
+import Resorse from "../Pages/STUDENT/Resorse";
 
 export const router = createBrowserRouter([
   {
@@ -164,6 +165,13 @@ export const router = createBrowserRouter([
         element: (
           <StudentRouter>
             <TypingTest />,
+          </StudentRouter>
+        ),
+      },{
+        path: "/dashboard/resource",
+        element: (
+          <StudentRouter>
+            <Resorse />,
           </StudentRouter>
         ),
       },

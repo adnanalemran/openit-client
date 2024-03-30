@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import Iframe from "react-iframe";
+import { Link } from "react-router-dom";
 const TypingTest = () => {
   const [inputText, setInputText] = useState("");
   const [timer, setTimer] = useState(0);
@@ -9,10 +10,9 @@ const TypingTest = () => {
   const [matchedLetters, setMatchedLetters] = useState([]);
   const [testResult, setTestResult] = useState(null);
   const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor augue sed felis feugiat, nec sodales lorem aliquet.";
+    "A Quick Brown Fox Jumps Over the Lazy Dog. “Sphinx of black quartz, judge my vow”: Used by Adobe InDesign to display font samples. ”Jackdaws love my big sphinx of quartz”: Similarly, used by Windows XP for some fonts";
 
-    
-  const testDuration = 2; // 60 seconds
+  const testDuration = 5 * 60; // 60 seconds
 
   let interval;
 
@@ -74,11 +74,9 @@ const TypingTest = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto my-8 p-4 bg-gray-100 rounded-lg">
+    <div className=" w-full mx-auto my-8 p-4 bg-gray-100 rounded-lg">
       <p className="text-lg font-semibold mb-4">{text}</p>
       <div className="relative mb-4">
-
-
         {text.split("").map((letter, index) => (
           <span
             key={index}
@@ -89,8 +87,6 @@ const TypingTest = () => {
             {letter}
           </span>
         ))}
-
-
       </div>
       <textarea
         className="w-full h-32 p-2 mb-4 border border-gray-300 rounded"
@@ -99,12 +95,10 @@ const TypingTest = () => {
         placeholder="Start typing here..."
       ></textarea>
       <div className="flex justify-between items-center mb-4">
-    <div className="">
-     <p>Test Time: {testDuration}s</p>
-        <p>Run Time: {timer}s</p>
-
-    </div>
- 
+        <div className="">
+          <p>Test Time: {testDuration}s</p>
+          <p>Run Time: {timer}s</p>
+        </div>
 
         <p>You types Words: {wordCount}</p>
       </div>
@@ -114,15 +108,13 @@ const TypingTest = () => {
           <p>Words per Minute: {testResult.wordsPerMinute}</p>
 
           <button
-          className={`px-4 py-2 rounded text-white mt-4 ${
-            started ? "bg-red-500" : "bg-green-500"
-          }`}
-          onClick={started ? resetTest : () => setStarted(true)}
-        >
-          {started ? "Reset" : "Start"}
-        </button>
-
-
+            className={`px-4 py-2 rounded text-white mt-4 ${
+              started ? "bg-red-500" : "bg-green-500"
+            }`}
+            onClick={started ? resetTest : () => setStarted(true)}
+          >
+            {started ? "Reset" : "Start"}
+          </button>
         </div>
       ) : (
         <button
@@ -134,6 +126,23 @@ const TypingTest = () => {
           {started ? "Reset" : "Start"}
         </button>
       )}
+      <br />
+      <br />
+
+      <p className="p-4">Alternative test </p>
+      <Link className="mt-4" to="https://monkeytype.com/">
+        <button className="btn  btn-warning btn-sm">monkeytype</button>
+      </Link>
+
+      <Iframe
+        url="https://10fastfingers.com/typing-test/bengali?fbclid=IwAR3A_TbeTqJK8f3GvIpDySLfeuy5_n3OhanffrucJY1sq_0qoDk6XajzLwg_aem_AU95qkVT3r4Fh_OlKHoIXpPsTLonFPmYIe8EczeDh-2H1VvhAMIHsuLGu3o4F8d8Us6T-w1g0PiBDnhlRfS_amJJ"
+        width="640px"
+        height="320px"
+        id=""
+        className="w-full h-[600px] my-8 rounded-sm"
+        display="block"
+        position="relative"
+      />
     </div>
   );
 };

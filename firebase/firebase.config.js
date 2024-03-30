@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 
  
 const firebaseConfig = {
-  apiKey: "AIzaSyDF5ZTZT-zm2BKXANkVxVic0sA6GvUaHnQ",
-  authDomain: "openit-edu.firebaseapp.com",
-  projectId: "openit-edu",
-  storageBucket: "openit-edu.appspot.com",
-  messagingSenderId: "300266824181",
-  appId: "1:300266824181:web:b7793369e8521400ddc0bc"
+  apiKey: "AIzaSyARh2OyzxiHIascpyqpTwgUY7AO09M5RGw",
+  authDomain: "openit-edu-b0f55.firebaseapp.com",
+  projectId: "openit-edu-b0f55",
+  storageBucket: "openit-edu-b0f55.appspot.com",
+  messagingSenderId: "727117595751",
+  appId: "1:727117595751:web:8f3016fe27136357d900c2"
 };
 
 export const app = initializeApp(firebaseConfig);

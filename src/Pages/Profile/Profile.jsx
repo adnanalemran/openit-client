@@ -54,7 +54,7 @@ const Profile = () => {
     <div className="bg-base-300   p-8 rounded-lg shadow-md">
       {dbuser?.userType === "user" && (
         <h2 className="text-red-500 text-2xl p-4">
-          আপনি একজন আবেদনকারী ,Student  হিসেবে যুক্ত হতে কর্তৃপক্ষের সাথে যোগাযোগ
+          আপনি একজন আবেদনকারী ,Student হিসেবে যুক্ত হতে কর্তৃপক্ষের সাথে যোগাযোগ
           করুন
         </h2>
       )}
@@ -198,16 +198,27 @@ const Profile = () => {
           <p>
             <span className="font-bold text-blue-500">SSC Passing Year :</span>
             {dbuser?.userData.passingYear}
-          </p>
+          </p>{" "}
           <p>
             <span className="font-bold text-blue-500">User Type :</span>
             {dbuser?.userType}
           </p>
           <p>
             <span className="font-bold text-blue-500">Beach No: </span>
-            {!user?.beach && <span>Beach No select</span>}
+
             {dbuser?.beach}
           </p>
+          <hr />
+          <div className="">
+          <p>
+            <span className="font-bold text-green-500">Permanent Address:</span>
+            {dbuser?.userData.permanentAddress}
+          </p>
+          <p>
+            <span className="font-bold text-green-500">Present Address:</span>
+            {dbuser?.userData.presentAddress}
+          </p>
+          </div>
         </div>
       </div>
     </div>

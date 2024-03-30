@@ -19,18 +19,9 @@
     "about":"Kamal Hussain, recognized for his exceptional skill set, currently holds the position of Executive Officer at Open IT Institute. Simultaneously, he is actively engaged in pursuing Label One courses, further enhancing his expertise and contributing to the advancement of the organization.",
     "email": "kamalnetrokona24@gmail.com"
   },
-    {
-    "id": 3,
-    "name": "Adnan Al-Emran",
-    "photoUrl": "https://i.ibb.co/2vJL0mv/1685169155998.jpg",
-    "designation": "software engineer",
-    "profession":"CTO and Level 2 instructor ",
-    "about":"Adnan Al Emran, a highly skilled computer engineer, is currently engaged in professional endeavors at Open IT Institute. Concurrently, he diligently pursues courses in Label Two, enriching his expertise in technology-related domains and actively overseeing pertinent technological matters.",
-    "mobileNo": "+880 1917-019619",
-    "email": "imranhossinontor@gmail.com"
-  },
+
   {
-    "id": 4,
+    "id": 3,
     "name": "Md.Moniruzzaman",
     "profession":"Level 1 instructor ",
     "photoUrl": "https://i.ibb.co/1rsX9nT/tonoy-1.jpg",
@@ -38,17 +29,8 @@
     "mobileNo": "+880 1919-989010",
     "about":"Md.Moniruzzaman, recognized for his exceptional skill set, currently holds the position of Executive Mentor at Open IT Institute. Simultaneously, he is actively engaged in pursuing Label One courses,",
     "email": "..-.."
-  },
-
-  {
-    "id": 5,
-    "name": "Md. Joynal Abedin",
-    "profession":"Level 1 instructor ",
-    "photoUrl": "https://i.ibb.co/RjkvkST/joynal-1.jpg",
-    "designation": "Hardware Engineer and advisor ",
-    "mobileNo": "+880 1601-677145",
-    "email": "engjoynal1@gmail.com",
-    "about":"Joynal Abedin, recognized for his exceptional skill set, currently holds the position of Executive Officer at Open IT Institute. Simultaneously,further enhancing his expertise and contributing to the advancement of the organization."
   }
+
+ 
  
 ]
