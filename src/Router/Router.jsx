@@ -30,6 +30,7 @@ import Applied_studentList from "../Pages/dashboard/Dashboard/applied_studentLis
 import StudentRouter from "./StudentRouter";
 import TypingTest from "../Pages/STUDENT/TypingTest";
 import Resorse from "../Pages/STUDENT/Resorse";
+import NoticeStudent from "../Pages/STUDENT/NoticeStudent";
 
 export const router = createBrowserRouter([
   {
@@ -156,10 +157,10 @@ export const router = createBrowserRouter([
             <AdministratorByEditProfile />,
           </AdminRouter>
         ),
-      }, 
-      
+      },
+
       // Student router
-      
+
       {
         path: "/dashboard/TypingTest",
         element: (
@@ -167,11 +168,19 @@ export const router = createBrowserRouter([
             <TypingTest />,
           </StudentRouter>
         ),
-      },{
+      },
+      {
         path: "/dashboard/resource",
         element: (
           <StudentRouter>
             <Resorse />,
+          </StudentRouter>
+        ),
+      },{
+        path: "/dashboard/StudentNotice",
+        element: (
+          <StudentRouter>
+            <NoticeStudent />,
           </StudentRouter>
         ),
       },

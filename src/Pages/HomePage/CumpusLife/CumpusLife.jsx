@@ -1,7 +1,6 @@
- 
 import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
-import Loading from "../../Loading/Loading";
+
 const CumpusLife = () => {
   const axiosSecure = useAxiosSecure();
 
@@ -33,17 +32,17 @@ const CumpusLife = () => {
         {blogs?.map((blog) => (
           <div key={blog?._id}>
             <div className=" my-5 flex gap-6  items-center justify-center align-middle  w-full   shadow-xl relative  ">
-              <figure className=" w-1/3  ">
+              <figure data-aos="flip-left" className=" w-1/2  ">
                 <img
                   src={blog?.imageUrl}
                   alt="Shoes"
-                  className="rounded-xl     h-80 object-cover  "
+                  className="rounded-xl       object-cover  "
                 />
               </figure>
 
-              <div className="w-2/3 pb-5">
+              <div className="w-1/2 pb-5">
                 <div className=" pl-3  ">
-                  <h2 className="  font-bold   text-blue-500  ">
+                  <h2 className="  font-bold text-3xl py-6  text-blue-500  ">
                     {blog?.noticeTitle}
                   </h2>{" "}
                   <p className="text-sm  ">{blog?.postDate}</p>
