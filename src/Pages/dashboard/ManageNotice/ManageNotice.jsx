@@ -1,9 +1,8 @@
-import StudentNotice from "./StudentNotice";
 import WebNotice from "./WebNotice";
 
 const ManageNotice = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <marquee className="text-2xl pb-8">
         Welcome to Notice control panel
       </marquee>
@@ -11,9 +10,7 @@ const ManageNotice = () => {
         <div className="   ">
           <WebNotice />
         </div>
-        <div className="  ">
-          {/* <StudentNotice className=" " /> */}
-        </div>
+        <div className="  ">{/* <StudentNotice className=" " /> */}</div>
       </div>
     </div>
   );

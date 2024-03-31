@@ -7,16 +7,13 @@ import Dashboard from "../Pages/dashboard/Dashboard";
 import Error from "../Layout/Shared/404/Error";
 import SignUp from "../Pages/Auth/Signin/SignUp";
 import DashboardHome from "../Pages/dashboard/Dashboard/DashboardHome";
-
 import ManageUser from "../Pages/dashboard/Dashboard/ManageUser";
-import StudentList from "../Pages/dashboard/Dashboard/StudentList";
 import SingleProfile from "../Pages/Profile/SingleProfile";
 import PrivateRoute from "./PrivateRoute";
 import InvalidAccess from "../Layout/Shared/404/InvalidAccess";
 import AdminRouter from "./AdminRouter";
 import Profile from "../Pages/Profile/Profile";
 import ResultForHome from "../Pages/result/resultForHome";
-
 import CumpusLife from "../Pages/HomePage/CumpusLife/CumpusLife";
 import Student_public_view from "../Pages/Student_public_view/Student_public_view";
 import ManageNotice from "../Pages/dashboard/ManageNotice/ManageNotice";
@@ -24,13 +21,12 @@ import AllNotice from "../Pages/dashboard/ManageNotice/AllNotice";
 import SingleNotice from "../Pages/dashboard/ManageNotice/SingleNotice";
 import ManageBlog from "../Pages/dashboard/Blog/ManageBlog";
 import EditProfile from "../Pages/Profile/EditProfile";
-import AdminMenu from "../Pages/dashboard/Admin/AdminMenu";
 import AdministratorByEditProfile from "../Pages/Profile/AdministratorByEditProfile";
 import Applied_studentList from "../Pages/dashboard/Dashboard/applied_studentList";
 import StudentRouter from "./StudentRouter";
 import TypingTest from "../Pages/STUDENT/TypingTest";
 import Resorse from "../Pages/STUDENT/Resorse";
-import NoticeStudent from "../Pages/STUDENT/NoticeStudent";
+ 
 
 export const router = createBrowserRouter([
   {
@@ -132,14 +128,7 @@ export const router = createBrowserRouter([
           </AdminRouter>
         ),
       },
-      {
-        path: "/dashboard/student-list",
-        element: (
-          <AdminRouter>
-            <StudentList />
-          </AdminRouter>
-        ),
-      },
+
       {
         path: "/dashboard/singleUserInfo/:id",
         element: <SingleProfile />,
@@ -176,14 +165,8 @@ export const router = createBrowserRouter([
             <Resorse />,
           </StudentRouter>
         ),
-      },{
-        path: "/dashboard/StudentNotice",
-        element: (
-          <StudentRouter>
-            <NoticeStudent />,
-          </StudentRouter>
-        ),
       },
+      
     ],
   },
   {

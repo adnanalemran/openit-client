@@ -79,7 +79,7 @@ const ManageUser = () => {
 
   //this a comment
   return (
-    <div className="bg-base-200 p-0 m-0 lg:p-4 lg:m-4 rounded-xl">
+    <div className="bg-base-200 p-0 m-0 lg:p-4 lg:m-4 rounded-xl min-h-screen">
       <div className="text-3xl py-2">
         <h2>Manage user</h2>
       </div>

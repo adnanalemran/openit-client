@@ -18,11 +18,9 @@ const Notice = () => {
     },
   });
 
-
   if (loading === true) {
     return <Loading />;
   }
-
 
   return (
     <div data-aos="fade-left" className="border rounded-lg border-gray-500">

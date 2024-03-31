@@ -83,7 +83,7 @@ const ManageBlog = () => {
     return <Loading />;
   }
   return (
-    <div className="">
+    <div className="min-h-screen">
       <div className="card bg-gradient-to-b  ">
         <div className="text-2xl pt-3 pb-2   font-bold">
           Write a Website Blog
