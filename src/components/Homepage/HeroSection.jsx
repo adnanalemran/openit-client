@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import faground from "../../assets/Group 327.svg";
 import image from "../../assets/OBJECTS.svg";
 import { TypeAnimation } from "react-type-animation";

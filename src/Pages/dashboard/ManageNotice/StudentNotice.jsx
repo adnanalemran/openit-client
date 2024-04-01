@@ -1,5 +1,4 @@
-import React from "react";
-
+ 
 const StudentNotice = () => {
   return (
     <div className='card bg-gradient-to-b from-purple-400 to-purple-600'>

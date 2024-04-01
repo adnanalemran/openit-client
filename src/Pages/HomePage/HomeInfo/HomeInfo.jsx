@@ -1,6 +1,6 @@
-import React from "react";
-import Notice from "./Notice";
 
+import Notice from "./Notice";
+ 
 const HomeInfo = () => {
   return (
     <div className="w-full py-5">
