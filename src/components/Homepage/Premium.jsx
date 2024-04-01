@@ -1,18 +1,37 @@
 import faground from "../../assets/Group 327.svg";
 import hearts from "../../assets/hearts 1.png";
 import jigsaw from "../../assets/jigsaw 1.png";
-import "./style.css";
+ 
 const Premium = () => {
   return (
-    <div>
-      <div>
-        <img className="moving-image" src={faground} alt="" />
 
-        <div className="hero-content text-gray-900 w-full">
-          <div className=" w-full gap-16 flex flex-col lg:flex-row-reverse items-center align-middle">
-            <div className="lg:w-1/2 w-full  ">
-              <div className="">
-                <h1 className=" font-bold text-5xl lg:py-8  py-2  ">
+
+    <div>
+    <div
+      className="hero min-h-screen    "
+      style={
+        {
+          //   backgroundImage: `url(${faground})`,
+        }
+      }
+    >
+   <img  className="moving-image" src={faground} alt="" />
+
+      <div className="hero-content text-gray-900 w-full">
+        <div className=" w-full gap-16 flex flex-col lg:flex-row-reverse items-center align-middle">
+      
+          <div className="lg:w-1/2 w-full  ">
+            <div className="">
+              <h1 className=" font-bold text-5xl lg:py-8 py-2  ">
+
+
+
+
+
+
+
+
+
                   Premium <span className="text-orange-500"> Learning</span>
                   <br />
                   Experience

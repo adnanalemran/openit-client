@@ -20,6 +20,7 @@ const HomePage = () => {
       <div className="   mx-auto overflow-hidden ">
         <HomeInfo />
         <Featured />
+
         <Premium />
         <Book />
         <Faculty />
