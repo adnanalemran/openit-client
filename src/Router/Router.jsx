@@ -26,6 +26,7 @@ import Applied_studentList from "../Pages/dashboard/Dashboard/applied_studentLis
 import StudentRouter from "./StudentRouter";
 import TypingTest from "../Pages/STUDENT/TypingTest";
 import Resorse from "../Pages/STUDENT/Resorse";
+import About from "../Pages/About/About";
  
 
 export const router = createBrowserRouter([
@@ -39,8 +40,8 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/Faculty",
-        element: <Faculty />,
+        path: "/About",
+        element: <About />,
       },
       {
         path: "/student-for-public",
@@ -51,7 +52,7 @@ export const router = createBrowserRouter([
         element: <ResultForHome />,
       },
       {
-        path: "gallery",
+        path: "/gallery",
         element: <CumpusLife />,
       },
       {

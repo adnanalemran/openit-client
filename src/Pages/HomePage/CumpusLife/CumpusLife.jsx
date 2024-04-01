@@ -20,7 +20,7 @@ const CumpusLife = () => {
   // }
 
   return (
-    <div className="py-8 text-bangla lg:pt-16">
+    <div className="py-8  lg:pt-16">
       <div className="text-center ">
         <h2 className="text-3xl font-semibold text-gray-950 pb-3">
           Camps time..
@@ -28,7 +28,7 @@ const CumpusLife = () => {
         <p className="text-gray-700">Discover the open-it blog !</p>
       </div>
 
-      <div className=" flex flex-col-reverse gap-6 w-full py-12 px-4   ">
+      <div className=" text-bangla flex flex-col-reverse gap-6 w-full py-12 px-4   ">
         {blogs?.map((blog) => (
           <div key={blog?._id}>
             <div className=" my-5 flex gap-6  items-center justify-center align-middle  w-full   shadow-xl relative  ">

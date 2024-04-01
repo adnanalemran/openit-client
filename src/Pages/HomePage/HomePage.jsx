@@ -12,6 +12,7 @@ import HeroSection from "../../components/Homepage/HeroSection";
 import Premium from "../../components/Homepage/Premium";
 import CumpusLifesmall from "./CumpusLife/CumpusLifesmall";
 import Book from "../../components/Homepage/book";
+import Patnar from "../../components/Homepage/Patnar";
 
 const HomePage = () => {
   return (
@@ -26,6 +27,7 @@ const HomePage = () => {
         <Premium />
         <Book/>
         <Faculty />
+        <Patnar/>
         <CumpusLifesmall />
         
         <OurAlumni />

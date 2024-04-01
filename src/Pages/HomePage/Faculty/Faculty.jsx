@@ -12,9 +12,9 @@ const Faculty = () => {
   }, []);
 
   return (
-    <div className="py-8 text-bangla   ">
+    <div className="py-8    ">
       <div className="text-center ">
-        <h2 className="text-3xl font-semibold text-gray-950 pb-3">
+        <h2 className="text-4xl font-bold text-gray-950 pb-3">
           Our Mentor
         </h2>
         <p className="text-gray-700">
@@ -22,7 +22,7 @@ const Faculty = () => {
         </p>
       </div>
 
-      <div className="lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full py-12 ">
+      <div className=" text-bangla lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full py-12 ">
         {faculty.map((singlefaculty) => (
           <div key={singlefaculty.id} className="card      p-2     ">
             <div className="card w-full   shadow-xl relative hover:shadow-2xl mx-auto ">

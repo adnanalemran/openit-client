@@ -9,7 +9,7 @@ const Main = () => {
       className="z-10"
         innerSize={12}
         outerSize={28}
-        color="193, 11, 111"
+        color="255,140,0"
         outerAlpha={0.2}
         innerScale={0.7}
         outerScale={5}

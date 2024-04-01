@@ -32,8 +32,8 @@
     "react-type-animation": "^3.2.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.10.5",
-    "swiper": "^11.0.7",
-    "tailwind-scrollbar": "^3.1.0"
+    "swiper": "^11.0.7"
+ 
   },
   "devDependencies": {
     "@types/node": "^20.11.25",

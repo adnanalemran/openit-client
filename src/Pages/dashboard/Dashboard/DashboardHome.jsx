@@ -37,7 +37,7 @@ const DashboardHome = () => {
         color="193, 11, 111"
         outerAlpha={0.2}
         innerScale={0.7}
-        outerScale={10}
+        outerScale={5}
         clickables={[
           "a",
           "Link",

@@ -3,11 +3,12 @@ import faground from "../../assets/Group 327.svg";
 import image from "../../assets/OBJECTS.svg";
 import { TypeAnimation } from "react-type-animation";
 import "./HeroSection.css"; // Import CSS file for custom styles
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
     <div>
-      <div className="hero min-h-screen">
+      <div className="hero min-h-screen overflow-hidden">
         <img className="moving-image" src={faground} alt="" />
 
         <div className="hero-content text-gray-900 w-full">
@@ -40,14 +41,15 @@ const HeroSection = () => {
                   their success in the dynamic world of technology.
                 </p>
                 <div className="flex justify-end py-16 pr-7">
+                 <Link to="/dashboard">
                   <button className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center">
-                    Explore Now
-                  </button>
+                    Explore dashboard
+                  </button></Link>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2 w-full image-container">
-              <img src={image} alt="" className="moving-image" />
+              <img src={image} alt=""   />
             </div>
           </div>
         </div>
