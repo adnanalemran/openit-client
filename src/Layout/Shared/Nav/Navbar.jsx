@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import logo from "../../../assets/logo.png";
-import "./nav.css";
+ 
 import { FaUser, FaSignOutAlt, FaHome, FaSignInAlt } from "react-icons/fa";
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);

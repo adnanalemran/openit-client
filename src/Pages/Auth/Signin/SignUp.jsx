@@ -218,7 +218,6 @@ const SignUp = () => {
                   </label>
                 </div>
 
-                
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">
                     <div className="    text-gray-800 "> Gender: </div>
@@ -242,11 +241,6 @@ const SignUp = () => {
                     </select>
                   </label>
                 </div>
-             
-             
-
-
-
 
                 <div className="col-span-full sm:col-span-3">
                   <label className="input input-bordered flex items-center gap-2 ">

@@ -1,4 +1,3 @@
- 
 import logo from "../../../assets/logo.png";
 const Info = () => {
   return (
@@ -7,7 +6,6 @@ const Info = () => {
         <img src={logo} alt="Open IT Institute Logo" className="  h-16" />
         <h1 className="text-3xl font-bold">Open IT Institute</h1>
       </div>
-    
     </header>
   );
 };

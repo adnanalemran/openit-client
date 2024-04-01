@@ -1,4 +1,3 @@
- 
 import { useState } from "react";
 import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
@@ -29,8 +28,6 @@ const ManageBlog = () => {
     });
   };
 
-
-  
   const handleDeleteNoticce = (notice) => {
     Swal.fire({
       title: "Are you sure?",
@@ -73,7 +70,7 @@ const ManageBlog = () => {
       postDate: postDate,
       noticeDetails: noticeDetails,
     };
- 
+
     axiosSecure.post("/blog", formData).then(() => {
       refetch();
       showSuccessAlert();
@@ -121,7 +118,6 @@ const ManageBlog = () => {
 
           <br />
           <div className="flex justify-end gap-4">
-           
             <button type="submit" className="btn">
               Publish Blog
             </button>
@@ -129,53 +125,42 @@ const ManageBlog = () => {
         </form>
 
         <div className="card w-full glass">
-        <div className="overflow-x-auto">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>no</th>
-                <th>title</th>
-                <th>Notice Date </th>
-           
-                <th>Action</th>
-              </tr>
-            </thead>
+          <div className="overflow-x-auto">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>no</th>
+                  <th>title</th>
+                  <th>Notice Date </th>
 
-            <tbody>
-            {notices?.map((notice, index) => (
-              <tr key={notice?._id}> <td>{index + 1}</td>
-                  <td className="text-blue-500">{notice.noticeTitle}</td>
-                  <td>{notice.postDate}</td>
-        
-                  <td>
-                  <button
-                    onClick={() => handleDeleteNoticce(notice)}
-                    className="btn btn-sm btn-error"
-                  >
-                    <FaTrash />
-                  </button>
-                </td>
-                 
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                {notices?.map((notice, index) => (
+                  <tr key={notice?._id}>
+                    {" "}
+                    <td>{index + 1}</td>
+                    <td className="text-blue-500">{notice.noticeTitle}</td>
+                    <td>{notice.postDate}</td>
+                    <td>
+                      <button
+                        onClick={() => handleDeleteNoticce(notice)}
+                        className="btn btn-sm btn-error"
+                      >
+                        <FaTrash />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-        
-
-
-
-
-
-
-
-
       </div>
     </div>
   );
 };
-
- 
 
 export default ManageBlog;

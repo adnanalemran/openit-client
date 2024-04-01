@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className="bg-white">
       <AnimatedCursor
-      className="z-10"
+        className="z-10"
         innerSize={12}
         outerSize={28}
         color="255,140,0"
