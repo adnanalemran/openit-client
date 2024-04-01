@@ -31,7 +31,7 @@ const About = () => {
                     </div>
                     <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
                 </div>
-                <form onSubmit={handleSubmit} className="space-y-6"> {/* Form tag with onSubmit handler */}
+                <form onSubmit={handleSubmit} className="space-y-6">  
                     <div>
                         <label htmlFor="name" className="text-sm">Full name</label>
                         <input id="name" type="text" placeholder="" className="w-full p-3 rounded dark:bg-gray-100" onChange={handleChange} />
