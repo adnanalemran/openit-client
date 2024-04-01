@@ -12,8 +12,7 @@ const TypingTest = () => {
   const text =
     "A Quick Brown Fox Jumps Over the Lazy Dog. “Sphinx of black quartz, judge my vow”: Used by Adobe InDesign to display font samples. ”Jackdaws love my big sphinx of quartz”: Similarly, used by Windows XP for some fonts";
 
-  const testDuration = 5 * 60; // 60 seconds
-
+  const testDuration = 5 * 60;  
   let interval;
 
   useEffect(() => {

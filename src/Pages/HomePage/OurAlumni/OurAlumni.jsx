@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import "swiper/css";
-import "swiper/css/bundle"; // Import the bundle for Swiper bundle mode
+import "swiper/css/bundle";  
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
- 
-import 'aos/dist/aos.css';
+
+import "aos/dist/aos.css";
 const OurAlumni = () => {
   const [alumniData, setAlumniData] = useState([]);
 
@@ -21,8 +21,11 @@ const OurAlumni = () => {
 
   return (
     <>
-      <div  className="py-8 text-bangla">
-        <h2  data-aos="fade-up" className="text-center text-5xl font-bold py-4 border-b-2 ">
+      <div className="py-8 text-bangla">
+        <h2
+          data-aos="fade-up"
+          className="text-center text-5xl font-bold py-4 border-b-2 "
+        >
           আমাদের প্রাক্তন ছাত্র, আমাদের গর্ব
         </h2>
         <div className="py-4"></div>
@@ -62,7 +65,7 @@ const OurAlumni = () => {
         >
           {alumniData.map((alumni) => (
             <SwiperSlide key={alumni.id}>
-              <div  data-aos="zoom-in">
+              <div data-aos="zoom-in">
                 <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
                   <img
                     src={alumni.imageUrl}

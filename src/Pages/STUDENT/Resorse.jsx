@@ -1,10 +1,9 @@
 import Iframe from "react-iframe";
- 
+
 const Resorse = () => {
-    return (
-        <div className="min-h-screen">
-           
-           <Iframe
+  return (
+    <div className="min-h-screen">
+      <Iframe
         url="https://file.openit-edu.com/"
         width="640px"
         height="320px"
@@ -13,17 +12,8 @@ const Resorse = () => {
         display="block"
         position="relative"
       />
-
-
-
-
-
-
-
-
-
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Resorse;

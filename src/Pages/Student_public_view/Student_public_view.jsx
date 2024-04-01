@@ -72,7 +72,10 @@ const Student_public_view = () => {
             <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full py-12 mx-auto ">
               {filteredUsers.map((user) => (
                 <div key={user._id}>
-                  <div  data-aos="zoom-in-up" className=" my-5 flex  items-center justify-center align-middle  w-full  max-w-sm  shadow-md sh relative mx-auto  ">
+                  <div
+                    data-aos="zoom-in-up"
+                    className=" my-5 flex  items-center justify-center align-middle  w-full  max-w-sm  shadow-md sh relative mx-auto  "
+                  >
                     <figure className=" w-1/3  ">
                       <img
                         src={user?.photoURL}
