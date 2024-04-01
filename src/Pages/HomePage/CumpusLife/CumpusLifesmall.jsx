@@ -1,7 +1,5 @@
-import { useState } from "react";
-import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
-import Loading from "../../Loading/Loading";
+import useAxiosSecure from "../../../Hook/useAxiosPublic";
 const CumpusLifesmall = () => {
   const axiosSecure = useAxiosSecure();
  
@@ -36,7 +34,7 @@ const CumpusLifesmall = () => {
               <figure className=" w-1/4  ">
                 <img
                   src={blog?.imageUrl}
-                  alt="Shoes"
+                  alt="Image"
                   className="rounded-xl  h-60 object-cover  "
                 />
               </figure>

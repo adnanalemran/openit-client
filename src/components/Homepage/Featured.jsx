@@ -14,13 +14,13 @@ const Featured = () => {
         </p>
       </div>
 
-      <div className="lg:flex gap-6 w-full py-12   ">
+      <div className=" flex flex-col lg:flex-row   gap-6 w-full py-12    ">
         <div className="card w-full max-w-sm  shadow-xl relative hover:shadow-2xl mx-auto ">
           <a title="click for product detail page">
             <figure className=" px-2">
               <img
                 src={office}
-                alt="Shoes"
+                alt="corse"
                 className="rounded-xl my-2 w-[390px] h-[270px] object-cover  "
               />
             </figure>
@@ -146,7 +146,7 @@ const Featured = () => {
             <figure className=" px-2">
               <img
                 src={gpdesign}
-                alt="Shoes"
+                alt="corse"
                 className="rounded-xl my-2 w-[390px] h-[270px] object-cover  "
               />
             </figure>

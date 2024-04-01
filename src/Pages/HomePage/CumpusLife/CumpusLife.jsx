@@ -1,5 +1,5 @@
-import useAxiosSecure from "../../../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../../Hook/useAxiosPublic";
 
 const CumpusLife = () => {
   const axiosSecure = useAxiosSecure();
@@ -35,7 +35,7 @@ const CumpusLife = () => {
               <figure data-aos="flip-left" className=" w-1/2  ">
                 <img
                   src={blog?.imageUrl}
-                  alt="Shoes"
+                  alt="Image"
                   className="rounded-xl       object-cover  "
                 />
               </figure>

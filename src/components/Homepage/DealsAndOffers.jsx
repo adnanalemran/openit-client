@@ -9,7 +9,7 @@ const DealsAndOffers = () => {
           <figure className=" w-1/3  ">
             <img
               src="https://t3.ftcdn.net/jpg/02/02/61/30/360_F_202613068_kl4ZJPWGn5nWo2G1qBTv1a5CzgKkHg2r.jpg"
-              alt="Shoes"
+              alt="Image"
               className="rounded-xl     h-36 object-cover  "
             />
           </figure>
@@ -27,7 +27,7 @@ const DealsAndOffers = () => {
           <figure className=" w-1/3  ">
             <img
               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0aM7Eazx0qada-GAwHAFjewluCWTeTyjReXGxBpVdoNPkFWBGTOP-THvb9v-eW3LI-vTkG9HAGYwa5RH3yAQ8RaV72X7CovPdZopbkgEpulnQyzmsTkg3_LMKOzDiQgyHlRJC2sbht5Z-/s1600/Birisiri-lake.jpg"
-              alt="Shoes"
+              alt="Image"
               className="rounded-xl     h-36 object-cover  "
             />
           </figure>
@@ -44,7 +44,7 @@ const DealsAndOffers = () => {
           <figure className=" w-1/3  ">
             <img
               src="https://seemadentalcollege.org/images/2019/08/22/how-to-make-the-best-use-of-your-college-alumni-association.jpg"
-              alt="Shoes"
+              alt="Image"
               className="rounded-xl     h-36 object-cover  "
             />
           </figure>

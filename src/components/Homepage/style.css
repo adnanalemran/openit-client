@@ -1,0 +1,20 @@
+@keyframes moveImage {
+    0% {
+      transform: translateX(-6px) translateY(-6px);
+    }
+    50% {
+      transform: translateX(8px) translateY(6px);
+    }
+    100% {
+      transform: translateX(-6px) translateY(-6px);
+    }
+  }
+  
+  .image-container {
+    overflow: hidden; /* Ensures the image doesn't overflow its container */
+  }
+  
+  .moving-image {
+    animation: moveImage 3s infinite; /* Adjust the duration and other properties as needed */
+  }
+  

@@ -3,8 +3,8 @@ import Notice from "./Notice";
 
 const HomeInfo = () => {
   return (
-    <div className="w-full  ">
-      <div className="hero min-h-screen  text-bangla w-full">
+    <div className="w-full py-5">
+      <div className="hero    text-bangla w-full">
         <div className="hero-content flex-col lg:flex-row-reverse gap-8">
           <div className=" lg:w-1/3">
             <Notice />

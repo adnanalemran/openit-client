@@ -2,7 +2,7 @@ import { FaNodeJs } from "react-icons/fa";
 import faground from "../../assets/Group 327.svg";
 import hearts from "../../assets/hearts 1.png";
 import jigsaw from "../../assets/jigsaw 1.png";
-
+import "./style.css";
 const Premium = () => {
   return (
     <div>
@@ -14,13 +14,13 @@ const Premium = () => {
           }
         }
       >
-        <img src={faground} alt="" />
+        <img  className="moving-image" src={faground} alt="" />
 
         <div className="hero-content text-gray-900 w-full">
           <div className=" w-full gap-16 flex flex-col lg:flex-row-reverse items-center align-middle">
             <div className="lg:w-1/2 w-full  ">
               <div className="">
-                <h1 className=" font-bold text-5xl lg:py-8   ">
+                <h1 className=" font-bold text-5xl lg:py-8  py-2  ">
                   Premium <span className="text-orange-500"> Learning</span>
                   <br />
                   Experience
@@ -45,14 +45,19 @@ const Premium = () => {
                     </div>
                     <div className=" font-semibold text-gray-600">
                         <p>Online and smart support </p>
-                        <p>We launch our new web application and student portal !</p>
+                        <p>We launch our new web application and student portal for open it students !</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2 w-full   p-4  ">
-              <svg
+              <div className="">
+
+              </div>
+              <img className="rounded-lg" src="https://demo.edublink.co/wp-content/uploads/2023/06/about-26.webp" alt="" />
+
+              {/* <svg
                 width="400"
                 height="500"
                 viewBox="0 0 517 645"
@@ -810,7 +815,7 @@ const Premium = () => {
                   d="M321.703 51.6727C321.4 51.6727 321.098 51.5304 320.92 51.2812L301.685 25.694C301.364 25.2669 301.453 24.662 301.88 24.3417C302.307 24.0214 302.93 24.1103 303.251 24.5374L322.023 49.5019L343.357 40.2492C343.856 40.0357 344.425 40.2492 344.656 40.7474C344.87 41.2456 344.656 41.815 344.158 42.0285L322.112 51.5837C321.969 51.6549 321.827 51.6727 321.703 51.6727Z"
                   fill="#39393B"
                 />
-              </svg>
+              </svg> */}
             </div>
           </div>
         </div>

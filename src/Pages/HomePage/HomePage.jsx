@@ -11,10 +11,12 @@ import DealsAndOffers from "../../components/Homepage/DealsAndOffers";
 import HeroSection from "../../components/Homepage/HeroSection";
 import Premium from "../../components/Homepage/Premium";
 import CumpusLifesmall from "./CumpusLife/CumpusLifesmall";
+import Book from "../../components/Homepage/book";
 
 const HomePage = () => {
   return (
     <div className="">
+   
       {/* <Slider /> */}
       <HeroSection />
 
@@ -22,6 +24,7 @@ const HomePage = () => {
         <HomeInfo />
         <Featured />
         <Premium />
+        <Book/>
         <Faculty />
         <CumpusLifesmall />
         
