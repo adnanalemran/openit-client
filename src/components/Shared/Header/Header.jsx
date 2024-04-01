@@ -3,12 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 
 import "./header.css";
- 
+
 import Swal from "sweetalert2";
 
 const Header = () => {
-  
-
   const handleClick = () => {
     Swal.fire({
       title: "Error",
@@ -64,7 +62,6 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">{menu}</ul>
         </div>
-        
       </div>
     </div>
   );

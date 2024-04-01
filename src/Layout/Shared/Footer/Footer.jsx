@@ -33,19 +33,16 @@ const Footer = () => {
       </footer>
       <footer className="footer px-10 py-4 border-t    border-base-300  container mx-auto">
         <aside className="items-center grid-flow-col">
-          <Link to="/">© 2021-2024 Open IT Institute. All Rights Reserved.
+          <Link to="/">
+            © 2021-2024 Open IT Institute. All Rights Reserved.
           </Link>
-        
-         
         </aside>
         <nav className="md:place-self-center md:justify-self-end ">
-        <Link to="https://www.linkedin.com/in/adnanalemran">Developed by <samp className="text-warning"> Adnan al emran</samp> 
+          <Link to="https://www.linkedin.com/in/adnanalemran">
+            Developed by <samp className="text-warning"> Adnan al emran</samp>
           </Link>
-        
         </nav>
-       
       </footer>
-      
     </div>
   );
 };
