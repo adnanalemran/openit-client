@@ -28,7 +28,7 @@ const HomePage = () => {
         <Book/>
         <Faculty />
         <Patnar/>
-        <CumpusLifesmall />
+        
         
         <OurAlumni />
         <Subscribe />
