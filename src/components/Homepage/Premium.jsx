@@ -1,4 +1,4 @@
-import { FaNodeJs } from "react-icons/fa";
+ 
 import faground from "../../assets/Group 327.svg";
 import hearts from "../../assets/hearts 1.png";
 import jigsaw from "../../assets/jigsaw 1.png";
@@ -7,12 +7,7 @@ const Premium = () => {
   return (
     <div>
       <div
-        className="hero min-h-screen    "
-        style={
-          {
-            //   backgroundImage: `url(${faground})`,
-          }
-        }
+         
       >
         <img  className="moving-image" src={faground} alt="" />
 
