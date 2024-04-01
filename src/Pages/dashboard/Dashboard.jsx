@@ -42,9 +42,12 @@ const Dashboard = () => {
       <div className="lg:h-[200px]  h-[100px] bg-cover bg-center lg:relative">
         <div className=" py-4  bg-base-300 shadow-sm container mx-auto rounded-lg px-6">
           <div className="flex-1  ">
-            <Link to="/" className=" flex text-lg text-gray-600 items-center   ">
+            <Link
+              to="/"
+              className=" flex text-lg text-gray-600 items-center   "
+            >
               <FaArrowLeft className=" mr-3 " />
-                Back to Open-it Homepage
+              Back to Open-it Homepage
             </Link>
           </div>
         </div>

@@ -69,7 +69,7 @@ const WebNotice = () => {
       postDate: postDate,
       noticeDetails: noticeDetails,
     };
- 
+
     axiosSecure.post("/notice", formData).then(() => {
       refetch();
       showSuccessAlert();
@@ -122,7 +122,6 @@ const WebNotice = () => {
             </button>
           </div>
         </form>
-        
       </div>
       <div className="card w-full glass">
         <div className="overflow-x-auto">
@@ -132,31 +131,34 @@ const WebNotice = () => {
                 <th>no</th>
                 <th>title</th>
                 <th>Notice Date </th>
-                <th>Create  Date </th>
+                <th>Create Date </th>
                 <th>Action</th>
               </tr>
             </thead>
 
             <tbody>
-            {notices?.map((notice, index) => (
-              <tr key={notice?._id}> <td>{index + 1}</td>
-               
-               <Link className="text-blue-800 " to={`/notice/${notice?._id}`}>
-                  <p>
-                    <td className="text-blue-500">{notice?.noticeTitle}</td>
-                  </p>
-                </Link>
+              {notices?.map((notice, index) => (
+                <tr key={notice?._id}>
+                  {" "}
+                  <td>{index + 1}</td>
+                  <Link
+                    className="text-blue-800 "
+                    to={`/notice/${notice?._id}`}
+                  >
+                    <p>
+                      <td className="text-blue-500">{notice?.noticeTitle}</td>
+                    </p>
+                  </Link>
                   <td>{notice.postDate}</td>
                   <td>{notice.noticeDate}</td>
                   <td>
-                  <button
-                    onClick={() => handleDeleteNoticce(notice)}
-                    className="btn btn-sm btn-error"
-                  >
-                    <FaTrash />
-                  </button>
-                </td>
-                 
+                    <button
+                      onClick={() => handleDeleteNoticce(notice)}
+                      className="btn btn-sm btn-error"
+                    >
+                      <FaTrash />
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

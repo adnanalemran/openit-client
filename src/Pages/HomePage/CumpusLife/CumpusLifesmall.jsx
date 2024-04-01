@@ -2,8 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hook/useAxiosPublic";
 const CumpusLifesmall = () => {
   const axiosSecure = useAxiosSecure();
- 
-  const { data: blogs = [],  } = useQuery({
+
+  const { data: blogs = [] } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => {
       const res = await axiosSecure.get("/blog/latest", {});
@@ -14,16 +14,12 @@ const CumpusLifesmall = () => {
     },
   });
 
-  // if (loading === true) {
-  //   return <Loading />;
-  // }
+ 
 
   return (
     <div className="py-8 lg:pt-16">
       <div className="text-center ">
-        <h2 className="text-4xl font-bold text-gray-950 pb-3">
-          Camps time..
-        </h2>
+        <h2 className="text-4xl font-bold text-gray-950 pb-3">Camps time..</h2>
         <p className="text-gray-700">Discover the open-it blog !</p>
       </div>
 
@@ -45,10 +41,7 @@ const CumpusLifesmall = () => {
                     {blog?.noticeTitle}
                   </h2>{" "}
                   <p className="text-sm  ">{blog?.postDate}</p>
-                  <p>
-                  {blog?.noticeDetails}
-                  
-                  </p>
+                  <p>{blog?.noticeDetails}</p>
                 </div>
               </div>
             </div>
