@@ -1,4 +1,3 @@
- 
 import faground from "../../assets/Group 327.svg";
 import image from "../../assets/OBJECTS.svg";
 import { TypeAnimation } from "react-type-animation";
@@ -41,15 +40,16 @@ const HeroSection = () => {
                   their success in the dynamic world of technology.
                 </p>
                 <div className="flex justify-end py-16 pr-7">
-                 <Link to="/dashboard">
-                  <button className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center">
-                    Explore dashboard
-                  </button></Link>
+                  <Link to="/dashboard">
+                    <button className="px-8 py-3 font-semibold rounded-full btn bg-slate-300 flex items-center">
+                      Explore dashboard
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2 w-full image-container">
-              <img src={image} alt=""   />
+              <img src={image} alt="" />
             </div>
           </div>
         </div>
