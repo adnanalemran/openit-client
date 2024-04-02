@@ -17,7 +17,7 @@ const HomePage = () => {
     <div className="">
       <HeroSection />
 
-      <div className="   mx-auto overflow-hidden ">
+      <div className=" mx-auto overflow-hidden ">
         <HomeInfo />
         <Featured />
 

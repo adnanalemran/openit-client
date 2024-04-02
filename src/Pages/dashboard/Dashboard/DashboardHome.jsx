@@ -8,7 +8,7 @@ import Analisys from "../../../components/DashboardHome/Analisys";
 import Gatting from "../../../components/DashboardHome/Gatting";
 import Time from "../../../components/DashboardHome/Time";
 import Chart from "../../../components/DashboardHome/Chart";
-import AnimatedCursor from "react-animated-cursor";
+ 
 
 const DashboardHome = () => {
   const [status, setStatus] = useState("");
@@ -30,29 +30,7 @@ const DashboardHome = () => {
 
   return (
     <div>
-        <AnimatedCursor
-      className="z-10"
-        innerSize={12}
-        outerSize={18}
-        color="193, 11, 111"
-        outerAlpha={0.2}
-        innerScale={0.7}
-        outerScale={5}
-        clickables={[
-          "a",
-          "Link",
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          "label[for]",
-          "select",
-          "textarea",
-          "button",
-          ".link",
-        ]}
-      />
+ 
       <div>
         {isAdmin ? (
           <p>
