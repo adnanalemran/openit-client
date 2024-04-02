@@ -27,6 +27,7 @@ import StudentRouter from "./StudentRouter";
 import TypingTest from "../Pages/STUDENT/TypingTest";
 import Resorse from "../Pages/STUDENT/Resorse";
 import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
  
 
 export const router = createBrowserRouter([
@@ -42,6 +43,9 @@ export const router = createBrowserRouter([
       {
         path: "/About",
         element: <About />,
+      },  {
+        path: "/Contact",
+        element: <Contact />,
       },
       {
         path: "/student-for-public",
