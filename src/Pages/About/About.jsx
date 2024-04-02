@@ -1,23 +1,24 @@
 import bannar from "../../assets/tablet-white.png";
 import adnan from "../../assets/adnan.jfif";
 
-import { FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 const About = () => {
   return (
-    <div className="pt-24">
-      <div className="grid max-w-screen-2xl grid-cols-1 gap-8 px-8 py-16 mx-auto my-4 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-base-200 rounded-lg">
+    <div className="pt-16 overflow-hidden">
+      <div className="grid max-w-screen-2xl grid-cols-1  gap-8 px-8 py-16 mx-auto my-4 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-base-200 rounded-lg">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
-            <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+          <h2 className="text-xl font-bold leading-tight lg:text-5xl">
               Open IT Institute
             </h2>
             <div className=" text-gray-600  ">Version:1.0.0 </div>
+          
           </div>
           <div className=" my-4 w-full  shadow border-warning border rounded-lg">
             <div className="card-body">
               <h2 className="card-title">What is new ! 1.0.0 </h2>
-
+              <div className=" text-gray-600  ">Date: 02-04-2024 </div>
               <ul className="list-disc px-4">
                 <li>Full website brand new design </li>
                 <li>Admin portal </li>
@@ -33,7 +34,7 @@ const About = () => {
         <div className="flex flex-col  ">
           <div className="space-y-2 pb-8">
             <h2 className="text-xl font-bold leading-tight lg:text-5xl">
-              Developer info
+            Developer Information  
             </h2>
           </div>
           <div className=" my-4 w-full   border-warning border rounded-lg">
