@@ -1,84 +1,91 @@
-import React, { useState } from "react";
+import bannar from "../../assets/tablet-white.png";
+import adnan from "../../assets/adnan.jfif";
 
+import { FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 const About = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-
-    const { name, email, message } = formData;
-    const subject = "Message from website";
-    const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-
-    window.location.href = `mailto:admin@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-  };
-
   return (
-    <div className="pt-32">
-      <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto my-4 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-base-200 rounded-lg">
+    <div className="pt-24">
+      <div className="grid max-w-screen-2xl grid-cols-1 gap-8 px-8 py-16 mx-auto my-4 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 bg-base-200 rounded-lg">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
-              Let's talk!
+              Open IT Institute
             </h2>
-            <div className="dark:text-gray-600">subtext </div>
+            <div className=" text-gray-600  ">Version:1.0.0 </div>
           </div>
-          <img
-            src="assets/svg/doodle.svg"
-            alt=""
-            className="p-6 h-52 md:h-64"
-          />
+          <div className=" my-4 w-full  shadow border-warning border rounded-lg">
+            <div className="card-body">
+              <h2 className="card-title">What is new ! 1.0.0 </h2>
+
+              <ul className="list-disc px-4">
+                <li>Full website brand new design </li>
+                <li>Admin portal </li>
+                <li>Student portal </li>
+                <li>Optimized and improved </li>
+              </ul>
+            </div>
+            <figure>
+              <img className="p-4 " src={bannar} alt="Open it" />
+            </figure>
+          </div>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="text-sm">
-              Full name
-            </label>
-            <input
-              id="name"
-              type="text"
-              placeholder=""
-              className="w-full p-3 rounded dark:bg-gray-100"
-              onChange={handleChange}
-            />
+        <div className="flex flex-col  ">
+          <div className="space-y-2 pb-8">
+            <h2 className="text-xl font-bold leading-tight lg:text-5xl">
+              Developer info
+            </h2>
           </div>
-          <div>
-            <label htmlFor="email" className="text-sm">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              className="w-full p-3 rounded dark:bg-gray-100"
-              onChange={handleChange}
-            />
+          <div className=" my-4 w-full   border-warning border rounded-lg">
+            <div className="flex flex-col justify-center  p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+              <img
+                src={adnan}
+                alt=""
+                className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+              />
+              <div className="space-y-4 text-center divide-y dark:divide-gray-300">
+                <div className="my-2 space-y-1">
+                  <h2 className="text-xl font-semibold sm:text-2xl">
+                    Adnan al-emran
+                  </h2>
+                  <p className="px-5 text-xs sm:text-base dark:text-gray-600">
+                    BSc in CSE, Green University of Bangladesh
+                  </p>
+                </div>
+                <div className="flex justify-center pt-2 space-x-4 align-center">
+                  contact info:
+                </div>
+                <div className="flex justify-center pt-2 space-x-4 align-center">
+                  <a
+                    href="tel:+8801917019619"
+                    className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  >
+                    <FaPhoneAlt />
+                  </a>
+                  <a
+                    href="mailto:adnanalemranontor@gmail.com"
+                    className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  >
+                    <FiMail />
+                  </a>
+
+                  <a
+                    href="https://bd.linkedin.com/in/adnanalemran"
+                    className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  >
+                    <FaLinkedin />
+                  </a>
+                  <a
+                    href="https://github.com/adnanalemran"
+                    className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  >
+                    <FaGithub />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <label htmlFor="message" className="text-sm">
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows="3"
-              className="w-full p-3 rounded dark:bg-gray-100"
-              onChange={handleChange}
-            ></textarea>
-          </div>
-          <button type="submit" className="w-full text-white btn bg-purple-600">
-            Send Message
-          </button>{" "}
-          {/* Submit button */}
-        </form>
+        </div>
       </div>
     </div>
   );

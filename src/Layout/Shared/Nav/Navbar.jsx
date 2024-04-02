@@ -33,6 +33,9 @@ const Nav = () => {
         <NavLink to="/gallery">News</NavLink>
       </li>
       <li>
+        <NavLink to="/Contact">Contact</NavLink>
+      </li> 
+       <li>
         <NavLink to="/About">About</NavLink>
       </li>
     </>
