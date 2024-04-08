@@ -28,7 +28,8 @@ import TypingTest from "../Pages/STUDENT/TypingTest";
 import Resorse from "../Pages/STUDENT/Resorse";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
- 
+import StudentList from "../Pages/dashboard/Dashboard/StudentList";
+
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
       {
         path: "/About",
         element: <About />,
-      },  {
+      }, {
         path: "/Contact",
         element: <Contact />,
       },
@@ -151,6 +152,14 @@ export const router = createBrowserRouter([
             <AdministratorByEditProfile />,
           </AdminRouter>
         ),
+      }, 
+      {
+        path: "/dashboard/student-list",
+        element: (
+          <AdminRouter>
+            <StudentList />,
+          </AdminRouter>
+        ),
       },
 
       // Student router
@@ -171,7 +180,7 @@ export const router = createBrowserRouter([
           </StudentRouter>
         ),
       },
-      
+
     ],
   },
   {
