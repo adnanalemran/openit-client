@@ -33,7 +33,7 @@ const SingleNotice = () => {
           <p>Publish date {notice?.postDate} </p>
         </div>
         <hr className="border-1 border-purple-300 mb-8" />
-        <h1 className="text-3xl "> Title: {notice?.noticeTitle}</h1>
+        <h1 className="text-3xl "> Subject: {notice?.noticeTitle}</h1>
 
         <br />
         {notice?.noticeDetails}

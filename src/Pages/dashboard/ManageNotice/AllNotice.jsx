@@ -50,7 +50,7 @@ const AllNotice = () => {
             <thead>
               <tr>
                 <th>no</th>
-                <th>title</th>
+                <th>Subject</th>
                 <th>Notice Date </th>
                 <th>Create Date </th>
                 <th>Action</th>

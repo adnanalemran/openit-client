@@ -24,7 +24,7 @@ const Contact = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span>Fake address, 9999 City</span>
+                <span>Code Road, Shantibagh, Kendua, Netrakona.</span>
               </p>
               <p className="flex items-center">
                 <svg

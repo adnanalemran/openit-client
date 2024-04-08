@@ -33,7 +33,7 @@ const Notice = () => {
           <thead>
             <tr>
               <td>no:</td>
-              <th>title</th>
+              <th>Subject</th>
               <th>Date</th>
             </tr>
           </thead>
