@@ -12,12 +12,12 @@ const About = () => {
           <h2 className="text-xl font-bold leading-tight lg:text-5xl">
               Open IT Institute
             </h2>
-            <div className=" text-gray-600  ">Version:1.0.0 </div>
+            <div className=" text-gray-600  ">Version:1.0.1 </div>
           
           </div>
           <div className=" my-4 w-full  shadow border-warning border rounded-lg">
             <div className="card-body">
-              <h2 className="card-title">What is new ! 1.0.0 </h2>
+              <h2 className="card-title">What is new ! 1.0.2 </h2>
               <div className=" text-gray-600  ">Date: 02-04-2024 </div>
               <ul className="list-disc px-4">
                 <li>Full website brand new design </li>
