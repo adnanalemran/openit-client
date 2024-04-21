@@ -10,7 +10,6 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="h-screen mx-auto w-full text-center">
-
        
         <h2 className="text-xl pt-32 px-16">Loading...</h2>
          <Loading/> 

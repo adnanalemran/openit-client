@@ -55,7 +55,7 @@ const Notice = () => {
           </tbody>
         </table>
         <div className="card-actions justify-end">
-          {/* <button className="btn btn-sm  mr-6 mb-3 ">See more </button> */}
+        
         </div>
       </div>
     </div>
