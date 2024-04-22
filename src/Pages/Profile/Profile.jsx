@@ -54,8 +54,7 @@ const Profile = () => {
     <div className="bg-base-300   p-8 rounded-lg shadow-md">
       {dbuser?.userType === "user" && (
         <h2 className="text-red-500 text-2xl p-4">
-          আপনি একজন আবেদনকারী ,Student হিসেবে যুক্ত হতে কর্তৃপক্ষের সাথে যোগাযোগ
-          করুন
+         Please communicate with the authorities as an applicant and a student to join
         </h2>
       )}
 
