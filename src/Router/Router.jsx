@@ -29,6 +29,7 @@ import Resorse from "../Pages/STUDENT/Resorse";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import StudentList from "../Pages/dashboard/Dashboard/StudentList";
+import Checking from "../Pages/Checking/Checking";
 
 
 export const router = createBrowserRouter([
@@ -74,6 +75,11 @@ export const router = createBrowserRouter([
   {
     path: "/signUp",
     element: <SignUp />,
+  },
+
+  {
+    path: "/checking/:id",
+    element: <Checking/>,
   },
 
   {
@@ -152,7 +158,7 @@ export const router = createBrowserRouter([
             <AdministratorByEditProfile />,
           </AdminRouter>
         ),
-      }, 
+      },
       {
         path: "/dashboard/student-list",
         element: (
