@@ -130,6 +130,7 @@ const ManageBlog = () => {
               <thead>
                 <tr>
                   <th>no</th>
+                  
                   <th>title</th>
                   <th>Notice Date </th>
 

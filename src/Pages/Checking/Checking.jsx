@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useAxiosSecure from "../../Hook/useAxiosPublic";
 import Info from '../Auth/Signin/Info';
+import Loading from '../Loading/Loading';
 
 const Checking = () => {
     const { id } = useParams();
@@ -22,12 +23,32 @@ const Checking = () => {
         },
     });
 
-    if (isLoading) return <div>Loading...</div>; // added loading state handling
+    if (isLoading) return <div><Loading/></div>; // added loading state handling
 
     return (
         <div className='p-4'>
-            {isError || invalid ? ( // added error and invalid state handling
-                "No user"
+            {isError || invalid ? (  
+
+
+<div className="py-8 px-4  ">
+<Info />
+<p className="bg-base-300 w-full shadow-xl mx-auto max-w-md p-8  space-y-3 rounded-xl border my-5 text-xl text-red-500">
+The QR code used on this ID card is not valid. Please inform the ID card bearer of the information to the authorities.
+</p>
+<footer className="footer px-10 py-4 border-t    border-base-300  container mx-auto">
+    <aside className="items-center grid-flow-col">
+        <Link to="/">
+            © 2021-2024 Open IT Institute. All Rights Reserved.
+        </Link>
+    </aside>
+    <nav className="md:place-self-center md:justify-self-end ">
+        <Link to="https://www.linkedin.com/in/adnanalemran">
+            Developed by <samp className="text-orange-600"> Adnan al emran</samp>
+        </Link>
+    </nav>
+</footer>
+</div>
+        
             ) : (
                 <>
                     <Info />
@@ -68,17 +89,17 @@ const Checking = () => {
                             আমরা তার সার্বিক মঙ্গল কামনা করছি |
                         </p>
                         <footer className="footer px-10 py-4 border-t    border-base-300  container mx-auto">
-        <aside className="items-center grid-flow-col">
-          <Link to="/">
-            © 2021-2024 Open IT Institute. All Rights Reserved.
-          </Link>
-        </aside>
-        <nav className="md:place-self-center md:justify-self-end ">
-          <Link to="https://www.linkedin.com/in/adnanalemran">
-            Developed by <samp className="text-orange-600"> Adnan al emran</samp>
-          </Link>
-        </nav>
-      </footer>
+                            <aside className="items-center grid-flow-col">
+                                <Link to="/">
+                                    © 2021-2024 Open IT Institute. All Rights Reserved.
+                                </Link>
+                            </aside>
+                            <nav className="md:place-self-center md:justify-self-end ">
+                                <Link to="https://www.linkedin.com/in/adnanalemran">
+                                    Developed by <samp className="text-orange-600"> Adnan al emran</samp>
+                                </Link>
+                            </nav>
+                        </footer>
                     </div>
                 </>
             )}

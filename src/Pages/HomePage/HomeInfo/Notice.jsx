@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Loading/Loading";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+
+
 const Notice = () => {
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(true);
