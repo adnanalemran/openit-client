@@ -1,7 +1,7 @@
 import HomeInfo from "./HomeInfo/HomeInfo";
 import Faculty from "./Faculty/Faculty";
 
-import OurAlumni from "./OurAlumni/OurAlumni";
+
 
 import Subscribe from "../../components/Homepage/Subscribe";
 import Featured from "../../components/Homepage/Featured";
@@ -26,7 +26,7 @@ const HomePage = () => {
         <Faculty />
         <Patnar />
 
-        <OurAlumni />
+
         <Subscribe />
       </div>
     </div>

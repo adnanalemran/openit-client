@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hook/useAxiosPublic";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Info from "./Info";
+import { FaUser, FaEnvelope, FaLock, FaPhone, FaGraduationCap, FaCalendarAlt, FaMapMarkerAlt, FaFacebook, FaUpload, FaSpinner } from "react-icons/fa";
 
 const apiKey = import.meta.env.VITE_IMAGE_HOSTING_API_KEY;
 const imageHostingApi = `https://api.imgbb.com/1/upload?key=${apiKey}`;
@@ -119,174 +120,149 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <div className="py-8 px-4  min-h-screen">
-        <section className="p-6  dark:bg-gray-800 dark:text-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 py-8 px-4">
+      <div className="max-w-4xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-8">
           <Info />
-          <p className="font-serif text-sm dark:text-gray-400 text-center py-2">
-            Student Application Form
-          </p>
-          <form
-            onSubmit={handleSignUp}
-            className="container bg-base-300 shadow-sm  flex flex-col mx-auto space-y-12"
-          >
-            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
-              <div className="space-y-2 col-span-full lg:col-span-1">
-                <p className="font-medium">Personal Information</p>
-                <p className="text-xs">
-                  Please provide your details for a smooth registration process.
-                </p>
-              </div>
-              <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                <div className="col-span-full  ">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="    text-gray-800">Name:</div>
+          <div className="mt-4">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              শিক্ষার্থী আবেদন ফর্ম
+            </h1>
+            <p className="text-gray-600">
+              আপনার ভবিষ্যতের জন্য প্রথম পদক্ষেপ নিন
+            </p>
+          </div>
+        </div>
+
+        {/* Main Form */}
+        <form onSubmit={handleSignUp} className="space-y-8">
+          {/* Personal Information Section */}
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-orange-500 to-red-500 px-6 py-4">
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <FaUser className="text-white" />
+                ব্যক্তিগত তথ্য
+              </h2>
+              <p className="text-orange-100 text-sm mt-1">
+                আপনার ব্যক্তিগত তথ্য প্রদান করুন
+              </p>
+            </div>
+            <div className="p-6 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Name */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">নাম</label>
+                  <div className="relative">
+                    <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
                       name="displayName"
-                      id="displayName"
-                      className="grow"
                       required
-                      placeholder="E.g. Adnan al emran  "
+                      placeholder="আপনার পূর্ণ নাম লিখুন"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <div className="space-y-1 text-sm">
-                    <label className="input input-bordered flex items-center gap-2 ">
-                      <div className="    text-gray-800">Formal-Photo: </div>
-                      <input type="file" name="photoURL" className="grow" />
-                    </label>
                   </div>
                 </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="    text-gray-800 "> Course: </div>
+
+                {/* Photo Upload */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">ছবি আপলোড করুন</label>
+                  <div className="relative">
+                    <FaUpload className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <input
+                      type="file"
+                      name="photoURL"
+                      accept="image/*"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100"
+                    />
+                  </div>
+                </div>
+
+                {/* Course Selection */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">কোর্স নির্বাচন করুন</label>
+                  <div className="relative">
+                    <FaGraduationCap className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <select
-                      className="w-full p-2"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 appearance-none bg-white"
                       defaultValue=""
                       required
-                      onChange={handleCourseChange} // Add onChange event handler
+                      onChange={handleCourseChange}
                     >
-                      <option
-                        value=""
-                        disabled
-                        hidden
-                        className="w-full text-gray-800"
-                      >
-                        Select your course
-                      </option>
-                      <option value="office-application-course">
-                        Office Application Course
-                      </option>
-                      <option value="graphic-design-course">
-                        Graphic Design Course
-                      </option>
-                      <option value="web-course-cms">Web Course (CMS)</option>
-                      <option value="web-course-laravel">
-                        Web Course (Laravel)
-                      </option>
-                      <option value="web-course-marn">Web Course (MARN)</option>
+                      <option value="" disabled>কোর্স নির্বাচন করুন</option>
+                      <option value="office-application-course">অফিস অ্যাপ্লিকেশন কোর্স</option>
+                      <option value="graphic-design-course">গ্রাফিক ডিজাইন কোর্স</option>
+                      <option value="web-course-cms">ওয়েব কোর্স (সিএমএস)</option>
+                      <option value="web-course-laravel">ওয়েব কোর্স (লারাভেল)</option>
+                      <option value="web-course-marn">ওয়েব কোর্স (মার্ন)</option>
                     </select>
-                  </label>
+                  </div>
                 </div>
 
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Father Name:</div>
-                    <input
-                      type="text"
-                      name="fatherName"
-                      id="fatherName"
-                      className="grow"
-                      required
-                      placeholder="E.g. Ibrahim"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Mother Name:</div>
-                    <input
-                      type="text"
-                      name="motherName"
-                      id="motherName"
-                      className="grow"
-                      required
-                      placeholder="E.g. Aklima Akter"
-                    />
-                  </label>
-                </div>
-
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="    text-gray-800 "> Gender: </div>
+                {/* Gender */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">লিঙ্গ</label>
+                  <div className="relative">
+                    <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <select
-                      className="w-full p-2"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 appearance-none bg-white"
                       defaultValue=""
                       required
                       onChange={handleGenderChange}
                     >
-                      <option
-                        value=""
-                        disabled
-                        hidden
-                        className="w-full text-gray-800"
-                      >
-                        Select your gender
-                      </option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
+                      <option value="" disabled>লিঙ্গ নির্বাচন করুন</option>
+                      <option value="male">পুরুষ</option>
+                      <option value="female">মহিলা</option>
+                      <option value="other">অন্যান্য</option>
                     </select>
-                  </label>
+                  </div>
                 </div>
 
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Date of Birth:</div>
+                {/* Father's Name */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">পিতার নাম</label>
+                  <input
+                    type="text"
+                    name="fatherName"
+                    required
+                    placeholder="পিতার নাম লিখুন"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                {/* Mother's Name */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">মাতার নাম</label>
+                  <input
+                    type="text"
+                    name="motherName"
+                    required
+                    placeholder="মাতার নাম লিখুন"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                {/* Date of Birth */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">জন্ম তারিখ</label>
+                  <div className="relative">
+                    <FaCalendarAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
                       type="date"
                       name="dateOfBirth"
-                      id="dateOfBirth"
-                      className="grow"
                       required
-                      placeholder="Select date"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
+                  </div>
                 </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">
-                      Education Qualification:
-                    </div>
-                    <input
-                      type="text"
-                      name="educationQualification"
-                      id="educationQualification"
-                      className="grow"
-                      required
-                      placeholder="E.g. Bsc in CSE"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">School/University:</div>
-                    <input
-                      type="text"
-                      name="schoolUniversity"
-                      id="schoolUniversity"
-                      className="grow"
-                      required
-                      placeholder="E.g. Green University of Bangladesh"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label htmlFor="PhoneNo" className="block  "></label>
-                  <label className="input input-bordered flex items-center gap-2">
-                    +880
+
+                {/* Phone Number */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">ফোন নম্বর</label>
+                  <div className="relative">
+                    <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <span className="absolute left-10 top-1/2 transform -translate-y-1/2 text-gray-500">+880</span>
                     <input
                       type="text"
                       name="PhoneNo"
@@ -295,179 +271,207 @@ const SignUp = () => {
                       pattern="[0-9]{10}"
                       placeholder="1917019619"
                       required
-                      id="PhoneNo"
-                      className="grow"
+                      className="w-full pl-16 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
+                  </div>
                 </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2">
-                    <div className="text-gray-800">Facebook Profile URL:</div>
+
+                {/* Education Qualification */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">শিক্ষাগত যোগ্যতা</label>
+                  <input
+                    type="text"
+                    name="educationQualification"
+                    required
+                    placeholder="যেমন: বিএসসি ইন সিএসই"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                {/* School/University */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">স্কুল/বিশ্ববিদ্যালয়</label>
+                  <input
+                    type="text"
+                    name="schoolUniversity"
+                    required
+                    placeholder="যেমন: গ্রিন ইউনিভার্সিটি অফ বাংলাদেশ"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                {/* Facebook URL */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">ফেসবুক প্রোফাইল</label>
+                  <div className="relative">
+                    <FaFacebook className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
                       type="url"
                       name="facebookUrl"
-                      id="facebookUrl"
-                      className="grow"
                       required
                       placeholder="https://facebook.com/your_username"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
+                  </div>
                 </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Present Address:</div>
+
+                {/* Present Address */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">বর্তমান ঠিকানা</label>
+                  <div className="relative">
+                    <FaMapMarkerAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
                       name="presentAddress"
-                      id="presentAddress"
-                      className="grow"
                       required
-                      placeholder="E.g.Vill.- Mohuriya,P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
+                      placeholder="আপনার বর্তমান ঠিকানা লিখুন"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
+                  </div>
                 </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Permanent Address:</div>
+
+                {/* Permanent Address */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">স্থায়ী ঠিকানা</label>
+                  <div className="relative">
+                    <FaMapMarkerAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
                       name="permanentAddress"
-                      id="permanentAddress"
-                      className="grow"
                       required
-                      placeholder="E.g.Vill.- Mohuriya, P.O.Muzaffarpur Upazila.-Kendua, Dist- Netrokona, Banglades"
+                      placeholder="আপনার স্থায়ী ঠিকানা লিখুন"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
+                  </div>
                 </div>
               </div>
-            </fieldset>
-            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
-              <div className="space-y-2 col-span-full lg:col-span-1">
-                <p className="font-medium">SSC education information </p>
-                <p className="text-xs r">
-                  For your convenience, Please provide your details for a smooth
-                  registration process.
-                </p>
+            </div>
+          </div>
+
+          {/* SSC Education Information Section */}
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-4">
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <FaGraduationCap className="text-white" />
+                এসএসসি শিক্ষা তথ্য
+              </h2>
+              <p className="text-blue-100 text-sm mt-1">
+                আপনার এসএসসি পরীক্ষার তথ্য প্রদান করুন
+              </p>
+            </div>
+            <div className="p-6 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">এসএসসি রোল নম্বর</label>
+                  <input
+                    type="number"
+                    name="sscRollNo"
+                    required
+                    placeholder="যেমন: 654321"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">এসএসসি রেজিস্ট্রেশন নম্বর</label>
+                  <input
+                    type="number"
+                    name="sscRegNo"
+                    required
+                    placeholder="000000000000000"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">এসএসসি বোর্ড</label>
+                  <input
+                    type="text"
+                    name="SSCBoardName"
+                    required
+                    placeholder="যেমন: ঢাকা"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">পাসের বছর</label>
+                  <input
+                    type="number"
+                    name="passingYear"
+                    required
+                    placeholder="যেমন: 2015"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
               </div>
-              <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">SSC Roll No :</div>
+            </div>
+          </div>
+
+          {/* Account Information Section */}
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-green-500 to-teal-500 px-6 py-4">
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <FaLock className="text-white" />
+                অ্যাকাউন্ট তথ্য
+              </h2>
+              <p className="text-green-100 text-sm mt-1">
+                আপনার লগইন তথ্য সংরক্ষণ করুন
+              </p>
+            </div>
+            <div className="p-6 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">ইমেইল</label>
+                  <div className="relative">
+                    <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
-                      type="number"
-                      name="sscRollNo"
-                      id="sscRollno"
-                      className="grow"
-                      required
-                      placeholder="E.g.654321"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">SSC REG no:</div>
-                    <input
-                      type="number"
-                      name="sscRegNo"
-                      id="sscRegNo"
-                      className="grow"
-                      required
-                      placeholder="000000000000000"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">SSC board name</div>
-                    <input
-                      type="text"
-                      name="SSCBoardName"
-                      id="SSCBoardName"
-                      className="grow"
-                      required
-                      placeholder="E.g. Dhaka"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2 ">
-                    <div className="text-gray-800">Passing Year:</div>
-                    <input
-                      type="number"
-                      name="passingYear"
-                      id="passingYear"
-                      className="grow"
-                      required
-                      placeholder="E.g. 2015"
-                    />
-                  </label>
-                </div>
-                <div className="col-span-full sm:col-span-3"></div>
-              </div>
-            </fieldset>
-            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
-              <div className="space-y-2 col-span-full lg:col-span-1">
-                <p className="font-medium">Account Information</p>
-                <p className="text-xs r">
-                  For your convenience, save my email and password for future
-                  logins.
-                </p>
-              </div>
-              <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      className="w-4 h-4 opacity-70"
-                    >
-                      <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                      <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-                    </svg>
-                    <input
-                      type="text"
-                      className="grow"
+                      type="email"
+                      value={email}
                       onChange={handleEmailChange}
-                      placeholder="Email"
+                      required
+                      placeholder="আপনার ইমেইল লিখুন"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
+                  </div>
                 </div>
-                <div className="col-span-full sm:col-span-3">
-                  <label className="input input-bordered flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                      className="w-4 h-4 opacity-70"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">পাসওয়ার্ড</label>
+                  <div className="relative">
+                    <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
                       type="password"
+                      value={password}
                       onChange={handlePasswordChange}
-                      className="grow"
+                      required
+                      placeholder="পাসওয়ার্ড লিখুন"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
                     />
-                  </label>
+                  </div>
                 </div>
-                <div className="col-span-full sm:col-span-3"></div>
               </div>
-            </fieldset>
-            <div className="w-full flex flex-col items-end justify-end pb-4 px-4 ">
-              <button className="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group  ">
-                <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-full group-hover:h-64"></span>
-                <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
-                <span className="relative">
-                  {loading ? "processing..." : "Apply"}
-                </span>
-              </button>
             </div>
-          </form>
-        </section>
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              disabled={loading}
+              className="relative inline-flex items-center justify-center px-12 py-4 overflow-hidden font-semibold text-white bg-gradient-to-r from-orange-500 to-red-500 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              {loading ? (
+                <>
+                  <FaSpinner className="animate-spin mr-2" />
+                  প্রক্রিয়াকরণ হচ্ছে...
+                </>
+              ) : (
+                "আবেদন জমা দিন"
+              )}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

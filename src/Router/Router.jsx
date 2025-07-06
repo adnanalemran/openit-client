@@ -29,6 +29,7 @@ import Resorse from "../Pages/STUDENT/Resorse";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import StudentList from "../Pages/dashboard/Dashboard/StudentList";
+import Notices from "../Pages/Notices/Notices";
 
 import Checking from "../Pages/Checking/Checking";
 
@@ -44,10 +45,11 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/About",
+        path: "/about",
         element: <About />,
-      }, {
-        path: "/Contact",
+      }, 
+      {
+        path: "/contact",
         element: <Contact />,
       },
       {
@@ -63,13 +65,21 @@ export const router = createBrowserRouter([
         element: <CumpusLife />,
       },
       {
+        path: "/notices",
+        element: <Notices />,
+      },
+      {
         path: "/notice/:id",
         element: <SingleNotice />,
+      },
+      {
+        path: "/courses",
+        element: <CumpusLife />, // Using CampusLife as courses page for now
       },
     ],
   },
   {
-    path: "/signIn",
+    path: "/signin",
     element: <Signin />,
   },
 
@@ -156,7 +166,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/AdminEditProfile/:id",
         element: (
           <AdminRouter>
-            <AdministratorByEditProfile />,
+            <AdministratorByEditProfile />
           </AdminRouter>
         ),
       },
@@ -164,7 +174,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/student-list",
         element: (
           <AdminRouter>
-            <StudentList />,
+            <StudentList />
           </AdminRouter>
         ),
       },
@@ -175,7 +185,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/TypingTest",
         element: (
           <StudentRouter>
-            <TypingTest />,
+            <TypingTest />
           </StudentRouter>
         ),
       },
@@ -183,7 +193,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/resource",
         element: (
           <StudentRouter>
-            <Resorse />,
+            <Resorse />
           </StudentRouter>
         ),
       },
