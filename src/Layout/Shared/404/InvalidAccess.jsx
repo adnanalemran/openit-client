@@ -1,6 +1,6 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 
-import animation from "../../../../public/animation/Animation - 1710596968227.json";
+import animation from "../../../assets/animation/Animation - 1710596968227.json";
 import Info from "../../../Pages/Auth/Signin/Info";
 const InvalidAccess = () => {
   return (

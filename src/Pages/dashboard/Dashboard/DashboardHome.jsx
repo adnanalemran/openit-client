@@ -1,7 +1,7 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import animation from "../../../../public/animation/Animation - 1710595501629.json";
+import animation from "../../../assets/animation/Animation - 1710595501629.json";
 import useAdmin from "../../../Hook/useAdmin";
 import useStudent from "../../../Hook/useStudent";
 import Analisys from "../../../components/DashboardHome/Analisys";
