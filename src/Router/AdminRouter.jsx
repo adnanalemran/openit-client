@@ -1,45 +1,135 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import useAxiosSecure from "../Hook/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { FaSpinner, FaUserShield, FaExclamationTriangle, FaLock, FaCrown, FaTimesCircle } from "react-icons/fa";
 
 const AdminRouter = ({ children }) => {
   const axiosSecure = useAxiosSecure();
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
 
-  const { data: userData = [], isLoading } = useQuery({
-    queryKey: ["user", user.email],
+  const { data: userData, isLoading, error } = useQuery({
+    queryKey: ["user", user?.email],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/user/email/${user?.email}`);
+      if (!user?.email) throw new Error("No user email");
+      const res = await axiosSecure.get(`/user/email/${user.email}`);
       return res.data;
     },
+    enabled: !!user?.email,
+    retry: 2,
+    retryDelay: 1000,
   });
 
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  // Show loading state for authentication
   if (loading) {
     return (
-      <div className="h-screen mx-auto w-full text-center">
-        <h2 className="text-xl pt-32 px-16">Loading...</h2>
-        <progress className="progress px-8 w-1/2"></progress>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center">
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
+          <div className="relative">
+            <FaSpinner className="animate-spin text-4xl text-blue-500 mx-auto mb-4" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 border-2 border-blue-200 border-t-blue-500 rounded-full animate-spin"></div>
+            </div>
+          </div>
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">প্রমাণীকরণ হচ্ছে...</h2>
+          <p className="text-gray-500 mb-4">অনুগ্রহ করে অপেক্ষা করুন</p>
+          <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
+            <FaLock className="text-xs" />
+            <span>নিরাপদ অ্যাক্সেস</span>
+          </div>
+        </div>
       </div>
     );
   }
+
+  // Show loading state for user data
   if (isLoading) {
     return (
-      <div className="h-screen mx-auto w-full text-center">
-        <h2 className="text-xl pt-32 px-16">Loading...</h2>
-        <progress className="progress px-8 w-1/2"></progress>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center">
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
+          <div className="relative">
+            <FaSpinner className="animate-spin text-4xl text-blue-500 mx-auto mb-4" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 border-2 border-blue-200 border-t-blue-500 rounded-full animate-spin"></div>
+            </div>
+          </div>
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">ব্যবহারকারীর তথ্য লোড হচ্ছে...</h2>
+          <p className="text-gray-500 mb-4">অনুগ্রহ করে অপেক্ষা করুন</p>
+          <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
+            <FaUserShield className="text-xs" />
+            <span>অ্যাডমিন যাচাইকরণ</span>
+          </div>
+        </div>
       </div>
     );
   }
 
-    if (  userData.userType === "isAdmin") {
-      return children;
-    }
+  // Handle error
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-pink-50 flex items-center justify-center">
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg max-w-md">
+          <FaExclamationTriangle className="text-4xl text-red-500 mx-auto mb-4" />
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">ত্রুটি ঘটেছে</h2>
+          <p className="text-gray-500 mb-4">ব্যবহারকারীর তথ্য লোড করতে সমস্যা হয়েছে</p>
+          <div className="space-y-2">
+            <button 
+              onClick={() => window.location.reload()}
+              className="btn btn-error btn-sm mr-2"
+            >
+              আবার চেষ্টা করুন
+            </button>
+            <button 
+              onClick={() => window.history.back()}
+              className="btn btn-outline btn-sm"
+            >
+              ফিরে যান
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
-    return <Navigate state={location.pathname} to="/invalidAccess" />;
+  // Check if user is admin (handle both "isAdmin" and "admin" values)
+  const isAdmin = userData?.userType === "isAdmin" || userData?.userType === "admin";
   
+  if (isAdmin) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        {/* Admin indicator */}
+        <div className="fixed top-4 right-4 z-50">
+          <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg border border-blue-200">
+            <FaCrown className="text-yellow-500 text-sm" />
+            <span className="text-xs text-blue-700 font-medium">অ্যাডমিন</span>
+          </div>
+        </div>
+        
+        {children}
+      </div>
+    );
+  }
+
+  // User is not admin, redirect to invalid access
+  return (
+    <Navigate 
+      to="/invalidAccess" 
+      state={{ 
+        from: location.pathname, 
+        reason: "admin_access_denied",
+        userType: userData?.userType,
+        message: "এই পৃষ্ঠা দেখতে অ্যাডমিন অধিকার প্রয়োজন"
+      }}
+      replace 
+    />
+  );
 };
 
 export default AdminRouter;

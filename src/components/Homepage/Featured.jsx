@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import gpdesign from "../../assets/1_uw8prVHOb4-8rE5EM_JYjg.jpg";
 import mran from "../../assets/MERN-Stack-Development.png";
 import office from "../../assets/office_application.jpg";
-import { FaClock, FaPlay, FaDownload, FaStar, FaArrowRight } from "react-icons/fa";
+import { FaClock, FaPlay, FaStar, FaArrowRight } from "react-icons/fa";
 
 const Featured = () => {
   const courses = [
