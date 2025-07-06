@@ -7,7 +7,7 @@ import useAxiosPublic from "../../../Hook/useAxiosPublic";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Info from "./Info";
 
-const apiKey = "1ad39848438ab11b24c62874b073efd7";
+const apiKey = import.meta.env.VITE_IMAGE_HOSTING_API_KEY;
 const imageHostingApi = `https://api.imgbb.com/1/upload?key=${apiKey}`;
 
 const SignUp = () => {
