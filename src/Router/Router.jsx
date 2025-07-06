@@ -13,7 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import InvalidAccess from "../Layout/Shared/404/InvalidAccess";
 import AdminRouter from "./AdminRouter";
 import Profile from "../Pages/Profile/Profile";
-import ResultForHome from "../Pages/result/resultForHome";
+import ResultForHome from "../Pages/result/ResultForHome";
 import CumpusLife from "../Pages/HomePage/CumpusLife/CumpusLife";
 import Student_public_view from "../Pages/Student_public_view/Student_public_view";
 import ManageNotice from "../Pages/dashboard/ManageNotice/ManageNotice";

@@ -9,7 +9,7 @@ import Featured from "../../components/Homepage/Featured";
 import HeroSection from "../../components/Homepage/HeroSection";
 import Premium from "../../components/Homepage/Premium";
 
-import Book from "../../components/Homepage/book";
+import Book from "../../components/Homepage/Book";
 import Patnar from "../../components/Homepage/Patnar";
 
 const HomePage = () => {
